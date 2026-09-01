@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-multipart
+opencv-python
+
+run backend:
+cd backend
+venv\Scripts\activate
+uvicorn main:app --reload
+
+run frontend:
+cd frontend
+python -m http.server 5500

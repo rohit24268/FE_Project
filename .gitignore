@@ -1,0 +1,39 @@
+# Python virtual environment
+venv/
+backend/venv/
+.venv/
+backend/.venv/
+
+# Python cache
+__pycache__/
+*/__pycache__/
+*.pyc
+
+# Environment variables
+.env
+*.env
+
+# CCTV uploaded videos
+uploads/
+backend/uploads/
+
+# Extracted frames
+frames/
+backend/frames/
+
+# Generated video files
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
