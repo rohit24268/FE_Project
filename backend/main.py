@@ -1,18 +1,30 @@
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
-import os
+from pathlib import Path
 import shutil
 import uuid
+import os
 
-from video_processor import (
-    get_video_info,
-    extract_frames
+from services.yolo_service import analyze_video
+from fastapi.responses import FileResponse
+
+
+# --------------------------------------------------
+# FASTAPI APP
+# --------------------------------------------------
+
+app = FastAPI(
+    title="ForenSight AI",
+    description="AI-powered CCTV forensic analysis system",
+    version="1.0.0"
 )
 
 
-app = FastAPI(title="ForenSight AI")
-
+# --------------------------------------------------
+# CORS
+# --------------------------------------------------
 
 app.add_middleware(
     CORSMiddleware,
@@ -23,84 +35,210 @@ app.add_middleware(
 )
 
 
-UPLOAD_DIR = "uploads"
-FRAME_DIR = "frames"
+# --------------------------------------------------
+# DIRECTORIES
+# --------------------------------------------------
 
-os.makedirs(UPLOAD_DIR, exist_ok=True)
-os.makedirs(FRAME_DIR, exist_ok=True)
+BASE_DIR = Path(__file__).resolve().parent
 
+UPLOAD_DIR = BASE_DIR / "uploads"
+RESULT_DIR = BASE_DIR / "results"
+
+UPLOAD_DIR.mkdir(exist_ok=True)
+RESULT_DIR.mkdir(exist_ok=True)
+
+
+# --------------------------------------------------
+# SERVE PROCESSED RESULTS
+# --------------------------------------------------
+
+app.mount(
+    "/results",
+    StaticFiles(directory=str(RESULT_DIR)),
+    name="results"
+)
+
+
+# --------------------------------------------------
+# HEALTH CHECK
+# --------------------------------------------------
 
 @app.get("/")
 def home():
 
     return {
-        "message": "ForenSight AI Backend is running"
+        "message": "ForenSight AI Backend Running"
     }
 
+@app.get("/download-video/{filename}")
+async def download_video(filename: str):
 
-@app.get("/health")
-def health():
+    video_path = RESULT_DIR / filename
 
-    return {
-        "status": "healthy"
-    }
+    if not video_path.exists():
+        raise HTTPException(
+            status_code=404,
+            detail="Annotated video not found"
+        )
 
+    return FileResponse(
+        path=str(video_path),
+        media_type="application/octet-stream",
+        filename=filename
+    )
 
-@app.post("/upload-video")
-async def upload_video(
+# --------------------------------------------------
+# ANALYZE CCTV VIDEO
+# --------------------------------------------------
+
+@app.post("/analyze-video")
+async def analyze_cctv(
     file: UploadFile = File(...)
 ):
 
-    video_id = str(uuid.uuid4())
+    # --------------------------------------------------
+    # CHECK FILE
+    # --------------------------------------------------
 
-    extension = os.path.splitext(
-        file.filename
-    )[1]
-
-    filename = video_id + extension
-
-    video_path = os.path.join(
-        UPLOAD_DIR,
-        filename
-    )
-
-    with open(video_path, "wb") as buffer:
-
-        shutil.copyfileobj(
-            file.file,
-            buffer
+    if not file.filename:
+        raise HTTPException(
+            status_code=400,
+            detail="No video file provided"
         )
 
-    video_info = get_video_info(
-        video_path
-    )
+    allowed_extensions = {
+        ".mp4",
+        ".avi",
+        ".mov",
+        ".mkv",
+        ".webm"
+    }
 
-    if video_info is None:
+    file_extension = Path(
+        file.filename
+    ).suffix.lower()
 
-        return {
-            "error": "Unable to read video"
-        }
+    if file_extension not in allowed_extensions:
 
-    frame_output_dir = os.path.join(
-        FRAME_DIR,
-        video_id
-    )
+        raise HTTPException(
+            status_code=400,
+            detail="Unsupported video format"
+        )
 
-    frames = extract_frames(
-        video_path,
-        frame_output_dir,
-        interval=1
-    )
+
+    # --------------------------------------------------
+    # CREATE UNIQUE FILE NAME
+    # --------------------------------------------------
+
+    video_id = str(uuid.uuid4())
+
+    filename = f"{video_id}{file_extension}"
+
+    video_path = UPLOAD_DIR / filename
+
+
+    # --------------------------------------------------
+    # SAVE UPLOADED VIDEO
+    # --------------------------------------------------
+
+    try:
+
+        with open(video_path, "wb") as buffer:
+
+            shutil.copyfileobj(
+                file.file,
+                buffer
+            )
+
+    except Exception as e:
+
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to save video: {str(e)}"
+        )
+
+    finally:
+
+        await file.close()
+
+
+    # --------------------------------------------------
+    # RUN YOLO ANALYSIS
+    # --------------------------------------------------
+
+    try:
+
+        result = analyze_video(
+            str(video_path),
+            str(RESULT_DIR)
+        )
+
+    except Exception as e:
+
+        # Remove uploaded video if processing fails
+        if video_path.exists():
+
+            try:
+                os.remove(video_path)
+            except Exception:
+                pass
+
+        raise HTTPException(
+            status_code=500,
+            detail=f"YOLO processing failed: {str(e)}"
+        )
+
+
+    # --------------------------------------------------
+    # REMOVE ORIGINAL UPLOAD
+    # --------------------------------------------------
+
+    try:
+
+        if video_path.exists():
+            os.remove(video_path)
+
+    except Exception:
+        pass
+
+
+    # --------------------------------------------------
+    # RETURN ANALYSIS RESULTS
+    # --------------------------------------------------
 
     return {
 
-        "message": "Video analyzed successfully",
+        "success": True,
 
-        "video_id": video_id,
+        "message":
+            "CCTV video analyzed successfully",
 
-        "filename": file.filename,
+        "original_video":
+            filename,
 
-        "video_info": video_info,
+        "analysis_id":
+            result["analysis_id"],
 
-        "frames_extracted": len(frames)
+        "total_detections":
+            result["total_detections"],
+
+        "object_counts":
+            result["object_counts"],
+
+        "annotated_video":
+            (
+                f"/results/"
+                f"{result['analysis_id']}"
+                f"_annotated.mp4"
+            ),
+
+        "detections_file":
+            (
+                f"/results/"
+                f"{result['analysis_id']}"
+                f"_detections.json"
+            ),
+
+        "detections":
+            result["detections"]
     }

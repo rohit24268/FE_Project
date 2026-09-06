@@ -1,100 +1,491 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+
+
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ForenSight AI</title>
 
     <link rel="stylesheet" href="style.css">
+
+
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
+
     <nav class="navbar">
 
         <div class="logo">
-            ForenSight AI
+            ForenSight <span>AI</span>
         </div>
 
         <div class="nav-links">
+
             <a href="#">Dashboard</a>
             <a href="#">Cases</a>
             <a href="#">Evidence</a>
             <a href="#">Reports</a>
+
         </div>
 
     </nav>
 
 
+    <!-- MAIN -->
+
     <main class="container">
+
+        <!-- HERO -->
 
         <section class="hero">
 
-            <h1>Forensic CCTV Analysis</h1>
+            <div>
 
-            <p>
-                Upload CCTV footage and analyze it using
-                AI-powered forensic tools.
-            </p>
+                <div class="eyebrow">
+                    AI-POWERED DIGITAL FORENSICS
+                </div>
+
+                <h1>
+                    Forensic CCTV
+                    <span>Analysis</span>
+                </h1>
+
+                <p>
+                    Upload CCTV footage and use AI-powered
+                    object detection and tracking to identify
+                    potential evidence.
+                </p>
+
+            </div>
 
         </section>
 
 
+        <!-- UPLOAD -->
+
         <section class="upload-card">
 
-            <h2>Upload CCTV Footage</h2>
+            <div class="section-title">
 
-            <p class="description">
-                Select a CCTV video file to begin analysis.
-            </p>
+                <div>
+
+                    <h2>
+                        Upload CCTV Evidence
+                    </h2>
+
+                    <p class="description">
+                        Select CCTV footage to begin forensic
+                        analysis using YOLO.
+                    </p>
+
+                </div>
+
+                <div class="security-badge">
+                    🔒 Secure Analysis
+                </div>
+
+            </div>
+
 
             <div class="upload-area">
 
-                <input
-                    type="file"
-                    id="videoInput"
-                    accept="video/*"
-                >
+                <div class="upload-icon">
+                    🎥
+                </div>
 
-                <label for="videoInput">
+                <h3>
+                    Upload CCTV Footage
+                </h3>
+
+                <p>
+                    Drag and drop your video here or
+                    select a file from your computer.
+                </p>
+
+                <input type="file" id="videoInput" accept="video/mp4,video/avi,video/mov,video/mkv,video/webm">
+
+                <label for="videoInput" class="choose-button">
+
                     Choose CCTV Video
+
                 </label>
 
-                <p id="fileName">
+                <p id="fileName" class="file-name">
                     No file selected
+                </p>
+
+                <p class="supported">
+                    MP4 • AVI • MOV • MKV • WEBM
                 </p>
 
             </div>
 
 
-            <button
-                id="uploadButton"
-                onclick="uploadVideo()">
+            <button id="uploadButton" class="analyze-button" onclick="uploadVideo()">
 
-                Upload & Analyze
+                <span id="buttonText">
+                    Analyze CCTV Evidence
+                </span>
 
             </button>
 
 
-            <div
-                id="status"
-                class="status">
+            <!-- STATUS -->
+
+            <div id="status" class="status">
             </div>
 
         </section>
 
 
-        <section
-            id="result"
-            class="result-card hidden">
+        <!-- LOADING -->
 
-            <h2>Upload Result</h2>
+        <section id="loading" class="loading-card hidden">
 
-            <div id="resultContent"></div>
+            <div class="spinner"></div>
+
+            <h3>
+                Analyzing CCTV Footage
+            </h3>
+
+            <p>
+                YOLO is detecting and tracking objects.
+                Please wait while the evidence is processed.
+            </p>
+
+        </section>
+
+
+        <!-- RESULTS -->
+
+        <section id="result" class="results-section hidden">
+
+
+            <!-- RESULT HEADER -->
+
+            <div class="result-header">
+
+                <div>
+
+                    <div class="eyebrow">
+                        ANALYSIS COMPLETE
+                    </div>
+
+                    <h2>
+                        Evidence Analysis Results
+                    </h2>
+
+                    <p id="analysisId">
+                    </p>
+
+                </div>
+
+
+                <a id="downloadJson" class="download-button" href="#" download>
+
+                    ↓ Download Evidence JSON
+
+                </a>
+
+            </div>
+
+
+            <!-- STAT CARDS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🎯
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Total Detections
+                        </p>
+
+                        <h2 id="totalDetections">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👤
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Persons
+                        </p>
+
+                        <h2 id="personCount">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🚗
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Vehicles
+                        </p>
+
+                        <h2 id="vehicleCount">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🔎
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Object Types
+                        </p>
+
+                        <h2 id="objectTypeCount">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- OBJECT SUMMARY -->
+
+            <div class="content-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h2>
+                            Detection Summary
+                        </h2>
+
+                        <p>
+                            Objects identified in the CCTV
+                            footage.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="objectSummary" class="object-grid">
+
+                </div>
+
+            </div>
+
+
+            <!-- ANNOTATED VIDEO -->
+
+            <div class="content-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h2>
+                            Annotated CCTV Footage
+                        </h2>
+
+                        <p>
+                            YOLO object detection and tracking
+                            results.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="video-download-section">
+
+                    <a id="downloadVideo" href="#" class="download-btn">
+                        ⬇ Download Annotated Video
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- DETECTION EVENTS -->
+
+            <div class="content-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h2>
+                            Detection Events
+                        </h2>
+
+                        <p>
+                            Objects detected throughout the
+                            CCTV footage.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Object
+                                </th>
+
+                                <th>
+                                    Track ID
+                                </th>
+
+                                <th>
+                                    Timestamp
+                                </th>
+
+                                <th>
+                                    Confidence
+                                </th>
+
+                                <th>
+                                    Frame
+                                </th>
+
+                                <th>
+                                    Bounding Box
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="detectionsTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <p id="tableNote" class="table-note">
+
+                </p>
+
+            </div>
+
+
+            <!-- FORENSIC INFORMATION -->
+
+            <div class="content-card forensic-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h2>
+                            Forensic Evidence Information
+                        </h2>
+
+                        <p>
+                            Information generated from the
+                            CCTV analysis.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="forensic-grid">
+
+                    <div>
+
+                        <span>
+                            Analysis ID
+                        </span>
+
+                        <strong id="forensicAnalysisId">
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Total Detections
+                        </span>
+
+                        <strong id="forensicDetections">
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Processing Status
+                        </span>
+
+                        <strong class="complete">
+                            Complete
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </section>
 
@@ -102,6 +493,7 @@
 
 
     <script src="script.js"></script>
+
 
 </body>
 
