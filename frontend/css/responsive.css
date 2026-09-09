@@ -1,0 +1,58 @@
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .forensic-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .container {
+        padding: 30px 15px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .section-title,
+    .result-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .upload-card,
+    .content-card {
+        padding: 20px;
+    }
+}

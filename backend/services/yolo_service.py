@@ -9,7 +9,8 @@ import uuid
 # LOAD YOLO MODEL ONCE
 # --------------------------------------------------
 
-model = YOLO("yolo11n.pt")
+MODEL_PATH = Path(__file__).resolve().parent.parent / "yolo11n.pt"
+model = YOLO(str(MODEL_PATH))
 
 
 # --------------------------------------------------

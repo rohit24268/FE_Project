@@ -1,0 +1,4123 @@
+[
+    {
+        "frame": 0,
+        "timestamp": 0.0,
+        "object": "person",
+        "confidence": 0.881,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1852,
+            "y1": 720,
+            "x2": 2195,
+            "y2": 1448
+        }
+    },
+    {
+        "frame": 0,
+        "timestamp": 0.0,
+        "object": "person",
+        "confidence": 0.847,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2480,
+            "y1": 713,
+            "x2": 2799,
+            "y2": 1438
+        }
+    },
+    {
+        "frame": 0,
+        "timestamp": 0.0,
+        "object": "person",
+        "confidence": 0.791,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2171,
+            "y1": 887,
+            "x2": 2479,
+            "y2": 1433
+        }
+    },
+    {
+        "frame": 3,
+        "timestamp": 0.1,
+        "object": "person",
+        "confidence": 0.893,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1850,
+            "y1": 730,
+            "x2": 2189,
+            "y2": 1449
+        }
+    },
+    {
+        "frame": 3,
+        "timestamp": 0.1,
+        "object": "person",
+        "confidence": 0.854,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2495,
+            "y1": 722,
+            "x2": 2820,
+            "y2": 1460
+        }
+    },
+    {
+        "frame": 3,
+        "timestamp": 0.1,
+        "object": "person",
+        "confidence": 0.79,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2223,
+            "y1": 900,
+            "x2": 2531,
+            "y2": 1447
+        }
+    },
+    {
+        "frame": 6,
+        "timestamp": 0.2,
+        "object": "person",
+        "confidence": 0.891,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1854,
+            "y1": 736,
+            "x2": 2192,
+            "y2": 1455
+        }
+    },
+    {
+        "frame": 6,
+        "timestamp": 0.2,
+        "object": "person",
+        "confidence": 0.862,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2500,
+            "y1": 720,
+            "x2": 2825,
+            "y2": 1461
+        }
+    },
+    {
+        "frame": 6,
+        "timestamp": 0.2,
+        "object": "person",
+        "confidence": 0.816,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2232,
+            "y1": 900,
+            "x2": 2548,
+            "y2": 1462
+        }
+    },
+    {
+        "frame": 9,
+        "timestamp": 0.3,
+        "object": "person",
+        "confidence": 0.886,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1858,
+            "y1": 738,
+            "x2": 2199,
+            "y2": 1463
+        }
+    },
+    {
+        "frame": 9,
+        "timestamp": 0.3,
+        "object": "person",
+        "confidence": 0.879,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2499,
+            "y1": 714,
+            "x2": 2823,
+            "y2": 1455
+        }
+    },
+    {
+        "frame": 9,
+        "timestamp": 0.3,
+        "object": "person",
+        "confidence": 0.824,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2239,
+            "y1": 904,
+            "x2": 2562,
+            "y2": 1480
+        }
+    },
+    {
+        "frame": 12,
+        "timestamp": 0.4,
+        "object": "person",
+        "confidence": 0.881,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1851,
+            "y1": 735,
+            "x2": 2195,
+            "y2": 1468
+        }
+    },
+    {
+        "frame": 12,
+        "timestamp": 0.4,
+        "object": "person",
+        "confidence": 0.869,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2500,
+            "y1": 714,
+            "x2": 2819,
+            "y2": 1446
+        }
+    },
+    {
+        "frame": 12,
+        "timestamp": 0.4,
+        "object": "person",
+        "confidence": 0.718,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2234,
+            "y1": 903,
+            "x2": 2558,
+            "y2": 1480
+        }
+    },
+    {
+        "frame": 15,
+        "timestamp": 0.5,
+        "object": "person",
+        "confidence": 0.88,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1830,
+            "y1": 731,
+            "x2": 2184,
+            "y2": 1487
+        }
+    },
+    {
+        "frame": 15,
+        "timestamp": 0.5,
+        "object": "person",
+        "confidence": 0.878,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2497,
+            "y1": 715,
+            "x2": 2824,
+            "y2": 1469
+        }
+    },
+    {
+        "frame": 15,
+        "timestamp": 0.5,
+        "object": "person",
+        "confidence": 0.745,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2206,
+            "y1": 907,
+            "x2": 2530,
+            "y2": 1475
+        }
+    },
+    {
+        "frame": 18,
+        "timestamp": 0.6,
+        "object": "person",
+        "confidence": 0.863,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1821,
+            "y1": 719,
+            "x2": 2180,
+            "y2": 1486
+        }
+    },
+    {
+        "frame": 18,
+        "timestamp": 0.6,
+        "object": "person",
+        "confidence": 0.869,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2509,
+            "y1": 713,
+            "x2": 2835,
+            "y2": 1468
+        }
+    },
+    {
+        "frame": 18,
+        "timestamp": 0.6,
+        "object": "person",
+        "confidence": 0.652,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2223,
+            "y1": 908,
+            "x2": 2543,
+            "y2": 1467
+        }
+    },
+    {
+        "frame": 21,
+        "timestamp": 0.7,
+        "object": "person",
+        "confidence": 0.851,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1824,
+            "y1": 714,
+            "x2": 2180,
+            "y2": 1472
+        }
+    },
+    {
+        "frame": 21,
+        "timestamp": 0.7,
+        "object": "person",
+        "confidence": 0.86,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2517,
+            "y1": 715,
+            "x2": 2840,
+            "y2": 1465
+        }
+    },
+    {
+        "frame": 21,
+        "timestamp": 0.7,
+        "object": "person",
+        "confidence": 0.766,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2222,
+            "y1": 913,
+            "x2": 2541,
+            "y2": 1472
+        }
+    },
+    {
+        "frame": 24,
+        "timestamp": 0.8,
+        "object": "person",
+        "confidence": 0.866,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1819,
+            "y1": 709,
+            "x2": 2173,
+            "y2": 1466
+        }
+    },
+    {
+        "frame": 24,
+        "timestamp": 0.8,
+        "object": "person",
+        "confidence": 0.804,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2520,
+            "y1": 723,
+            "x2": 2831,
+            "y2": 1448
+        }
+    },
+    {
+        "frame": 24,
+        "timestamp": 0.8,
+        "object": "person",
+        "confidence": 0.846,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2228,
+            "y1": 902,
+            "x2": 2551,
+            "y2": 1469
+        }
+    },
+    {
+        "frame": 27,
+        "timestamp": 0.9,
+        "object": "person",
+        "confidence": 0.892,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1802,
+            "y1": 704,
+            "x2": 2158,
+            "y2": 1463
+        }
+    },
+    {
+        "frame": 27,
+        "timestamp": 0.9,
+        "object": "person",
+        "confidence": 0.816,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2511,
+            "y1": 712,
+            "x2": 2825,
+            "y2": 1452
+        }
+    },
+    {
+        "frame": 27,
+        "timestamp": 0.9,
+        "object": "person",
+        "confidence": 0.747,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2195,
+            "y1": 882,
+            "x2": 2522,
+            "y2": 1448
+        }
+    },
+    {
+        "frame": 30,
+        "timestamp": 1.0,
+        "object": "person",
+        "confidence": 0.874,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1787,
+            "y1": 694,
+            "x2": 2147,
+            "y2": 1461
+        }
+    },
+    {
+        "frame": 30,
+        "timestamp": 1.0,
+        "object": "person",
+        "confidence": 0.832,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2498,
+            "y1": 694,
+            "x2": 2814,
+            "y2": 1441
+        }
+    },
+    {
+        "frame": 30,
+        "timestamp": 1.0,
+        "object": "person",
+        "confidence": 0.77,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2187,
+            "y1": 871,
+            "x2": 2526,
+            "y2": 1461
+        }
+    },
+    {
+        "frame": 33,
+        "timestamp": 1.1,
+        "object": "person",
+        "confidence": 0.879,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1760,
+            "y1": 682,
+            "x2": 2123,
+            "y2": 1456
+        }
+    },
+    {
+        "frame": 33,
+        "timestamp": 1.1,
+        "object": "person",
+        "confidence": 0.828,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2470,
+            "y1": 672,
+            "x2": 2790,
+            "y2": 1441
+        }
+    },
+    {
+        "frame": 33,
+        "timestamp": 1.1,
+        "object": "person",
+        "confidence": 0.66,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2158,
+            "y1": 871,
+            "x2": 2484,
+            "y2": 1445
+        }
+    },
+    {
+        "frame": 36,
+        "timestamp": 1.2,
+        "object": "person",
+        "confidence": 0.882,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1746,
+            "y1": 665,
+            "x2": 2114,
+            "y2": 1451
+        }
+    },
+    {
+        "frame": 36,
+        "timestamp": 1.2,
+        "object": "person",
+        "confidence": 0.807,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2427,
+            "y1": 653,
+            "x2": 2760,
+            "y2": 1460
+        }
+    },
+    {
+        "frame": 36,
+        "timestamp": 1.2,
+        "object": "person",
+        "confidence": 0.735,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2154,
+            "y1": 868,
+            "x2": 2480,
+            "y2": 1450
+        }
+    },
+    {
+        "frame": 39,
+        "timestamp": 1.3,
+        "object": "person",
+        "confidence": 0.891,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1738,
+            "y1": 655,
+            "x2": 2111,
+            "y2": 1456
+        }
+    },
+    {
+        "frame": 39,
+        "timestamp": 1.3,
+        "object": "person",
+        "confidence": 0.856,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2404,
+            "y1": 645,
+            "x2": 2733,
+            "y2": 1443
+        }
+    },
+    {
+        "frame": 39,
+        "timestamp": 1.3,
+        "object": "person",
+        "confidence": 0.644,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2131,
+            "y1": 857,
+            "x2": 2462,
+            "y2": 1451
+        }
+    },
+    {
+        "frame": 42,
+        "timestamp": 1.4,
+        "object": "person",
+        "confidence": 0.901,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1740,
+            "y1": 656,
+            "x2": 2109,
+            "y2": 1453
+        }
+    },
+    {
+        "frame": 42,
+        "timestamp": 1.4,
+        "object": "person",
+        "confidence": 0.873,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2397,
+            "y1": 642,
+            "x2": 2723,
+            "y2": 1428
+        }
+    },
+    {
+        "frame": 42,
+        "timestamp": 1.4,
+        "object": "person",
+        "confidence": 0.732,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2098,
+            "y1": 832,
+            "x2": 2438,
+            "y2": 1449
+        }
+    },
+    {
+        "frame": 45,
+        "timestamp": 1.5,
+        "object": "person",
+        "confidence": 0.864,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1738,
+            "y1": 658,
+            "x2": 2100,
+            "y2": 1451
+        }
+    },
+    {
+        "frame": 45,
+        "timestamp": 1.5,
+        "object": "person",
+        "confidence": 0.844,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2402,
+            "y1": 635,
+            "x2": 2730,
+            "y2": 1421
+        }
+    },
+    {
+        "frame": 45,
+        "timestamp": 1.5,
+        "object": "person",
+        "confidence": 0.823,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2075,
+            "y1": 828,
+            "x2": 2418,
+            "y2": 1449
+        }
+    },
+    {
+        "frame": 48,
+        "timestamp": 1.6,
+        "object": "person",
+        "confidence": 0.874,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1736,
+            "y1": 657,
+            "x2": 2095,
+            "y2": 1452
+        }
+    },
+    {
+        "frame": 48,
+        "timestamp": 1.6,
+        "object": "person",
+        "confidence": 0.845,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2415,
+            "y1": 648,
+            "x2": 2735,
+            "y2": 1413
+        }
+    },
+    {
+        "frame": 48,
+        "timestamp": 1.6,
+        "object": "person",
+        "confidence": 0.856,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2082,
+            "y1": 836,
+            "x2": 2427,
+            "y2": 1453
+        }
+    },
+    {
+        "frame": 51,
+        "timestamp": 1.7,
+        "object": "person",
+        "confidence": 0.879,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1711,
+            "y1": 652,
+            "x2": 2077,
+            "y2": 1468
+        }
+    },
+    {
+        "frame": 51,
+        "timestamp": 1.7,
+        "object": "person",
+        "confidence": 0.876,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2413,
+            "y1": 628,
+            "x2": 2740,
+            "y2": 1419
+        }
+    },
+    {
+        "frame": 51,
+        "timestamp": 1.7,
+        "object": "person",
+        "confidence": 0.868,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2076,
+            "y1": 839,
+            "x2": 2433,
+            "y2": 1458
+        }
+    },
+    {
+        "frame": 54,
+        "timestamp": 1.8,
+        "object": "person",
+        "confidence": 0.854,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1702,
+            "y1": 641,
+            "x2": 2071,
+            "y2": 1470
+        }
+    },
+    {
+        "frame": 54,
+        "timestamp": 1.8,
+        "object": "person",
+        "confidence": 0.86,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2411,
+            "y1": 626,
+            "x2": 2738,
+            "y2": 1421
+        }
+    },
+    {
+        "frame": 54,
+        "timestamp": 1.8,
+        "object": "person",
+        "confidence": 0.811,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2078,
+            "y1": 840,
+            "x2": 2438,
+            "y2": 1457
+        }
+    },
+    {
+        "frame": 57,
+        "timestamp": 1.9,
+        "object": "person",
+        "confidence": 0.863,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1691,
+            "y1": 635,
+            "x2": 2062,
+            "y2": 1468
+        }
+    },
+    {
+        "frame": 57,
+        "timestamp": 1.9,
+        "object": "person",
+        "confidence": 0.872,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2408,
+            "y1": 630,
+            "x2": 2741,
+            "y2": 1439
+        }
+    },
+    {
+        "frame": 57,
+        "timestamp": 1.9,
+        "object": "person",
+        "confidence": 0.76,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2059,
+            "y1": 837,
+            "x2": 2425,
+            "y2": 1458
+        }
+    },
+    {
+        "frame": 60,
+        "timestamp": 2.0,
+        "object": "person",
+        "confidence": 0.897,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1679,
+            "y1": 632,
+            "x2": 2055,
+            "y2": 1475
+        }
+    },
+    {
+        "frame": 60,
+        "timestamp": 2.0,
+        "object": "person",
+        "confidence": 0.835,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2395,
+            "y1": 645,
+            "x2": 2728,
+            "y2": 1444
+        }
+    },
+    {
+        "frame": 60,
+        "timestamp": 2.0,
+        "object": "person",
+        "confidence": 0.775,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2033,
+            "y1": 840,
+            "x2": 2402,
+            "y2": 1464
+        }
+    },
+    {
+        "frame": 63,
+        "timestamp": 2.1,
+        "object": "person",
+        "confidence": 0.871,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1677,
+            "y1": 634,
+            "x2": 2054,
+            "y2": 1479
+        }
+    },
+    {
+        "frame": 63,
+        "timestamp": 2.1,
+        "object": "person",
+        "confidence": 0.844,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2400,
+            "y1": 657,
+            "x2": 2734,
+            "y2": 1458
+        }
+    },
+    {
+        "frame": 63,
+        "timestamp": 2.1,
+        "object": "person",
+        "confidence": 0.753,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2035,
+            "y1": 845,
+            "x2": 2398,
+            "y2": 1461
+        }
+    },
+    {
+        "frame": 66,
+        "timestamp": 2.2,
+        "object": "person",
+        "confidence": 0.903,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1680,
+            "y1": 637,
+            "x2": 2063,
+            "y2": 1484
+        }
+    },
+    {
+        "frame": 66,
+        "timestamp": 2.2,
+        "object": "person",
+        "confidence": 0.875,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2397,
+            "y1": 647,
+            "x2": 2744,
+            "y2": 1471
+        }
+    },
+    {
+        "frame": 66,
+        "timestamp": 2.2,
+        "object": "person",
+        "confidence": 0.68,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2032,
+            "y1": 844,
+            "x2": 2401,
+            "y2": 1472
+        }
+    },
+    {
+        "frame": 69,
+        "timestamp": 2.3,
+        "object": "person",
+        "confidence": 0.896,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1680,
+            "y1": 633,
+            "x2": 2067,
+            "y2": 1482
+        }
+    },
+    {
+        "frame": 69,
+        "timestamp": 2.3,
+        "object": "person",
+        "confidence": 0.862,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2375,
+            "y1": 638,
+            "x2": 2734,
+            "y2": 1485
+        }
+    },
+    {
+        "frame": 69,
+        "timestamp": 2.3,
+        "object": "person",
+        "confidence": 0.788,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2027,
+            "y1": 837,
+            "x2": 2404,
+            "y2": 1483
+        }
+    },
+    {
+        "frame": 72,
+        "timestamp": 2.4,
+        "object": "person",
+        "confidence": 0.867,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1680,
+            "y1": 624,
+            "x2": 2071,
+            "y2": 1483
+        }
+    },
+    {
+        "frame": 72,
+        "timestamp": 2.4,
+        "object": "person",
+        "confidence": 0.884,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2362,
+            "y1": 614,
+            "x2": 2736,
+            "y2": 1500
+        }
+    },
+    {
+        "frame": 72,
+        "timestamp": 2.4,
+        "object": "person",
+        "confidence": 0.832,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2060,
+            "y1": 832,
+            "x2": 2428,
+            "y2": 1481
+        }
+    },
+    {
+        "frame": 75,
+        "timestamp": 2.5,
+        "object": "person",
+        "confidence": 0.865,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1684,
+            "y1": 615,
+            "x2": 2080,
+            "y2": 1495
+        }
+    },
+    {
+        "frame": 75,
+        "timestamp": 2.5,
+        "object": "person",
+        "confidence": 0.88,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2369,
+            "y1": 612,
+            "x2": 2741,
+            "y2": 1495
+        }
+    },
+    {
+        "frame": 75,
+        "timestamp": 2.5,
+        "object": "person",
+        "confidence": 0.849,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2081,
+            "y1": 836,
+            "x2": 2436,
+            "y2": 1480
+        }
+    },
+    {
+        "frame": 78,
+        "timestamp": 2.6,
+        "object": "person",
+        "confidence": 0.878,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1693,
+            "y1": 612,
+            "x2": 2088,
+            "y2": 1505
+        }
+    },
+    {
+        "frame": 78,
+        "timestamp": 2.6,
+        "object": "person",
+        "confidence": 0.899,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2381,
+            "y1": 617,
+            "x2": 2757,
+            "y2": 1506
+        }
+    },
+    {
+        "frame": 78,
+        "timestamp": 2.6,
+        "object": "person",
+        "confidence": 0.839,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2099,
+            "y1": 846,
+            "x2": 2451,
+            "y2": 1495
+        }
+    },
+    {
+        "frame": 81,
+        "timestamp": 2.7,
+        "object": "person",
+        "confidence": 0.873,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1701,
+            "y1": 618,
+            "x2": 2089,
+            "y2": 1507
+        }
+    },
+    {
+        "frame": 81,
+        "timestamp": 2.7,
+        "object": "person",
+        "confidence": 0.889,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2387,
+            "y1": 617,
+            "x2": 2769,
+            "y2": 1513
+        }
+    },
+    {
+        "frame": 81,
+        "timestamp": 2.7,
+        "object": "person",
+        "confidence": 0.832,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2086,
+            "y1": 848,
+            "x2": 2449,
+            "y2": 1504
+        }
+    },
+    {
+        "frame": 84,
+        "timestamp": 2.8,
+        "object": "person",
+        "confidence": 0.86,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1698,
+            "y1": 629,
+            "x2": 2081,
+            "y2": 1513
+        }
+    },
+    {
+        "frame": 84,
+        "timestamp": 2.8,
+        "object": "person",
+        "confidence": 0.868,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2415,
+            "y1": 615,
+            "x2": 2789,
+            "y2": 1512
+        }
+    },
+    {
+        "frame": 84,
+        "timestamp": 2.8,
+        "object": "person",
+        "confidence": 0.861,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2092,
+            "y1": 843,
+            "x2": 2466,
+            "y2": 1511
+        }
+    },
+    {
+        "frame": 87,
+        "timestamp": 2.9,
+        "object": "person",
+        "confidence": 0.859,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1687,
+            "y1": 621,
+            "x2": 2075,
+            "y2": 1514
+        }
+    },
+    {
+        "frame": 87,
+        "timestamp": 2.9,
+        "object": "person",
+        "confidence": 0.861,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2416,
+            "y1": 591,
+            "x2": 2791,
+            "y2": 1519
+        }
+    },
+    {
+        "frame": 87,
+        "timestamp": 2.9,
+        "object": "person",
+        "confidence": 0.848,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2093,
+            "y1": 840,
+            "x2": 2474,
+            "y2": 1517
+        }
+    },
+    {
+        "frame": 90,
+        "timestamp": 3.0,
+        "object": "person",
+        "confidence": 0.873,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1675,
+            "y1": 607,
+            "x2": 2062,
+            "y2": 1494
+        }
+    },
+    {
+        "frame": 90,
+        "timestamp": 3.0,
+        "object": "person",
+        "confidence": 0.841,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2410,
+            "y1": 574,
+            "x2": 2782,
+            "y2": 1519
+        }
+    },
+    {
+        "frame": 90,
+        "timestamp": 3.0,
+        "object": "person",
+        "confidence": 0.758,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2088,
+            "y1": 834,
+            "x2": 2472,
+            "y2": 1516
+        }
+    },
+    {
+        "frame": 93,
+        "timestamp": 3.1,
+        "object": "person",
+        "confidence": 0.881,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1663,
+            "y1": 591,
+            "x2": 2060,
+            "y2": 1500
+        }
+    },
+    {
+        "frame": 93,
+        "timestamp": 3.1,
+        "object": "person",
+        "confidence": 0.822,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2385,
+            "y1": 572,
+            "x2": 2757,
+            "y2": 1518
+        }
+    },
+    {
+        "frame": 93,
+        "timestamp": 3.1,
+        "object": "person",
+        "confidence": 0.807,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2101,
+            "y1": 823,
+            "x2": 2487,
+            "y2": 1516
+        }
+    },
+    {
+        "frame": 96,
+        "timestamp": 3.2,
+        "object": "person",
+        "confidence": 0.871,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1659,
+            "y1": 577,
+            "x2": 2064,
+            "y2": 1500
+        }
+    },
+    {
+        "frame": 96,
+        "timestamp": 3.2,
+        "object": "person",
+        "confidence": 0.868,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2361,
+            "y1": 572,
+            "x2": 2741,
+            "y2": 1532
+        }
+    },
+    {
+        "frame": 96,
+        "timestamp": 3.2,
+        "object": "person",
+        "confidence": 0.828,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2071,
+            "y1": 813,
+            "x2": 2466,
+            "y2": 1521
+        }
+    },
+    {
+        "frame": 99,
+        "timestamp": 3.3,
+        "object": "person",
+        "confidence": 0.876,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1663,
+            "y1": 574,
+            "x2": 2071,
+            "y2": 1501
+        }
+    },
+    {
+        "frame": 99,
+        "timestamp": 3.3,
+        "object": "person",
+        "confidence": 0.863,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2365,
+            "y1": 572,
+            "x2": 2744,
+            "y2": 1525
+        }
+    },
+    {
+        "frame": 99,
+        "timestamp": 3.3,
+        "object": "person",
+        "confidence": 0.807,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2075,
+            "y1": 808,
+            "x2": 2458,
+            "y2": 1513
+        }
+    },
+    {
+        "frame": 102,
+        "timestamp": 3.4,
+        "object": "person",
+        "confidence": 0.862,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1687,
+            "y1": 578,
+            "x2": 2090,
+            "y2": 1496
+        }
+    },
+    {
+        "frame": 102,
+        "timestamp": 3.4,
+        "object": "person",
+        "confidence": 0.886,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2366,
+            "y1": 564,
+            "x2": 2751,
+            "y2": 1531
+        }
+    },
+    {
+        "frame": 102,
+        "timestamp": 3.4,
+        "object": "person",
+        "confidence": 0.829,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2087,
+            "y1": 811,
+            "x2": 2461,
+            "y2": 1516
+        }
+    },
+    {
+        "frame": 105,
+        "timestamp": 3.5,
+        "object": "person",
+        "confidence": 0.903,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1702,
+            "y1": 586,
+            "x2": 2108,
+            "y2": 1518
+        }
+    },
+    {
+        "frame": 105,
+        "timestamp": 3.5,
+        "object": "person",
+        "confidence": 0.901,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2359,
+            "y1": 556,
+            "x2": 2750,
+            "y2": 1544
+        }
+    },
+    {
+        "frame": 105,
+        "timestamp": 3.5,
+        "object": "person",
+        "confidence": 0.81,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2087,
+            "y1": 813,
+            "x2": 2451,
+            "y2": 1513
+        }
+    },
+    {
+        "frame": 108,
+        "timestamp": 3.6,
+        "object": "person",
+        "confidence": 0.871,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1738,
+            "y1": 586,
+            "x2": 2146,
+            "y2": 1532
+        }
+    },
+    {
+        "frame": 108,
+        "timestamp": 3.6,
+        "object": "person",
+        "confidence": 0.865,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2356,
+            "y1": 552,
+            "x2": 2756,
+            "y2": 1560
+        }
+    },
+    {
+        "frame": 108,
+        "timestamp": 3.6,
+        "object": "person",
+        "confidence": 0.783,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2099,
+            "y1": 803,
+            "x2": 2455,
+            "y2": 1520
+        }
+    },
+    {
+        "frame": 111,
+        "timestamp": 3.7,
+        "object": "person",
+        "confidence": 0.865,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1768,
+            "y1": 586,
+            "x2": 2174,
+            "y2": 1542
+        }
+    },
+    {
+        "frame": 111,
+        "timestamp": 3.7,
+        "object": "person",
+        "confidence": 0.881,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2395,
+            "y1": 565,
+            "x2": 2787,
+            "y2": 1560
+        }
+    },
+    {
+        "frame": 111,
+        "timestamp": 3.7,
+        "object": "person",
+        "confidence": 0.812,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2130,
+            "y1": 803,
+            "x2": 2482,
+            "y2": 1537
+        }
+    },
+    {
+        "frame": 114,
+        "timestamp": 3.8,
+        "object": "person",
+        "confidence": 0.87,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1785,
+            "y1": 577,
+            "x2": 2190,
+            "y2": 1549
+        }
+    },
+    {
+        "frame": 114,
+        "timestamp": 3.8,
+        "object": "person",
+        "confidence": 0.848,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2443,
+            "y1": 571,
+            "x2": 2830,
+            "y2": 1561
+        }
+    },
+    {
+        "frame": 114,
+        "timestamp": 3.8,
+        "object": "person",
+        "confidence": 0.842,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2181,
+            "y1": 810,
+            "x2": 2522,
+            "y2": 1539
+        }
+    },
+    {
+        "frame": 117,
+        "timestamp": 3.9,
+        "object": "person",
+        "confidence": 0.897,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1808,
+            "y1": 576,
+            "x2": 2214,
+            "y2": 1558
+        }
+    },
+    {
+        "frame": 117,
+        "timestamp": 3.9,
+        "object": "person",
+        "confidence": 0.839,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2519,
+            "y1": 574,
+            "x2": 2908,
+            "y2": 1570
+        }
+    },
+    {
+        "frame": 117,
+        "timestamp": 3.9,
+        "object": "person",
+        "confidence": 0.846,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2236,
+            "y1": 816,
+            "x2": 2581,
+            "y2": 1565
+        }
+    },
+    {
+        "frame": 120,
+        "timestamp": 4.0,
+        "object": "person",
+        "confidence": 0.88,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1830,
+            "y1": 579,
+            "x2": 2234,
+            "y2": 1567
+        }
+    },
+    {
+        "frame": 120,
+        "timestamp": 4.0,
+        "object": "person",
+        "confidence": 0.844,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2556,
+            "y1": 562,
+            "x2": 2939,
+            "y2": 1569
+        }
+    },
+    {
+        "frame": 120,
+        "timestamp": 4.0,
+        "object": "person",
+        "confidence": 0.798,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2253,
+            "y1": 811,
+            "x2": 2609,
+            "y2": 1577
+        }
+    },
+    {
+        "frame": 123,
+        "timestamp": 4.1,
+        "object": "person",
+        "confidence": 0.881,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1844,
+            "y1": 583,
+            "x2": 2247,
+            "y2": 1578
+        }
+    },
+    {
+        "frame": 123,
+        "timestamp": 4.1,
+        "object": "person",
+        "confidence": 0.824,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2562,
+            "y1": 542,
+            "x2": 2949,
+            "y2": 1577
+        }
+    },
+    {
+        "frame": 123,
+        "timestamp": 4.1,
+        "object": "person",
+        "confidence": 0.793,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2279,
+            "y1": 807,
+            "x2": 2631,
+            "y2": 1568
+        }
+    },
+    {
+        "frame": 126,
+        "timestamp": 4.2,
+        "object": "person",
+        "confidence": 0.877,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1846,
+            "y1": 584,
+            "x2": 2248,
+            "y2": 1584
+        }
+    },
+    {
+        "frame": 126,
+        "timestamp": 4.2,
+        "object": "person",
+        "confidence": 0.853,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2552,
+            "y1": 534,
+            "x2": 2950,
+            "y2": 1606
+        }
+    },
+    {
+        "frame": 126,
+        "timestamp": 4.2,
+        "object": "person",
+        "confidence": 0.847,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2284,
+            "y1": 808,
+            "x2": 2640,
+            "y2": 1588
+        }
+    },
+    {
+        "frame": 129,
+        "timestamp": 4.3,
+        "object": "person",
+        "confidence": 0.877,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1845,
+            "y1": 576,
+            "x2": 2243,
+            "y2": 1579
+        }
+    },
+    {
+        "frame": 129,
+        "timestamp": 4.3,
+        "object": "person",
+        "confidence": 0.868,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2528,
+            "y1": 539,
+            "x2": 2934,
+            "y2": 1622
+        }
+    },
+    {
+        "frame": 129,
+        "timestamp": 4.3,
+        "object": "person",
+        "confidence": 0.835,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2240,
+            "y1": 816,
+            "x2": 2596,
+            "y2": 1584
+        }
+    },
+    {
+        "frame": 132,
+        "timestamp": 4.4,
+        "object": "person",
+        "confidence": 0.876,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1836,
+            "y1": 567,
+            "x2": 2235,
+            "y2": 1592
+        }
+    },
+    {
+        "frame": 132,
+        "timestamp": 4.4,
+        "object": "person",
+        "confidence": 0.837,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2527,
+            "y1": 560,
+            "x2": 2930,
+            "y2": 1633
+        }
+    },
+    {
+        "frame": 132,
+        "timestamp": 4.4,
+        "object": "person",
+        "confidence": 0.885,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2201,
+            "y1": 816,
+            "x2": 2573,
+            "y2": 1603
+        }
+    },
+    {
+        "frame": 135,
+        "timestamp": 4.5,
+        "object": "person",
+        "confidence": 0.854,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1821,
+            "y1": 557,
+            "x2": 2219,
+            "y2": 1593
+        }
+    },
+    {
+        "frame": 135,
+        "timestamp": 4.5,
+        "object": "person",
+        "confidence": 0.853,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2513,
+            "y1": 557,
+            "x2": 2919,
+            "y2": 1634
+        }
+    },
+    {
+        "frame": 135,
+        "timestamp": 4.5,
+        "object": "person",
+        "confidence": 0.833,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2164,
+            "y1": 811,
+            "x2": 2543,
+            "y2": 1599
+        }
+    },
+    {
+        "frame": 138,
+        "timestamp": 4.6,
+        "object": "person",
+        "confidence": 0.863,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1778,
+            "y1": 560,
+            "x2": 2183,
+            "y2": 1598
+        }
+    },
+    {
+        "frame": 138,
+        "timestamp": 4.6,
+        "object": "person",
+        "confidence": 0.84,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2491,
+            "y1": 554,
+            "x2": 2900,
+            "y2": 1643
+        }
+    },
+    {
+        "frame": 138,
+        "timestamp": 4.6,
+        "object": "person",
+        "confidence": 0.667,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2183,
+            "y1": 810,
+            "x2": 2557,
+            "y2": 1610
+        }
+    },
+    {
+        "frame": 141,
+        "timestamp": 4.7,
+        "object": "person",
+        "confidence": 0.871,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1752,
+            "y1": 563,
+            "x2": 2169,
+            "y2": 1607
+        }
+    },
+    {
+        "frame": 141,
+        "timestamp": 4.7,
+        "object": "person",
+        "confidence": 0.869,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2470,
+            "y1": 539,
+            "x2": 2888,
+            "y2": 1654
+        }
+    },
+    {
+        "frame": 141,
+        "timestamp": 4.7,
+        "object": "person",
+        "confidence": 0.816,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2152,
+            "y1": 812,
+            "x2": 2530,
+            "y2": 1616
+        }
+    },
+    {
+        "frame": 144,
+        "timestamp": 4.8,
+        "object": "person",
+        "confidence": 0.89,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1754,
+            "y1": 574,
+            "x2": 2181,
+            "y2": 1624
+        }
+    },
+    {
+        "frame": 144,
+        "timestamp": 4.8,
+        "object": "person",
+        "confidence": 0.874,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2455,
+            "y1": 545,
+            "x2": 2878,
+            "y2": 1671
+        }
+    },
+    {
+        "frame": 144,
+        "timestamp": 4.8,
+        "object": "person",
+        "confidence": 0.709,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2146,
+            "y1": 819,
+            "x2": 2534,
+            "y2": 1640
+        }
+    },
+    {
+        "frame": 147,
+        "timestamp": 4.9,
+        "object": "person",
+        "confidence": 0.887,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1765,
+            "y1": 579,
+            "x2": 2194,
+            "y2": 1632
+        }
+    },
+    {
+        "frame": 147,
+        "timestamp": 4.9,
+        "object": "person",
+        "confidence": 0.84,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2475,
+            "y1": 550,
+            "x2": 2894,
+            "y2": 1659
+        }
+    },
+    {
+        "frame": 147,
+        "timestamp": 4.9,
+        "object": "person",
+        "confidence": 0.824,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2145,
+            "y1": 820,
+            "x2": 2529,
+            "y2": 1639
+        }
+    },
+    {
+        "frame": 150,
+        "timestamp": 5.0,
+        "object": "person",
+        "confidence": 0.889,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1756,
+            "y1": 571,
+            "x2": 2188,
+            "y2": 1628
+        }
+    },
+    {
+        "frame": 150,
+        "timestamp": 5.0,
+        "object": "person",
+        "confidence": 0.868,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2487,
+            "y1": 552,
+            "x2": 2915,
+            "y2": 1677
+        }
+    },
+    {
+        "frame": 150,
+        "timestamp": 5.0,
+        "object": "person",
+        "confidence": 0.815,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2143,
+            "y1": 811,
+            "x2": 2528,
+            "y2": 1632
+        }
+    },
+    {
+        "frame": 153,
+        "timestamp": 5.1,
+        "object": "person",
+        "confidence": 0.883,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1741,
+            "y1": 560,
+            "x2": 2178,
+            "y2": 1628
+        }
+    },
+    {
+        "frame": 153,
+        "timestamp": 5.1,
+        "object": "person",
+        "confidence": 0.891,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2511,
+            "y1": 547,
+            "x2": 2935,
+            "y2": 1670
+        }
+    },
+    {
+        "frame": 153,
+        "timestamp": 5.1,
+        "object": "person",
+        "confidence": 0.833,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2158,
+            "y1": 811,
+            "x2": 2542,
+            "y2": 1628
+        }
+    },
+    {
+        "frame": 156,
+        "timestamp": 5.2,
+        "object": "person",
+        "confidence": 0.862,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1728,
+            "y1": 552,
+            "x2": 2169,
+            "y2": 1629
+        }
+    },
+    {
+        "frame": 156,
+        "timestamp": 5.2,
+        "object": "person",
+        "confidence": 0.822,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2522,
+            "y1": 527,
+            "x2": 2949,
+            "y2": 1688
+        }
+    },
+    {
+        "frame": 156,
+        "timestamp": 5.2,
+        "object": "person",
+        "confidence": 0.835,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2168,
+            "y1": 814,
+            "x2": 2559,
+            "y2": 1634
+        }
+    },
+    {
+        "frame": 159,
+        "timestamp": 5.3,
+        "object": "person",
+        "confidence": 0.868,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1732,
+            "y1": 549,
+            "x2": 2172,
+            "y2": 1629
+        }
+    },
+    {
+        "frame": 159,
+        "timestamp": 5.3,
+        "object": "person",
+        "confidence": 0.843,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2527,
+            "y1": 508,
+            "x2": 2956,
+            "y2": 1693
+        }
+    },
+    {
+        "frame": 159,
+        "timestamp": 5.3,
+        "object": "person",
+        "confidence": 0.763,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2172,
+            "y1": 808,
+            "x2": 2570,
+            "y2": 1632
+        }
+    },
+    {
+        "frame": 162,
+        "timestamp": 5.4,
+        "object": "person",
+        "confidence": 0.891,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1749,
+            "y1": 549,
+            "x2": 2192,
+            "y2": 1642
+        }
+    },
+    {
+        "frame": 162,
+        "timestamp": 5.4,
+        "object": "person",
+        "confidence": 0.87,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2518,
+            "y1": 499,
+            "x2": 2952,
+            "y2": 1697
+        }
+    },
+    {
+        "frame": 162,
+        "timestamp": 5.4,
+        "object": "person",
+        "confidence": 0.755,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2173,
+            "y1": 795,
+            "x2": 2583,
+            "y2": 1647
+        }
+    },
+    {
+        "frame": 165,
+        "timestamp": 5.5,
+        "object": "person",
+        "confidence": 0.903,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1763,
+            "y1": 532,
+            "x2": 2210,
+            "y2": 1641
+        }
+    },
+    {
+        "frame": 165,
+        "timestamp": 5.5,
+        "object": "person",
+        "confidence": 0.843,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2497,
+            "y1": 494,
+            "x2": 2939,
+            "y2": 1695
+        }
+    },
+    {
+        "frame": 165,
+        "timestamp": 5.5,
+        "object": "person",
+        "confidence": 0.829,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2156,
+            "y1": 784,
+            "x2": 2572,
+            "y2": 1644
+        }
+    },
+    {
+        "frame": 168,
+        "timestamp": 5.6,
+        "object": "person",
+        "confidence": 0.886,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1780,
+            "y1": 520,
+            "x2": 2225,
+            "y2": 1638
+        }
+    },
+    {
+        "frame": 168,
+        "timestamp": 5.6,
+        "object": "person",
+        "confidence": 0.884,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2487,
+            "y1": 498,
+            "x2": 2940,
+            "y2": 1705
+        }
+    },
+    {
+        "frame": 168,
+        "timestamp": 5.6,
+        "object": "person",
+        "confidence": 0.702,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2190,
+            "y1": 780,
+            "x2": 2606,
+            "y2": 1659
+        }
+    },
+    {
+        "frame": 171,
+        "timestamp": 5.7,
+        "object": "person",
+        "confidence": 0.873,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1794,
+            "y1": 507,
+            "x2": 2239,
+            "y2": 1638
+        }
+    },
+    {
+        "frame": 171,
+        "timestamp": 5.7,
+        "object": "person",
+        "confidence": 0.866,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2495,
+            "y1": 490,
+            "x2": 2952,
+            "y2": 1700
+        }
+    },
+    {
+        "frame": 171,
+        "timestamp": 5.7,
+        "object": "person",
+        "confidence": 0.777,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2235,
+            "y1": 789,
+            "x2": 2634,
+            "y2": 1669
+        }
+    },
+    {
+        "frame": 174,
+        "timestamp": 5.8,
+        "object": "person",
+        "confidence": 0.901,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1792,
+            "y1": 502,
+            "x2": 2243,
+            "y2": 1642
+        }
+    },
+    {
+        "frame": 174,
+        "timestamp": 5.8,
+        "object": "person",
+        "confidence": 0.84,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2499,
+            "y1": 483,
+            "x2": 2954,
+            "y2": 1700
+        }
+    },
+    {
+        "frame": 174,
+        "timestamp": 5.8,
+        "object": "person",
+        "confidence": 0.707,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2260,
+            "y1": 786,
+            "x2": 2647,
+            "y2": 1667
+        }
+    },
+    {
+        "frame": 177,
+        "timestamp": 5.9,
+        "object": "person",
+        "confidence": 0.913,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1766,
+            "y1": 496,
+            "x2": 2233,
+            "y2": 1642
+        }
+    },
+    {
+        "frame": 177,
+        "timestamp": 5.9,
+        "object": "person",
+        "confidence": 0.829,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2493,
+            "y1": 461,
+            "x2": 2948,
+            "y2": 1703
+        }
+    },
+    {
+        "frame": 177,
+        "timestamp": 5.9,
+        "object": "person",
+        "confidence": 0.771,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2292,
+            "y1": 767,
+            "x2": 2673,
+            "y2": 1667
+        }
+    },
+    {
+        "frame": 180,
+        "timestamp": 6.0,
+        "object": "person",
+        "confidence": 0.922,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1752,
+            "y1": 500,
+            "x2": 2233,
+            "y2": 1651
+        }
+    },
+    {
+        "frame": 180,
+        "timestamp": 6.0,
+        "object": "person",
+        "confidence": 0.859,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2482,
+            "y1": 448,
+            "x2": 2942,
+            "y2": 1717
+        }
+    },
+    {
+        "frame": 180,
+        "timestamp": 6.0,
+        "object": "person",
+        "confidence": 0.693,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2296,
+            "y1": 752,
+            "x2": 2679,
+            "y2": 1672
+        }
+    },
+    {
+        "frame": 183,
+        "timestamp": 6.1,
+        "object": "person",
+        "confidence": 0.917,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1760,
+            "y1": 501,
+            "x2": 2247,
+            "y2": 1656
+        }
+    },
+    {
+        "frame": 183,
+        "timestamp": 6.1,
+        "object": "person",
+        "confidence": 0.845,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2483,
+            "y1": 448,
+            "x2": 2938,
+            "y2": 1708
+        }
+    },
+    {
+        "frame": 183,
+        "timestamp": 6.1,
+        "object": "person",
+        "confidence": 0.642,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2273,
+            "y1": 751,
+            "x2": 2651,
+            "y2": 1663
+        }
+    },
+    {
+        "frame": 186,
+        "timestamp": 6.2,
+        "object": "person",
+        "confidence": 0.925,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1759,
+            "y1": 494,
+            "x2": 2248,
+            "y2": 1658
+        }
+    },
+    {
+        "frame": 186,
+        "timestamp": 6.2,
+        "object": "person",
+        "confidence": 0.858,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2471,
+            "y1": 447,
+            "x2": 2937,
+            "y2": 1742
+        }
+    },
+    {
+        "frame": 186,
+        "timestamp": 6.2,
+        "object": "person",
+        "confidence": 0.807,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2219,
+            "y1": 761,
+            "x2": 2608,
+            "y2": 1679
+        }
+    },
+    {
+        "frame": 189,
+        "timestamp": 6.3,
+        "object": "person",
+        "confidence": 0.913,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1714,
+            "y1": 483,
+            "x2": 2207,
+            "y2": 1657
+        }
+    },
+    {
+        "frame": 189,
+        "timestamp": 6.3,
+        "object": "person",
+        "confidence": 0.872,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2480,
+            "y1": 438,
+            "x2": 2951,
+            "y2": 1759
+        }
+    },
+    {
+        "frame": 189,
+        "timestamp": 6.3,
+        "object": "person",
+        "confidence": 0.79,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2237,
+            "y1": 757,
+            "x2": 2614,
+            "y2": 1668
+        }
+    },
+    {
+        "frame": 192,
+        "timestamp": 6.4,
+        "object": "person",
+        "confidence": 0.901,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1670,
+            "y1": 473,
+            "x2": 2170,
+            "y2": 1655
+        }
+    },
+    {
+        "frame": 192,
+        "timestamp": 6.4,
+        "object": "person",
+        "confidence": 0.836,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2490,
+            "y1": 416,
+            "x2": 2955,
+            "y2": 1753
+        }
+    },
+    {
+        "frame": 192,
+        "timestamp": 6.4,
+        "object": "person",
+        "confidence": 0.802,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2189,
+            "y1": 749,
+            "x2": 2578,
+            "y2": 1678
+        }
+    },
+    {
+        "frame": 195,
+        "timestamp": 6.5,
+        "object": "person",
+        "confidence": 0.878,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1641,
+            "y1": 470,
+            "x2": 2151,
+            "y2": 1672
+        }
+    },
+    {
+        "frame": 195,
+        "timestamp": 6.5,
+        "object": "person",
+        "confidence": 0.849,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2473,
+            "y1": 403,
+            "x2": 2939,
+            "y2": 1762
+        }
+    },
+    {
+        "frame": 195,
+        "timestamp": 6.5,
+        "object": "person",
+        "confidence": 0.824,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2171,
+            "y1": 749,
+            "x2": 2571,
+            "y2": 1700
+        }
+    },
+    {
+        "frame": 198,
+        "timestamp": 6.6,
+        "object": "person",
+        "confidence": 0.905,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1633,
+            "y1": 476,
+            "x2": 2148,
+            "y2": 1677
+        }
+    },
+    {
+        "frame": 198,
+        "timestamp": 6.6,
+        "object": "person",
+        "confidence": 0.792,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2451,
+            "y1": 390,
+            "x2": 2913,
+            "y2": 1761
+        }
+    },
+    {
+        "frame": 198,
+        "timestamp": 6.6,
+        "object": "person",
+        "confidence": 0.768,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2168,
+            "y1": 750,
+            "x2": 2576,
+            "y2": 1724
+        }
+    },
+    {
+        "frame": 201,
+        "timestamp": 6.7,
+        "object": "person",
+        "confidence": 0.886,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1641,
+            "y1": 474,
+            "x2": 2168,
+            "y2": 1691
+        }
+    },
+    {
+        "frame": 201,
+        "timestamp": 6.7,
+        "object": "person",
+        "confidence": 0.89,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2371,
+            "y1": 401,
+            "x2": 2843,
+            "y2": 1772
+        }
+    },
+    {
+        "frame": 201,
+        "timestamp": 6.7,
+        "object": "person",
+        "confidence": 0.669,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2135,
+            "y1": 743,
+            "x2": 2542,
+            "y2": 1716
+        }
+    },
+    {
+        "frame": 204,
+        "timestamp": 6.8,
+        "object": "person",
+        "confidence": 0.865,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1649,
+            "y1": 457,
+            "x2": 2184,
+            "y2": 1694
+        }
+    },
+    {
+        "frame": 204,
+        "timestamp": 6.8,
+        "object": "person",
+        "confidence": 0.915,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2355,
+            "y1": 404,
+            "x2": 2840,
+            "y2": 1791
+        }
+    },
+    {
+        "frame": 204,
+        "timestamp": 6.8,
+        "object": "person",
+        "confidence": 0.52,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2112,
+            "y1": 717,
+            "x2": 2523,
+            "y2": 1712
+        }
+    },
+    {
+        "frame": 207,
+        "timestamp": 6.9,
+        "object": "person",
+        "confidence": 0.891,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1656,
+            "y1": 438,
+            "x2": 2191,
+            "y2": 1701
+        }
+    },
+    {
+        "frame": 207,
+        "timestamp": 6.9,
+        "object": "person",
+        "confidence": 0.869,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2353,
+            "y1": 389,
+            "x2": 2849,
+            "y2": 1795
+        }
+    },
+    {
+        "frame": 207,
+        "timestamp": 6.9,
+        "object": "person",
+        "confidence": 0.775,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2097,
+            "y1": 715,
+            "x2": 2510,
+            "y2": 1720
+        }
+    },
+    {
+        "frame": 210,
+        "timestamp": 7.0,
+        "object": "person",
+        "confidence": 0.878,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1647,
+            "y1": 430,
+            "x2": 2175,
+            "y2": 1698
+        }
+    },
+    {
+        "frame": 210,
+        "timestamp": 7.0,
+        "object": "person",
+        "confidence": 0.834,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2316,
+            "y1": 373,
+            "x2": 2820,
+            "y2": 1803
+        }
+    },
+    {
+        "frame": 210,
+        "timestamp": 7.0,
+        "object": "person",
+        "confidence": 0.664,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2097,
+            "y1": 712,
+            "x2": 2515,
+            "y2": 1735
+        }
+    },
+    {
+        "frame": 213,
+        "timestamp": 7.1,
+        "object": "person",
+        "confidence": 0.896,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1606,
+            "y1": 425,
+            "x2": 2135,
+            "y2": 1700
+        }
+    },
+    {
+        "frame": 213,
+        "timestamp": 7.1,
+        "object": "person",
+        "confidence": 0.862,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2258,
+            "y1": 363,
+            "x2": 2776,
+            "y2": 1815
+        }
+    },
+    {
+        "frame": 216,
+        "timestamp": 7.2,
+        "object": "person",
+        "confidence": 0.909,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1547,
+            "y1": 426,
+            "x2": 2084,
+            "y2": 1705
+        }
+    },
+    {
+        "frame": 216,
+        "timestamp": 7.2,
+        "object": "person",
+        "confidence": 0.857,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2246,
+            "y1": 358,
+            "x2": 2776,
+            "y2": 1843
+        }
+    },
+    {
+        "frame": 216,
+        "timestamp": 7.2,
+        "object": "person",
+        "confidence": 0.678,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2040,
+            "y1": 716,
+            "x2": 2458,
+            "y2": 1741
+        }
+    },
+    {
+        "frame": 219,
+        "timestamp": 7.3,
+        "object": "person",
+        "confidence": 0.905,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1531,
+            "y1": 434,
+            "x2": 2077,
+            "y2": 1715
+        }
+    },
+    {
+        "frame": 219,
+        "timestamp": 7.3,
+        "object": "person",
+        "confidence": 0.862,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2233,
+            "y1": 368,
+            "x2": 2763,
+            "y2": 1856
+        }
+    },
+    {
+        "frame": 219,
+        "timestamp": 7.3,
+        "object": "person",
+        "confidence": 0.751,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2019,
+            "y1": 718,
+            "x2": 2432,
+            "y2": 1740
+        }
+    },
+    {
+        "frame": 222,
+        "timestamp": 7.4,
+        "object": "person",
+        "confidence": 0.908,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1541,
+            "y1": 439,
+            "x2": 2100,
+            "y2": 1730
+        }
+    },
+    {
+        "frame": 222,
+        "timestamp": 7.4,
+        "object": "person",
+        "confidence": 0.859,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2250,
+            "y1": 375,
+            "x2": 2785,
+            "y2": 1880
+        }
+    },
+    {
+        "frame": 222,
+        "timestamp": 7.4,
+        "object": "person",
+        "confidence": 0.797,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 2008,
+            "y1": 725,
+            "x2": 2423,
+            "y2": 1762
+        }
+    },
+    {
+        "frame": 225,
+        "timestamp": 7.5,
+        "object": "person",
+        "confidence": 0.922,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1552,
+            "y1": 446,
+            "x2": 2112,
+            "y2": 1743
+        }
+    },
+    {
+        "frame": 225,
+        "timestamp": 7.5,
+        "object": "person",
+        "confidence": 0.859,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2280,
+            "y1": 379,
+            "x2": 2814,
+            "y2": 1893
+        }
+    },
+    {
+        "frame": 225,
+        "timestamp": 7.5,
+        "object": "person",
+        "confidence": 0.794,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 1999,
+            "y1": 739,
+            "x2": 2417,
+            "y2": 1788
+        }
+    },
+    {
+        "frame": 228,
+        "timestamp": 7.6,
+        "object": "person",
+        "confidence": 0.92,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1530,
+            "y1": 447,
+            "x2": 2090,
+            "y2": 1755
+        }
+    },
+    {
+        "frame": 228,
+        "timestamp": 7.6,
+        "object": "person",
+        "confidence": 0.837,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2262,
+            "y1": 367,
+            "x2": 2789,
+            "y2": 1899
+        }
+    },
+    {
+        "frame": 228,
+        "timestamp": 7.6,
+        "object": "person",
+        "confidence": 0.756,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 1968,
+            "y1": 754,
+            "x2": 2390,
+            "y2": 1810
+        }
+    },
+    {
+        "frame": 231,
+        "timestamp": 7.7,
+        "object": "person",
+        "confidence": 0.863,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1507,
+            "y1": 453,
+            "x2": 2069,
+            "y2": 1786
+        }
+    },
+    {
+        "frame": 231,
+        "timestamp": 7.7,
+        "object": "person",
+        "confidence": 0.795,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2246,
+            "y1": 371,
+            "x2": 2771,
+            "y2": 1921
+        }
+    },
+    {
+        "frame": 231,
+        "timestamp": 7.7,
+        "object": "person",
+        "confidence": 0.63,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 1975,
+            "y1": 756,
+            "x2": 2402,
+            "y2": 1820
+        }
+    },
+    {
+        "frame": 234,
+        "timestamp": 7.8,
+        "object": "person",
+        "confidence": 0.882,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1484,
+            "y1": 463,
+            "x2": 2041,
+            "y2": 1803
+        }
+    },
+    {
+        "frame": 234,
+        "timestamp": 7.8,
+        "object": "person",
+        "confidence": 0.773,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2176,
+            "y1": 383,
+            "x2": 2707,
+            "y2": 1948
+        }
+    },
+    {
+        "frame": 234,
+        "timestamp": 7.8,
+        "object": "person",
+        "confidence": 0.733,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 1983,
+            "y1": 766,
+            "x2": 2413,
+            "y2": 1854
+        }
+    },
+    {
+        "frame": 237,
+        "timestamp": 7.9,
+        "object": "person",
+        "confidence": 0.885,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1444,
+            "y1": 483,
+            "x2": 2002,
+            "y2": 1813
+        }
+    },
+    {
+        "frame": 237,
+        "timestamp": 7.9,
+        "object": "person",
+        "confidence": 0.836,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2108,
+            "y1": 404,
+            "x2": 2657,
+            "y2": 1969
+        }
+    },
+    {
+        "frame": 237,
+        "timestamp": 7.9,
+        "object": "person",
+        "confidence": 0.66,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 1944,
+            "y1": 790,
+            "x2": 2375,
+            "y2": 1884
+        }
+    },
+    {
+        "frame": 240,
+        "timestamp": 8.0,
+        "object": "person",
+        "confidence": 0.902,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1435,
+            "y1": 495,
+            "x2": 2004,
+            "y2": 1832
+        }
+    },
+    {
+        "frame": 240,
+        "timestamp": 8.0,
+        "object": "person",
+        "confidence": 0.817,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2090,
+            "y1": 406,
+            "x2": 2661,
+            "y2": 1988
+        }
+    },
+    {
+        "frame": 240,
+        "timestamp": 8.0,
+        "object": "person",
+        "confidence": 0.613,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 1933,
+            "y1": 812,
+            "x2": 2357,
+            "y2": 1907
+        }
+    },
+    {
+        "frame": 243,
+        "timestamp": 8.1,
+        "object": "person",
+        "confidence": 0.891,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1429,
+            "y1": 502,
+            "x2": 2009,
+            "y2": 1851
+        }
+    },
+    {
+        "frame": 243,
+        "timestamp": 8.1,
+        "object": "person",
+        "confidence": 0.878,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2076,
+            "y1": 407,
+            "x2": 2659,
+            "y2": 2012
+        }
+    },
+    {
+        "frame": 243,
+        "timestamp": 8.1,
+        "object": "person",
+        "confidence": 0.5,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 1863,
+            "y1": 825,
+            "x2": 2283,
+            "y2": 1912
+        }
+    },
+    {
+        "frame": 246,
+        "timestamp": 8.2,
+        "object": "person",
+        "confidence": 0.892,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1390,
+            "y1": 501,
+            "x2": 1967,
+            "y2": 1866
+        }
+    },
+    {
+        "frame": 246,
+        "timestamp": 8.2,
+        "object": "person",
+        "confidence": 0.867,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 2026,
+            "y1": 412,
+            "x2": 2608,
+            "y2": 2034
+        }
+    },
+    {
+        "frame": 249,
+        "timestamp": 8.3,
+        "object": "person",
+        "confidence": 0.879,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1338,
+            "y1": 499,
+            "x2": 1909,
+            "y2": 1882
+        }
+    },
+    {
+        "frame": 249,
+        "timestamp": 8.3,
+        "object": "person",
+        "confidence": 0.761,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 1931,
+            "y1": 419,
+            "x2": 2514,
+            "y2": 2057
+        }
+    },
+    {
+        "frame": 249,
+        "timestamp": 8.3,
+        "object": "person",
+        "confidence": 0.555,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 1799,
+            "y1": 843,
+            "x2": 2221,
+            "y2": 1966
+        }
+    },
+    {
+        "frame": 252,
+        "timestamp": 8.4,
+        "object": "person",
+        "confidence": 0.86,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1303,
+            "y1": 491,
+            "x2": 1865,
+            "y2": 1888
+        }
+    },
+    {
+        "frame": 252,
+        "timestamp": 8.4,
+        "object": "person",
+        "confidence": 0.646,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 1873,
+            "y1": 430,
+            "x2": 2461,
+            "y2": 2092
+        }
+    },
+    {
+        "frame": 252,
+        "timestamp": 8.4,
+        "object": "person",
+        "confidence": 0.507,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 1706,
+            "y1": 853,
+            "x2": 2142,
+            "y2": 2008
+        }
+    },
+    {
+        "frame": 255,
+        "timestamp": 8.5,
+        "object": "person",
+        "confidence": 0.905,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1216,
+            "y1": 499,
+            "x2": 1781,
+            "y2": 1898
+        }
+    },
+    {
+        "frame": 255,
+        "timestamp": 8.5,
+        "object": "person",
+        "confidence": 0.749,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 1829,
+            "y1": 449,
+            "x2": 2414,
+            "y2": 2095
+        }
+    },
+    {
+        "frame": 258,
+        "timestamp": 8.6,
+        "object": "person",
+        "confidence": 0.903,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1143,
+            "y1": 513,
+            "x2": 1725,
+            "y2": 1913
+        }
+    },
+    {
+        "frame": 258,
+        "timestamp": 8.6,
+        "object": "person",
+        "confidence": 0.809,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 1798,
+            "y1": 452,
+            "x2": 2393,
+            "y2": 2099
+        }
+    },
+    {
+        "frame": 258,
+        "timestamp": 8.6,
+        "object": "person",
+        "confidence": 0.504,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 1681,
+            "y1": 848,
+            "x2": 2055,
+            "y2": 1876
+        }
+    },
+    {
+        "frame": 261,
+        "timestamp": 8.7,
+        "object": "person",
+        "confidence": 0.898,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1085,
+            "y1": 513,
+            "x2": 1681,
+            "y2": 1930
+        }
+    },
+    {
+        "frame": 261,
+        "timestamp": 8.7,
+        "object": "person",
+        "confidence": 0.886,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 1745,
+            "y1": 437,
+            "x2": 2357,
+            "y2": 2101
+        }
+    },
+    {
+        "frame": 261,
+        "timestamp": 8.7,
+        "object": "person",
+        "confidence": 0.569,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 1571,
+            "y1": 846,
+            "x2": 1960,
+            "y2": 1935
+        }
+    },
+    {
+        "frame": 264,
+        "timestamp": 8.8,
+        "object": "person",
+        "confidence": 0.88,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1050,
+            "y1": 509,
+            "x2": 1646,
+            "y2": 1926
+        }
+    },
+    {
+        "frame": 264,
+        "timestamp": 8.8,
+        "object": "person",
+        "confidence": 0.807,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 1657,
+            "y1": 403,
+            "x2": 2268,
+            "y2": 2108
+        }
+    },
+    {
+        "frame": 267,
+        "timestamp": 8.9,
+        "object": "person",
+        "confidence": 0.885,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 1030,
+            "y1": 507,
+            "x2": 1620,
+            "y2": 1919
+        }
+    },
+    {
+        "frame": 267,
+        "timestamp": 8.9,
+        "object": "person",
+        "confidence": 0.665,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 1553,
+            "y1": 384,
+            "x2": 2161,
+            "y2": 2118
+        }
+    },
+    {
+        "frame": 267,
+        "timestamp": 8.9,
+        "object": "person",
+        "confidence": 0.488,
+        "track_id": 3,
+        "bounding_box": {
+            "x1": 1510,
+            "y1": 718,
+            "x2": 1996,
+            "y2": 2076
+        }
+    },
+    {
+        "frame": 270,
+        "timestamp": 9.0,
+        "object": "person",
+        "confidence": 0.889,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 944,
+            "y1": 499,
+            "x2": 1527,
+            "y2": 1923
+        }
+    },
+    {
+        "frame": 270,
+        "timestamp": 9.0,
+        "object": "person",
+        "confidence": 0.718,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 1431,
+            "y1": 391,
+            "x2": 2046,
+            "y2": 2132
+        }
+    },
+    {
+        "frame": 273,
+        "timestamp": 9.1,
+        "object": "person",
+        "confidence": 0.902,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 844,
+            "y1": 491,
+            "x2": 1427,
+            "y2": 1940
+        }
+    },
+    {
+        "frame": 273,
+        "timestamp": 9.1,
+        "object": "person",
+        "confidence": 0.829,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 1326,
+            "y1": 406,
+            "x2": 1950,
+            "y2": 2133
+        }
+    },
+    {
+        "frame": 276,
+        "timestamp": 9.2,
+        "object": "person",
+        "confidence": 0.902,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 726,
+            "y1": 493,
+            "x2": 1321,
+            "y2": 1956
+        }
+    },
+    {
+        "frame": 276,
+        "timestamp": 9.2,
+        "object": "person",
+        "confidence": 0.827,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 1267,
+            "y1": 419,
+            "x2": 1903,
+            "y2": 2135
+        }
+    },
+    {
+        "frame": 279,
+        "timestamp": 9.3,
+        "object": "person",
+        "confidence": 0.887,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 629,
+            "y1": 508,
+            "x2": 1233,
+            "y2": 1974
+        }
+    },
+    {
+        "frame": 279,
+        "timestamp": 9.3,
+        "object": "person",
+        "confidence": 0.844,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 1219,
+            "y1": 417,
+            "x2": 1863,
+            "y2": 2138
+        }
+    },
+    {
+        "frame": 279,
+        "timestamp": 9.3,
+        "object": "person",
+        "confidence": 0.448,
+        "track_id": 40,
+        "bounding_box": {
+            "x1": 2534,
+            "y1": 1059,
+            "x2": 2626,
+            "y2": 1208
+        }
+    },
+    {
+        "frame": 282,
+        "timestamp": 9.4,
+        "object": "person",
+        "confidence": 0.906,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 562,
+            "y1": 502,
+            "x2": 1183,
+            "y2": 1999
+        }
+    },
+    {
+        "frame": 282,
+        "timestamp": 9.4,
+        "object": "person",
+        "confidence": 0.883,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 1088,
+            "y1": 401,
+            "x2": 1734,
+            "y2": 2143
+        }
+    },
+    {
+        "frame": 285,
+        "timestamp": 9.5,
+        "object": "person",
+        "confidence": 0.854,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 491,
+            "y1": 498,
+            "x2": 1110,
+            "y2": 2016
+        }
+    },
+    {
+        "frame": 285,
+        "timestamp": 9.5,
+        "object": "person",
+        "confidence": 0.844,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 934,
+            "y1": 382,
+            "x2": 1564,
+            "y2": 2117
+        }
+    },
+    {
+        "frame": 285,
+        "timestamp": 9.5,
+        "object": "person",
+        "confidence": 0.461,
+        "track_id": 40,
+        "bounding_box": {
+            "x1": 2520,
+            "y1": 1073,
+            "x2": 2611,
+            "y2": 1221
+        }
+    },
+    {
+        "frame": 288,
+        "timestamp": 9.6,
+        "object": "person",
+        "confidence": 0.884,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 404,
+            "y1": 490,
+            "x2": 1010,
+            "y2": 2027
+        }
+    },
+    {
+        "frame": 288,
+        "timestamp": 9.6,
+        "object": "person",
+        "confidence": 0.854,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 804,
+            "y1": 374,
+            "x2": 1434,
+            "y2": 2130
+        }
+    },
+    {
+        "frame": 291,
+        "timestamp": 9.7,
+        "object": "person",
+        "confidence": 0.877,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 312,
+            "y1": 474,
+            "x2": 903,
+            "y2": 2006
+        }
+    },
+    {
+        "frame": 291,
+        "timestamp": 9.7,
+        "object": "person",
+        "confidence": 0.902,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 712,
+            "y1": 400,
+            "x2": 1340,
+            "y2": 2142
+        }
+    },
+    {
+        "frame": 294,
+        "timestamp": 9.8,
+        "object": "person",
+        "confidence": 0.887,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 153,
+            "y1": 475,
+            "x2": 758,
+            "y2": 2022
+        }
+    },
+    {
+        "frame": 294,
+        "timestamp": 9.8,
+        "object": "person",
+        "confidence": 0.873,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 686,
+            "y1": 410,
+            "x2": 1322,
+            "y2": 2153
+        }
+    },
+    {
+        "frame": 297,
+        "timestamp": 9.9,
+        "object": "person",
+        "confidence": 0.886,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 49,
+            "y1": 488,
+            "x2": 664,
+            "y2": 2042
+        }
+    },
+    {
+        "frame": 297,
+        "timestamp": 9.9,
+        "object": "person",
+        "confidence": 0.889,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 626,
+            "y1": 396,
+            "x2": 1277,
+            "y2": 2159
+        }
+    },
+    {
+        "frame": 300,
+        "timestamp": 10.0,
+        "object": "person",
+        "confidence": 0.871,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 0,
+            "y1": 497,
+            "x2": 607,
+            "y2": 2073
+        }
+    },
+    {
+        "frame": 300,
+        "timestamp": 10.0,
+        "object": "person",
+        "confidence": 0.745,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 438,
+            "y1": 376,
+            "x2": 1093,
+            "y2": 2160
+        }
+    },
+    {
+        "frame": 300,
+        "timestamp": 10.0,
+        "object": "person",
+        "confidence": 0.533,
+        "track_id": 42,
+        "bounding_box": {
+            "x1": 2550,
+            "y1": 1096,
+            "x2": 2637,
+            "y2": 1238
+        }
+    },
+    {
+        "frame": 303,
+        "timestamp": 10.1,
+        "object": "person",
+        "confidence": 0.794,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 0,
+            "y1": 497,
+            "x2": 557,
+            "y2": 2087
+        }
+    },
+    {
+        "frame": 303,
+        "timestamp": 10.1,
+        "object": "person",
+        "confidence": 0.734,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 299,
+            "y1": 366,
+            "x2": 943,
+            "y2": 2158
+        }
+    },
+    {
+        "frame": 303,
+        "timestamp": 10.1,
+        "object": "person",
+        "confidence": 0.574,
+        "track_id": 42,
+        "bounding_box": {
+            "x1": 2552,
+            "y1": 1098,
+            "x2": 2639,
+            "y2": 1243
+        }
+    },
+    {
+        "frame": 306,
+        "timestamp": 10.2,
+        "object": "person",
+        "confidence": 0.89,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 0,
+            "y1": 488,
+            "x2": 480,
+            "y2": 2101
+        }
+    },
+    {
+        "frame": 306,
+        "timestamp": 10.2,
+        "object": "person",
+        "confidence": 0.821,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 191,
+            "y1": 355,
+            "x2": 836,
+            "y2": 2153
+        }
+    },
+    {
+        "frame": 306,
+        "timestamp": 10.2,
+        "object": "person",
+        "confidence": 0.562,
+        "track_id": 42,
+        "bounding_box": {
+            "x1": 2550,
+            "y1": 1103,
+            "x2": 2638,
+            "y2": 1248
+        }
+    },
+    {
+        "frame": 309,
+        "timestamp": 10.3,
+        "object": "person",
+        "confidence": 0.835,
+        "track_id": 1,
+        "bounding_box": {
+            "x1": 0,
+            "y1": 473,
+            "x2": 414,
+            "y2": 2085
+        }
+    },
+    {
+        "frame": 309,
+        "timestamp": 10.3,
+        "object": "person",
+        "confidence": 0.705,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 79,
+            "y1": 378,
+            "x2": 721,
+            "y2": 2153
+        }
+    },
+    {
+        "frame": 309,
+        "timestamp": 10.3,
+        "object": "person",
+        "confidence": 0.565,
+        "track_id": 42,
+        "bounding_box": {
+            "x1": 2550,
+            "y1": 1105,
+            "x2": 2637,
+            "y2": 1249
+        }
+    },
+    {
+        "frame": 312,
+        "timestamp": 10.4,
+        "object": "person",
+        "confidence": 0.839,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 25,
+            "y1": 379,
+            "x2": 675,
+            "y2": 2150
+        }
+    },
+    {
+        "frame": 312,
+        "timestamp": 10.4,
+        "object": "person",
+        "confidence": 0.523,
+        "track_id": 42,
+        "bounding_box": {
+            "x1": 2549,
+            "y1": 1107,
+            "x2": 2638,
+            "y2": 1253
+        }
+    },
+    {
+        "frame": 315,
+        "timestamp": 10.5,
+        "object": "person",
+        "confidence": 0.858,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 0,
+            "y1": 383,
+            "x2": 629,
+            "y2": 2154
+        }
+    },
+    {
+        "frame": 315,
+        "timestamp": 10.5,
+        "object": "person",
+        "confidence": 0.644,
+        "track_id": 42,
+        "bounding_box": {
+            "x1": 2545,
+            "y1": 1108,
+            "x2": 2637,
+            "y2": 1258
+        }
+    },
+    {
+        "frame": 318,
+        "timestamp": 10.6,
+        "object": "person",
+        "confidence": 0.725,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 0,
+            "y1": 358,
+            "x2": 530,
+            "y2": 2152
+        }
+    },
+    {
+        "frame": 318,
+        "timestamp": 10.6,
+        "object": "person",
+        "confidence": 0.534,
+        "track_id": 42,
+        "bounding_box": {
+            "x1": 2541,
+            "y1": 1112,
+            "x2": 2635,
+            "y2": 1266
+        }
+    },
+    {
+        "frame": 321,
+        "timestamp": 10.7,
+        "object": "person",
+        "confidence": 0.732,
+        "track_id": 2,
+        "bounding_box": {
+            "x1": 0,
+            "y1": 366,
+            "x2": 428,
+            "y2": 2144
+        }
+    },
+    {
+        "frame": 321,
+        "timestamp": 10.7,
+        "object": "person",
+        "confidence": 0.42,
+        "track_id": 42,
+        "bounding_box": {
+            "x1": 2543,
+            "y1": 1121,
+            "x2": 2636,
+            "y2": 1272
+        }
+    },
+    {
+        "frame": 324,
+        "timestamp": 10.8,
+        "object": "car",
+        "confidence": 0.601,
+        "track_id": null,
+        "bounding_box": {
+            "x1": 3586,
+            "y1": 1055,
+            "x2": 3837,
+            "y2": 1229
+        }
+    },
+    {
+        "frame": 327,
+        "timestamp": 10.9,
+        "object": "car",
+        "confidence": 0.635,
+        "track_id": 52,
+        "bounding_box": {
+            "x1": 3562,
+            "y1": 1053,
+            "x2": 3831,
+            "y2": 1240
+        }
+    },
+    {
+        "frame": 330,
+        "timestamp": 11.0,
+        "object": "car",
+        "confidence": 0.6,
+        "track_id": 52,
+        "bounding_box": {
+            "x1": 3529,
+            "y1": 1054,
+            "x2": 3822,
+            "y2": 1256
+        }
+    },
+    {
+        "frame": 333,
+        "timestamp": 11.1,
+        "object": "car",
+        "confidence": 0.487,
+        "track_id": 52,
+        "bounding_box": {
+            "x1": 3498,
+            "y1": 1059,
+            "x2": 3800,
+            "y2": 1266
+        }
+    },
+    {
+        "frame": 333,
+        "timestamp": 11.1,
+        "object": "person",
+        "confidence": 0.464,
+        "track_id": 42,
+        "bounding_box": {
+            "x1": 2552,
+            "y1": 1151,
+            "x2": 2642,
+            "y2": 1297
+        }
+    },
+    {
+        "frame": 336,
+        "timestamp": 11.2,
+        "object": "car",
+        "confidence": 0.598,
+        "track_id": 52,
+        "bounding_box": {
+            "x1": 3468,
+            "y1": 1060,
+            "x2": 3790,
+            "y2": 1278
+        }
+    },
+    {
+        "frame": 336,
+        "timestamp": 11.2,
+        "object": "person",
+        "confidence": 0.567,
+        "track_id": 42,
+        "bounding_box": {
+            "x1": 2561,
+            "y1": 1152,
+            "x2": 2652,
+            "y2": 1299
+        }
+    },
+    {
+        "frame": 339,
+        "timestamp": 11.3,
+        "object": "person",
+        "confidence": 0.565,
+        "track_id": 42,
+        "bounding_box": {
+            "x1": 2567,
+            "y1": 1159,
+            "x2": 2656,
+            "y2": 1307
+        }
+    },
+    {
+        "frame": 345,
+        "timestamp": 11.5,
+        "object": "car",
+        "confidence": 0.407,
+        "track_id": 52,
+        "bounding_box": {
+            "x1": 3390,
+            "y1": 1078,
+            "x2": 3752,
+            "y2": 1316
+        }
+    }
+]

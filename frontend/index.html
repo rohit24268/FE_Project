@@ -11,7 +11,8 @@
 
     <title>ForenSight AI</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
 
 </head>
@@ -128,12 +129,10 @@
             </div>
 
 
-            <button id="uploadButton" class="analyze-button" onclick="uploadVideo()">
-
+            <button id="uploadButton" class="analyze-button">
                 <span id="buttonText">
                     Analyze CCTV Evidence
                 </span>
-
             </button>
 
 
@@ -423,6 +422,68 @@
             </div>
 
 
+            <!-- AI INVESTIGATION ASSISTANT -->
+
+            <div class="content-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h2>
+                            🤖 AI Investigation Assistant
+                        </h2>
+
+                        <p>
+                            Ask questions about this footage's
+                            detection evidence in plain English.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="chatWindow" class="chat-window">
+
+                    <div class="chat-message chat-assistant">
+
+                        <div class="chat-bubble">
+                            Ask me anything about this footage —
+                            for example, "When did a person first
+                            appear?" or "How many unique vehicles
+                            were tracked?"
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chat-input-row">
+
+                    <input
+                        type="text"
+                        id="chatInput"
+                        class="chat-input"
+                        placeholder="Ask about the evidence..."
+                    >
+
+                    <button
+                        id="chatSendButton"
+                        class="chat-send-button"
+                    >
+                        Ask
+                    </button>
+
+                </div>
+
+                <p id="chatNote" class="table-note">
+                </p>
+
+            </div>
+
+
             <!-- FORENSIC INFORMATION -->
 
             <div class="content-card forensic-card">
@@ -492,7 +553,7 @@
     </main>
 
 
-    <script src="script.js"></script>
+   <script type="module" src="js/app.js"></script>
 
 
 </body>

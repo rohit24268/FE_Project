@@ -1,8 +1,9 @@
 const API_URL = "http://localhost:8000";
 
-// --------------------------------------------------
+
+// ==================================================
 // ELEMENTS
-// --------------------------------------------------
+// ==================================================
 
 const videoInput = document.getElementById("videoInput");
 const fileName = document.getElementById("fileName");
@@ -12,212 +13,31 @@ const loading = document.getElementById("loading");
 const result = document.getElementById("result");
 const status = document.getElementById("status");
 
+const chatWindow = document.getElementById("chatWindow");
+const chatInput = document.getElementById("chatInput");
+const chatSendButton = document.getElementById("chatSendButton");
+const chatNote = document.getElementById("chatNote");
 
-// --------------------------------------------------
+
+// ==================================================
+// AI INVESTIGATION ASSISTANT STATE
+// ==================================================
+
+let currentAnalysisId = null;
+let chatHistory = [];
+
+
+// ==================================================
 // CHECK FRONTEND
-// --------------------------------------------------
+// ==================================================
 
 console.log("ForenSight AI frontend loaded");
 console.log("Backend URL:", API_URL);
 
 
-// --------------------------------------------------
-// FILE SELECTION
-// --------------------------------------------------
-
-videoInput.addEventListener("change", function () {
-
-    if (!this.files || this.files.length === 0) {
-
-        fileName.textContent = "No file selected";
-
-        return;
-    }
-
-    const file = this.files[0];
-
-    const size =
-        (file.size / (1024 * 1024)).toFixed(2);
-
-    fileName.textContent =
-        `${file.name} (${size} MB)`;
-
-});
-
-
-// --------------------------------------------------
-// UPLOAD VIDEO
-// --------------------------------------------------
-
-async function uploadVideo() {
-
-    const file = videoInput.files[0];
-
-    if (!file) {
-
-        showStatus(
-            "Please select a CCTV video first.",
-            "error"
-        );
-
-        return;
-    }
-
-
-    // Disable button
-    uploadButton.disabled = true;
-
-    buttonText.textContent =
-        "Analyzing...";
-
-
-    // Show loading
-    loading.classList.remove("hidden");
-
-    result.classList.add("hidden");
-
-
-    showStatus(
-        "Uploading CCTV footage...",
-        ""
-    );
-
-
-    // Create form data
-    const formData = new FormData();
-
-    formData.append(
-        "file",
-        file
-    );
-
-
-    try {
-
-        console.log(
-            "Sending video to:",
-            `${API_URL}/analyze-video`
-        );
-
-
-        showStatus(
-            "YOLO is analyzing the CCTV footage. Please wait...",
-            ""
-        );
-
-
-        // --------------------------------------------------
-        // SEND REQUEST
-        // --------------------------------------------------
-
-        const response = await fetch(
-            `${API_URL}/analyze-video`,
-            {
-                method: "POST",
-                body: formData
-            }
-        );
-
-
-        console.log(
-            "Backend response status:",
-            response.status
-        );
-
-
-        // --------------------------------------------------
-        // READ RESPONSE
-        // --------------------------------------------------
-
-        const text =
-            await response.text();
-
-
-        console.log(
-            "Raw backend response:",
-            text
-        );
-
-
-        let data;
-
-        try {
-
-            data = JSON.parse(text);
-
-        } catch (jsonError) {
-
-            throw new Error(
-                "Backend returned invalid JSON: " +
-                text
-            );
-        }
-
-
-        console.log(
-            "Parsed backend data:",
-            data
-        );
-
-
-        // --------------------------------------------------
-        // CHECK HTTP ERROR
-        // --------------------------------------------------
-
-        if (!response.ok) {
-
-            throw new Error(
-                data.detail ||
-                "Video analysis failed."
-            );
-        }
-
-
-        // --------------------------------------------------
-        // DISPLAY RESULTS
-        // --------------------------------------------------
-
-        displayResults(data);
-
-
-        showStatus(
-            "CCTV analysis completed successfully.",
-            "success"
-        );
-
-
-    } catch (error) {
-
-        console.error(
-            "Analysis error:",
-            error
-        );
-
-
-        showStatus(
-            error.message ||
-            "Unable to analyze video.",
-            "error"
-        );
-
-
-    } finally {
-
-        uploadButton.disabled = false;
-
-        buttonText.textContent =
-            "Analyze CCTV Evidence";
-
-        loading.classList.add("hidden");
-
-    }
-
-}
-
-
-// --------------------------------------------------
+// ==================================================
 // DISPLAY RESULTS
-// --------------------------------------------------
+// ==================================================
 
 function displayResults(data) {
 
@@ -226,17 +46,43 @@ function displayResults(data) {
         data
     );
 
-
     // Show result section
     result.classList.remove("hidden");
 
 
-    // --------------------------------------------------
+    // ==================================================
     // ANALYSIS ID
-    // --------------------------------------------------
+    // ==================================================
 
     const analysisId =
         data.analysis_id || "—";
+
+
+    // Reset AI assistant chat
+    currentAnalysisId =
+        data.analysis_id || null;
+
+    chatHistory = [];
+
+
+    if (chatWindow) {
+
+        chatWindow.innerHTML = `
+            <div class="chat-message chat-assistant">
+                <div class="chat-bubble">
+                    Ask me anything about this footage —
+                    for example, "When did a person first
+                    appear?" or "How many unique vehicles
+                    were tracked?"
+                </div>
+            </div>
+        `;
+    }
+
+
+    if (chatNote) {
+        chatNote.textContent = "";
+    }
 
 
     document.getElementById(
@@ -251,9 +97,9 @@ function displayResults(data) {
         analysisId;
 
 
-    // --------------------------------------------------
+    // ==================================================
     // TOTAL DETECTIONS
-    // --------------------------------------------------
+    // ==================================================
 
     const totalDetections =
         data.total_detections || 0;
@@ -271,9 +117,9 @@ function displayResults(data) {
         totalDetections;
 
 
-    // --------------------------------------------------
+    // ==================================================
     // OBJECT COUNTS
-    // --------------------------------------------------
+    // ==================================================
 
     const objectCounts =
         data.object_counts || {};
@@ -289,9 +135,9 @@ function displayResults(data) {
         objectTypes.length;
 
 
-    // --------------------------------------------------
+    // ==================================================
     // PERSON COUNT
-    // --------------------------------------------------
+    // ==================================================
 
     document.getElementById(
         "personCount"
@@ -299,9 +145,9 @@ function displayResults(data) {
         objectCounts.person || 0;
 
 
-    // --------------------------------------------------
+    // ==================================================
     // VEHICLE COUNT
-    // --------------------------------------------------
+    // ==================================================
 
     const vehicleCount =
         (objectCounts.car || 0) +
@@ -317,48 +163,51 @@ function displayResults(data) {
         vehicleCount;
 
 
-    // --------------------------------------------------
+    // ==================================================
     // OBJECT SUMMARY
-    // --------------------------------------------------
+    // ==================================================
 
     displayObjectSummary(
         objectCounts
     );
 
 
-    // --------------------------------------------------
+    // ==================================================
     // DOWNLOAD ANNOTATED VIDEO
-    // --------------------------------------------------
-
-
+    // ==================================================
 
     if (data.annotated_video) {
 
         const downloadVideo =
-            document.getElementById("downloadVideo");
+            document.getElementById(
+                "downloadVideo"
+            );
 
-        // Backend returns:
-        // /results/analysisid_annotated.mp4
 
         const filename =
             data.annotated_video
                 .split("/")
                 .pop();
 
+
         const downloadURL =
             `${API_URL}/download-video/${encodeURIComponent(filename)}`;
+
 
         console.log(
             "Annotated video download URL:",
             downloadURL
         );
 
+
         if (downloadVideo) {
 
             downloadVideo.href =
                 downloadURL;
 
-            downloadVideo.removeAttribute("target");
+            downloadVideo.removeAttribute(
+                "target"
+            );
 
             downloadVideo.style.display =
                 "inline-block";
@@ -366,13 +215,12 @@ function displayResults(data) {
             downloadVideo.textContent =
                 "⬇ Download Annotated Video";
         }
-
     }
 
 
-    // --------------------------------------------------
+    // ==================================================
     // DOWNLOAD JSON
-    // --------------------------------------------------
+    // ==================================================
 
     if (data.detections_file) {
 
@@ -397,24 +245,22 @@ function displayResults(data) {
 
             downloadButton.href =
                 jsonURL;
-
         }
-
     }
 
 
-    // --------------------------------------------------
+    // ==================================================
     // DETECTION TABLE
-    // --------------------------------------------------
+    // ==================================================
 
     displayDetectionTable(
         data.detections || []
     );
 
 
-    // --------------------------------------------------
+    // ==================================================
     // SCROLL TO RESULTS
-    // --------------------------------------------------
+    // ==================================================
 
     setTimeout(function () {
 
@@ -424,13 +270,12 @@ function displayResults(data) {
         });
 
     }, 300);
-
 }
 
 
-// --------------------------------------------------
+// ==================================================
 // OBJECT SUMMARY
-// --------------------------------------------------
+// ==================================================
 
 function displayObjectSummary(
     objectCounts
@@ -494,16 +339,14 @@ function displayObjectSummary(
             container.appendChild(
                 card
             );
-
         }
     );
-
 }
 
 
-// --------------------------------------------------
+// ==================================================
 // DETECTION TABLE
-// --------------------------------------------------
+// ==================================================
 
 function displayDetectionTable(
     detections
@@ -568,7 +411,7 @@ function displayDetectionTable(
 
             const trackId =
                 detection.track_id !== null &&
-                    detection.track_id !== undefined
+                detection.track_id !== undefined
                     ? detection.track_id
                     : "—";
 
@@ -581,7 +424,7 @@ function displayDetectionTable(
 
             const confidence =
                 detection.confidence !== null &&
-                    detection.confidence !== undefined
+                detection.confidence !== undefined
                     ? (
                         detection.confidence * 100
                     ).toFixed(1) + "%"
@@ -590,7 +433,7 @@ function displayDetectionTable(
 
             const frame =
                 detection.frame !== null &&
-                    detection.frame !== undefined
+                detection.frame !== undefined
                     ? detection.frame
                     : "—";
 
@@ -608,7 +451,6 @@ function displayDetectionTable(
                 boundingBox =
                     `${bbox.x1}, ${bbox.y1}, ` +
                     `${bbox.x2}, ${bbox.y2}`;
-
             }
 
 
@@ -637,8 +479,8 @@ function displayDetectionTable(
 
                 <td>
                     ${escapeHTML(
-                boundingBox
-            )}
+                        boundingBox
+                    )}
                 </td>
             `;
 
@@ -646,7 +488,6 @@ function displayDetectionTable(
             table.appendChild(
                 row
             );
-
         }
     );
 
@@ -669,15 +510,13 @@ function displayDetectionTable(
 
         note.textContent =
             `${detections.length} detection events recorded.`;
-
     }
-
 }
 
 
-// --------------------------------------------------
+// ==================================================
 // FORMAT TIME
-// --------------------------------------------------
+// ==================================================
 
 function formatTime(
     seconds
@@ -687,9 +526,7 @@ function formatTime(
         seconds === undefined ||
         seconds === null
     ) {
-
         return "—";
-
     }
 
 
@@ -710,13 +547,12 @@ function formatTime(
         ":" +
         String(secs).padStart(2, "0")
     );
-
 }
 
 
-// --------------------------------------------------
+// ==================================================
 // STATUS
-// --------------------------------------------------
+// ==================================================
 
 function showStatus(
     message,
@@ -736,15 +572,13 @@ function showStatus(
         status.classList.add(
             type
         );
-
     }
-
 }
 
 
-// --------------------------------------------------
+// ==================================================
 // HTML ESCAPING
-// --------------------------------------------------
+// ==================================================
 
 function escapeHTML(
     value
@@ -761,5 +595,4 @@ function escapeHTML(
 
 
     return div.innerHTML;
-
 }
