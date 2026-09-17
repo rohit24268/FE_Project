@@ -1,0 +1,15 @@
+{
+    "max_threat_score": 0.214,
+    "overall_threat_level": "LOW",
+    "total_incidents": 0,
+    "incidents": [],
+    "threat_summary": {
+        "critical_events": 0,
+        "high_events": 0,
+        "medium_events": 0,
+        "threat_objects_seen": {
+            "handbag": 110,
+            "suitcase": 11
+        }
+    }
+}

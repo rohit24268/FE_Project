@@ -72,20 +72,60 @@ def analyze_crop_attributes(image_bytes: bytes) -> str:
 
 
 # --------------------------------------------------
-# BUILD CASE CONTEXT FROM RAW DETECTIONS
+# BUILD CASE CONTEXT FROM RAW DETECTIONS & THREATS
 # --------------------------------------------------
 
-def build_case_context(detections: list) -> str:
+def build_case_context(detections: list, threat_analysis: dict | None = None) -> str:
     """
-    Turns the raw per-frame detections list into a compact,
-    token-efficient summary + a sampled event log that Gemini
-    can reason over directly, instead of dumping the entire
-    (potentially huge) JSON file into the prompt.
+    Turns raw detections and threat analysis into a compact,
+    threat-focused forensic summary that Gemini can reason over.
     """
 
     if not detections:
         return "No objects were detected in this footage."
 
+    # Compute threat analysis if not provided
+    if threat_analysis is None:
+        try:
+            from services.threat_service import analyze_video_threats
+            threat_analysis = analyze_video_threats(detections)
+        except Exception as e:
+            print(f"Failed to compute threats on the fly: {e}")
+            threat_analysis = None
+
+    lines = []
+
+    # 1. THREAT ASSESSMENT HEADER
+    if threat_analysis:
+        lines.append("=== THREAT ASSESSMENT SUMMARY ===")
+        lines.append(f"Overall Threat Level: {threat_analysis.get('overall_threat_level', 'UNKNOWN')}")
+        lines.append(f"Peak Threat Risk Score: {threat_analysis.get('max_threat_score', 0.0)}")
+        lines.append(f"Total Incident Count: {threat_analysis.get('total_incidents', 0)}")
+
+        incidents = threat_analysis.get("incidents", [])
+        if incidents:
+            lines.append("\n=== INCIDENT TIMELINE ===")
+            for idx, inc in enumerate(incidents, 1):
+                types_str = ", ".join(inc.get("threat_types", []))
+                armed_str = "YES (Weapon held/adjacent to person)" if inc.get("armed_person") else "NO"
+                lines.append(
+                    f"- Incident #{idx}: {inc.get('start_time', 0.0):.2f}s to {inc.get('end_time', 0.0):.2f}s "
+                    f"(Duration: {inc.get('duration', 0.0):.2f}s) | Severity: {inc.get('peak_level', 'UNKNOWN')} "
+                    f"(Score: {inc.get('peak_score', 0.0):.2f}) | Threat Types: [{types_str}] | Armed Suspect: {armed_str}"
+                )
+        else:
+            lines.append("\nNo high-severity threat incidents were flagged.")
+
+        threat_summary = threat_analysis.get("threat_summary", {})
+        seen_objs = threat_summary.get("threat_objects_seen", {})
+        if seen_objs:
+            lines.append("\nThreat Objects Detected:")
+            for obj_name, cnt in seen_objs.items():
+                lines.append(f"- {obj_name}: {cnt} frame occurrence(s)")
+
+        lines.append("")
+
+    # 2. GENERAL DETECTIONS & TRACKS
     object_counts = defaultdict(int)
     first_seen = {}
     last_seen = {}
@@ -93,7 +133,6 @@ def build_case_context(detections: list) -> str:
     track_attributes = {}
 
     for d in detections:
-
         obj = d.get("object", "unknown")
         ts = d.get("timestamp", 0)
         track_id = d.get("track_id")
@@ -114,20 +153,13 @@ def build_case_context(detections: list) -> str:
 
     total_duration = max(last_seen.values()) if last_seen else 0
 
-    summary_lines = [
-        f"Total detection events: {len(detections)}",
-        f"Footage duration covered by detections: ~{total_duration:.1f} seconds",
-        "",
-        "Per-object summary:",
-    ]
-
-    for obj, count in sorted(
-        object_counts.items(), key=lambda x: -x[1]
-    ):
-
+    lines.append("=== GENERAL OBJECT DETECTION SUMMARY ===")
+    lines.append(f"Total detection events: {len(detections)}")
+    lines.append(f"Footage duration covered: ~{total_duration:.1f} seconds")
+    lines.append("Detected entities:")
+    for obj, count in sorted(object_counts.items(), key=lambda x: -x[1]):
         unique_tracks = len(track_ids_by_object.get(obj, set()))
-
-        summary_lines.append(
+        lines.append(
             f"- {obj}: {count} detection events, "
             f"{unique_tracks} unique tracked instance(s), "
             f"first seen at {first_seen[obj]:.2f}s, "
@@ -135,27 +167,26 @@ def build_case_context(detections: list) -> str:
         )
 
     if track_attributes:
-        summary_lines.append("\nTracked Target Visual Attributes (Method A Multimodal Analysis):")
+        lines.append("\n=== TRACKED TARGET VISUAL ATTRIBUTES (Multimodal Analysis) ===")
         for tid, attr in sorted(track_attributes.items()):
-            summary_lines.append(f"- Track ID #{tid}: {attr}")
+            lines.append(f"- Track ID #{tid}: {attr}")
 
-    # --------------------------------------------------
-    # SAMPLE EVENT LOG (kept small to control token usage)
-    # --------------------------------------------------
-
+    # 3. SAMPLE EVENT LOG
     step = max(1, len(detections) // MAX_SAMPLE_EVENTS)
     sampled = detections[::step][:MAX_SAMPLE_EVENTS]
 
     event_lines = [
-        "\nSampled detection event log "
-        "(frame, timestamp_s, object, track_id, confidence, bbox, attributes):"
+        "\n=== SAMPLED EVENT LOG "
+        "(frame, timestamp_s, object, track_id, confidence, bbox, is_threat, threat_cat, attributes) ==="
     ]
 
     for d in sampled:
-
         bbox = d.get("bounding_box", {})
         attr = d.get("attributes", "")
-        attr_str = f", attributes: '{attr}'" if attr else ""
+        attr_str = f", attr: '{attr}'" if attr else ""
+        is_threat = d.get("is_threat", False)
+        threat_cat = d.get("threat_category", "")
+        threat_str = f", THREAT: {threat_cat}" if is_threat else ""
 
         event_lines.append(
             f"{d.get('frame')}, {d.get('timestamp')}, "
@@ -163,41 +194,35 @@ def build_case_context(detections: list) -> str:
             f"{d.get('confidence')}, "
             f"[{bbox.get('x1')},{bbox.get('y1')},"
             f"{bbox.get('x2')},{bbox.get('y2')}]"
-            f"{attr_str}"
+            f"{threat_str}{attr_str}"
         )
 
-    return "\n".join(summary_lines) + "\n" + "\n".join(event_lines)
+    return "\n".join(lines) + "\n" + "\n".join(event_lines)
 
 
 # --------------------------------------------------
 # ASK THE ASSISTANT A QUESTION
 # --------------------------------------------------
 
-SYSTEM_PROMPT = """You are the AI Investigation Assistant inside \
-ForenSight AI, a forensic CCTV analysis tool. You help investigators \
-make sense of YOLO object-detection results extracted from a single \
-piece of CCTV footage.
+SYSTEM_PROMPT = """You are the Threat & Incident Response AI Forensic Analyst inside \
+ForenSight AI, a CCTV threat detection and forensic investigation system.
 
-You will be given:
-1. A summary of detected objects (counts, first/last appearance times, \
-number of uniquely tracked instances).
-2. A sampled log of individual detection events (frame number, \
-timestamp in seconds, object class, track ID, confidence, bounding box).
+Your primary mission is to assist law enforcement, security personnel, and investigators \
+by identifying security threats, analyzing armed individuals, reconstructing incident timelines, \
+and generating dispatch or forensic reports based on YOLO detections and multi-model threat analysis.
+
+You are provided with:
+1. A Threat Assessment Summary (Overall Threat Level: SAFE, LOW, MEDIUM, HIGH, CRITICAL, Peak Threat Risk Score, Total Incidents).
+2. An Incident Timeline log (start time, end time, duration, peak severity, threat types, and whether an armed individual was detected).
+3. Tracked Target Visual Attributes (clothing, apparel, vehicle characteristics from multimodal CCTV crop analysis).
+4. General object detection summary and sampled frame event logs.
 
 Rules:
-- Answer strictly based on the provided detection data. Never invent \
-objects, people, timestamps, or events that are not supported by it.
-- The event log is a SAMPLE, not the complete list, so be careful with \
-exact counts if the sample looks incomplete for a question — say so \
-and refer the investigator to the full JSON export when precision \
-matters.
-- When useful, cite specific timestamps, frame numbers, or track IDs \
-so the investigator can locate the moment in the footage.
-- Keep answers concise and factual, in a neutral investigative tone. \
-Do not speculate about identity, intent, or guilt of any person or \
-vehicle shown — you are reporting object-detection evidence only.
-- If the data doesn't contain enough information to answer, say so \
-plainly instead of guessing.
+- Prioritize safety and threat awareness: immediately highlight any detected lethal weapons (guns, knives, firearms), blunt weapons, brandishing behaviors, or suspicious items when relevant to the question.
+- Always cite exact timestamps, durations, and Track IDs (e.g. "Track ID #2 brandished a knife between 00:14.2s and 00:22.5s") so investigators can verify the footage directly.
+- Maintain a professional, objective, forensic tone. Distinguish clearly between confirmed weapon detections and unconfirmed/suspicious items.
+- If asked to summarize incidents or write a report, structure it clearly with: Threat Level, Incident Timeline, Involved Suspects/Track IDs, Visual Descriptions, and Recommended Actionable Next Steps (e.g. security dispatch, area perimeter lockdown).
+- Answer strictly from the provided case data. If information is missing or not detected in the footage, state that clearly rather than inventing details.
 """
 
 
@@ -210,9 +235,10 @@ def ask_investigator(
     detections: list,
     question: str,
     history: list | None = None,
+    threat_analysis: dict | None = None,
 ) -> str:
 
-    context = build_case_context(detections)
+    context = build_case_context(detections, threat_analysis=threat_analysis)
 
     # --------------------------------------------------
     # BUILD MULTI-TURN CONTENTS

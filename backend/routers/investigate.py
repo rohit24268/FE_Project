@@ -38,11 +38,21 @@ async def investigate(payload: InvestigateRequest):
             detail=f"Failed to load detection data: {str(e)}"
         )
 
+    threats_path = RESULT_DIR / f"{payload.analysis_id}_threats.json"
+    threat_data = None
+    if threats_path.exists():
+        try:
+            with open(threats_path, "r") as t_file:
+                threat_data = json.load(t_file)
+        except Exception:
+            threat_data = None
+
     try:
         answer = ask_investigator(
             detections,
             payload.question,
-            [turn.model_dump() for turn in payload.history]
+            [turn.model_dump() for turn in payload.history],
+            threat_analysis=threat_data
         )
     except InvestigatorRateLimitError as e:
         raise HTTPException(

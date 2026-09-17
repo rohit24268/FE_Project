@@ -1,0 +1,6287 @@
+[
+    {
+        "frame": 0,
+        "timestamp": 0.0,
+        "object": "car",
+        "confidence": 0.824,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 648,
+            "y1": 89,
+            "x2": 730,
+            "y2": 161
+        }
+    },
+    {
+        "frame": 0,
+        "timestamp": 0.0,
+        "object": "car",
+        "confidence": 0.707,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 951,
+            "y1": 106,
+            "x2": 1025,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 3,
+        "timestamp": 0.1,
+        "object": "car",
+        "confidence": 0.83,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 636,
+            "y1": 88,
+            "x2": 728,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 3,
+        "timestamp": 0.1,
+        "object": "car",
+        "confidence": 0.623,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1088,
+            "y1": 153,
+            "x2": 1203,
+            "y2": 228
+        }
+    },
+    {
+        "frame": 3,
+        "timestamp": 0.1,
+        "object": "car",
+        "confidence": 0.586,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 139,
+            "y1": 143,
+            "x2": 252,
+            "y2": 207
+        }
+    },
+    {
+        "frame": 3,
+        "timestamp": 0.1,
+        "object": "car",
+        "confidence": 0.624,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 836,
+            "y1": 53,
+            "x2": 967,
+            "y2": 104
+        }
+    },
+    {
+        "frame": 3,
+        "timestamp": 0.1,
+        "object": "car",
+        "confidence": 0.554,
+        "track_id": 492,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 321,
+            "y1": 99,
+            "x2": 484,
+            "y2": 177
+        }
+    },
+    {
+        "frame": 3,
+        "timestamp": 0.1,
+        "object": "car",
+        "confidence": 0.708,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 940,
+            "y1": 105,
+            "x2": 1035,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 6,
+        "timestamp": 0.2,
+        "object": "car",
+        "confidence": 0.827,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 630,
+            "y1": 88,
+            "x2": 730,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 6,
+        "timestamp": 0.2,
+        "object": "car",
+        "confidence": 0.621,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1088,
+            "y1": 153,
+            "x2": 1203,
+            "y2": 228
+        }
+    },
+    {
+        "frame": 6,
+        "timestamp": 0.2,
+        "object": "car",
+        "confidence": 0.591,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 139,
+            "y1": 142,
+            "x2": 253,
+            "y2": 207
+        }
+    },
+    {
+        "frame": 6,
+        "timestamp": 0.2,
+        "object": "car",
+        "confidence": 0.622,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 836,
+            "y1": 53,
+            "x2": 967,
+            "y2": 104
+        }
+    },
+    {
+        "frame": 6,
+        "timestamp": 0.2,
+        "object": "car",
+        "confidence": 0.512,
+        "track_id": 492,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 321,
+            "y1": 99,
+            "x2": 483,
+            "y2": 177
+        }
+    },
+    {
+        "frame": 6,
+        "timestamp": 0.2,
+        "object": "car",
+        "confidence": 0.709,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 933,
+            "y1": 105,
+            "x2": 1042,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 6,
+        "timestamp": 0.2,
+        "object": "car",
+        "confidence": 0.403,
+        "track_id": 493,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 487,
+            "y1": 55,
+            "x2": 560,
+            "y2": 96
+        }
+    },
+    {
+        "frame": 9,
+        "timestamp": 0.3,
+        "object": "car",
+        "confidence": 0.829,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 626,
+            "y1": 88,
+            "x2": 733,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 9,
+        "timestamp": 0.3,
+        "object": "car",
+        "confidence": 0.621,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1088,
+            "y1": 153,
+            "x2": 1202,
+            "y2": 228
+        }
+    },
+    {
+        "frame": 9,
+        "timestamp": 0.3,
+        "object": "car",
+        "confidence": 0.598,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 139,
+            "y1": 143,
+            "x2": 253,
+            "y2": 207
+        }
+    },
+    {
+        "frame": 9,
+        "timestamp": 0.3,
+        "object": "car",
+        "confidence": 0.627,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 836,
+            "y1": 53,
+            "x2": 967,
+            "y2": 104
+        }
+    },
+    {
+        "frame": 9,
+        "timestamp": 0.3,
+        "object": "car",
+        "confidence": 0.503,
+        "track_id": 492,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 320,
+            "y1": 99,
+            "x2": 482,
+            "y2": 177
+        }
+    },
+    {
+        "frame": 9,
+        "timestamp": 0.3,
+        "object": "car",
+        "confidence": 0.711,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 928,
+            "y1": 105,
+            "x2": 1047,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 9,
+        "timestamp": 0.3,
+        "object": "car",
+        "confidence": 0.404,
+        "track_id": 493,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 488,
+            "y1": 55,
+            "x2": 560,
+            "y2": 96
+        }
+    },
+    {
+        "frame": 9,
+        "timestamp": 0.3,
+        "object": "car",
+        "confidence": 0.403,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 378,
+            "y1": 97,
+            "x2": 486,
+            "y2": 162
+        }
+    },
+    {
+        "frame": 12,
+        "timestamp": 0.4,
+        "object": "car",
+        "confidence": 0.818,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 624,
+            "y1": 89,
+            "x2": 736,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 12,
+        "timestamp": 0.4,
+        "object": "car",
+        "confidence": 0.607,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1085,
+            "y1": 153,
+            "x2": 1198,
+            "y2": 227
+        }
+    },
+    {
+        "frame": 12,
+        "timestamp": 0.4,
+        "object": "car",
+        "confidence": 0.595,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 139,
+            "y1": 143,
+            "x2": 251,
+            "y2": 206
+        }
+    },
+    {
+        "frame": 12,
+        "timestamp": 0.4,
+        "object": "car",
+        "confidence": 0.532,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 837,
+            "y1": 53,
+            "x2": 967,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 12,
+        "timestamp": 0.4,
+        "object": "car",
+        "confidence": 0.609,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 927,
+            "y1": 109,
+            "x2": 1049,
+            "y2": 192
+        }
+    },
+    {
+        "frame": 12,
+        "timestamp": 0.4,
+        "object": "car",
+        "confidence": 0.421,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 376,
+            "y1": 97,
+            "x2": 486,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 15,
+        "timestamp": 0.5,
+        "object": "car",
+        "confidence": 0.823,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 621,
+            "y1": 89,
+            "x2": 740,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 15,
+        "timestamp": 0.5,
+        "object": "car",
+        "confidence": 0.56,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1085,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 227
+        }
+    },
+    {
+        "frame": 15,
+        "timestamp": 0.5,
+        "object": "car",
+        "confidence": 0.597,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 138,
+            "y1": 143,
+            "x2": 250,
+            "y2": 206
+        }
+    },
+    {
+        "frame": 15,
+        "timestamp": 0.5,
+        "object": "car",
+        "confidence": 0.538,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 836,
+            "y1": 52,
+            "x2": 967,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 15,
+        "timestamp": 0.5,
+        "object": "car",
+        "confidence": 0.606,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 925,
+            "y1": 110,
+            "x2": 1052,
+            "y2": 192
+        }
+    },
+    {
+        "frame": 15,
+        "timestamp": 0.5,
+        "object": "car",
+        "confidence": 0.442,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 375,
+            "y1": 97,
+            "x2": 487,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 18,
+        "timestamp": 0.6,
+        "object": "car",
+        "confidence": 0.829,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 618,
+            "y1": 89,
+            "x2": 743,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 18,
+        "timestamp": 0.6,
+        "object": "car",
+        "confidence": 0.541,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1085,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 227
+        }
+    },
+    {
+        "frame": 18,
+        "timestamp": 0.6,
+        "object": "car",
+        "confidence": 0.591,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 138,
+            "y1": 143,
+            "x2": 250,
+            "y2": 206
+        }
+    },
+    {
+        "frame": 18,
+        "timestamp": 0.6,
+        "object": "car",
+        "confidence": 0.535,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 836,
+            "y1": 52,
+            "x2": 967,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 18,
+        "timestamp": 0.6,
+        "object": "car",
+        "confidence": 0.607,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 922,
+            "y1": 111,
+            "x2": 1055,
+            "y2": 192
+        }
+    },
+    {
+        "frame": 18,
+        "timestamp": 0.6,
+        "object": "car",
+        "confidence": 0.433,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 374,
+            "y1": 97,
+            "x2": 488,
+            "y2": 166
+        }
+    },
+    {
+        "frame": 21,
+        "timestamp": 0.7,
+        "object": "car",
+        "confidence": 0.827,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 615,
+            "y1": 90,
+            "x2": 746,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 21,
+        "timestamp": 0.7,
+        "object": "car",
+        "confidence": 0.552,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1086,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 227
+        }
+    },
+    {
+        "frame": 21,
+        "timestamp": 0.7,
+        "object": "car",
+        "confidence": 0.592,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 138,
+            "y1": 143,
+            "x2": 250,
+            "y2": 206
+        }
+    },
+    {
+        "frame": 21,
+        "timestamp": 0.7,
+        "object": "car",
+        "confidence": 0.533,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 836,
+            "y1": 52,
+            "x2": 967,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 21,
+        "timestamp": 0.7,
+        "object": "car",
+        "confidence": 0.605,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 920,
+            "y1": 111,
+            "x2": 1057,
+            "y2": 192
+        }
+    },
+    {
+        "frame": 21,
+        "timestamp": 0.7,
+        "object": "car",
+        "confidence": 0.424,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 374,
+            "y1": 97,
+            "x2": 488,
+            "y2": 166
+        }
+    },
+    {
+        "frame": 24,
+        "timestamp": 0.8,
+        "object": "car",
+        "confidence": 0.813,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 613,
+            "y1": 90,
+            "x2": 748,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 24,
+        "timestamp": 0.8,
+        "object": "car",
+        "confidence": 0.498,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1088,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 24,
+        "timestamp": 0.8,
+        "object": "car",
+        "confidence": 0.442,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 139,
+            "y1": 142,
+            "x2": 252,
+            "y2": 206
+        }
+    },
+    {
+        "frame": 24,
+        "timestamp": 0.8,
+        "object": "car",
+        "confidence": 0.498,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 919,
+            "y1": 113,
+            "x2": 1056,
+            "y2": 191
+        }
+    },
+    {
+        "frame": 24,
+        "timestamp": 0.8,
+        "object": "car",
+        "confidence": 0.462,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 376,
+            "y1": 98,
+            "x2": 482,
+            "y2": 162
+        }
+    },
+    {
+        "frame": 27,
+        "timestamp": 0.9,
+        "object": "car",
+        "confidence": 0.806,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 611,
+            "y1": 91,
+            "x2": 750,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 27,
+        "timestamp": 0.9,
+        "object": "car",
+        "confidence": 0.503,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1089,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 27,
+        "timestamp": 0.9,
+        "object": "car",
+        "confidence": 0.45,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 136,
+            "y1": 142,
+            "x2": 250,
+            "y2": 207
+        }
+    },
+    {
+        "frame": 27,
+        "timestamp": 0.9,
+        "object": "car",
+        "confidence": 0.51,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 917,
+            "y1": 111,
+            "x2": 1057,
+            "y2": 189
+        }
+    },
+    {
+        "frame": 27,
+        "timestamp": 0.9,
+        "object": "car",
+        "confidence": 0.488,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 374,
+            "y1": 98,
+            "x2": 481,
+            "y2": 162
+        }
+    },
+    {
+        "frame": 30,
+        "timestamp": 1.0,
+        "object": "car",
+        "confidence": 0.805,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 608,
+            "y1": 91,
+            "x2": 753,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 30,
+        "timestamp": 1.0,
+        "object": "car",
+        "confidence": 0.504,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 224
+        }
+    },
+    {
+        "frame": 30,
+        "timestamp": 1.0,
+        "object": "car",
+        "confidence": 0.446,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 138,
+            "y1": 141,
+            "x2": 252,
+            "y2": 206
+        }
+    },
+    {
+        "frame": 30,
+        "timestamp": 1.0,
+        "object": "car",
+        "confidence": 0.503,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 915,
+            "y1": 110,
+            "x2": 1058,
+            "y2": 187
+        }
+    },
+    {
+        "frame": 30,
+        "timestamp": 1.0,
+        "object": "car",
+        "confidence": 0.409,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 373,
+            "y1": 99,
+            "x2": 486,
+            "y2": 166
+        }
+    },
+    {
+        "frame": 30,
+        "timestamp": 1.0,
+        "object": "car",
+        "confidence": 0.412,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 985,
+            "y1": 122,
+            "x2": 1075,
+            "y2": 195
+        }
+    },
+    {
+        "frame": 33,
+        "timestamp": 1.1,
+        "object": "car",
+        "confidence": 0.798,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 606,
+            "y1": 91,
+            "x2": 756,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 33,
+        "timestamp": 1.1,
+        "object": "car",
+        "confidence": 0.506,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1198,
+            "y2": 224
+        }
+    },
+    {
+        "frame": 33,
+        "timestamp": 1.1,
+        "object": "car",
+        "confidence": 0.459,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 136,
+            "y1": 142,
+            "x2": 250,
+            "y2": 207
+        }
+    },
+    {
+        "frame": 33,
+        "timestamp": 1.1,
+        "object": "car",
+        "confidence": 0.491,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 914,
+            "y1": 109,
+            "x2": 1060,
+            "y2": 187
+        }
+    },
+    {
+        "frame": 33,
+        "timestamp": 1.1,
+        "object": "car",
+        "confidence": 0.437,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 373,
+            "y1": 99,
+            "x2": 487,
+            "y2": 168
+        }
+    },
+    {
+        "frame": 33,
+        "timestamp": 1.1,
+        "object": "car",
+        "confidence": 0.418,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 985,
+            "y1": 122,
+            "x2": 1074,
+            "y2": 195
+        }
+    },
+    {
+        "frame": 36,
+        "timestamp": 1.2,
+        "object": "car",
+        "confidence": 0.754,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 604,
+            "y1": 91,
+            "x2": 758,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 36,
+        "timestamp": 1.2,
+        "object": "car",
+        "confidence": 0.493,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 224
+        }
+    },
+    {
+        "frame": 36,
+        "timestamp": 1.2,
+        "object": "car",
+        "confidence": 0.458,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 138,
+            "y1": 141,
+            "x2": 252,
+            "y2": 206
+        }
+    },
+    {
+        "frame": 36,
+        "timestamp": 1.2,
+        "object": "car",
+        "confidence": 0.527,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 913,
+            "y1": 113,
+            "x2": 1062,
+            "y2": 190
+        }
+    },
+    {
+        "frame": 36,
+        "timestamp": 1.2,
+        "object": "car",
+        "confidence": 0.414,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 378,
+            "y1": 100,
+            "x2": 488,
+            "y2": 167
+        }
+    },
+    {
+        "frame": 36,
+        "timestamp": 1.2,
+        "object": "car",
+        "confidence": 0.404,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 974,
+            "y1": 121,
+            "x2": 1057,
+            "y2": 188
+        }
+    },
+    {
+        "frame": 39,
+        "timestamp": 1.3,
+        "object": "car",
+        "confidence": 0.774,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 602,
+            "y1": 90,
+            "x2": 761,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 39,
+        "timestamp": 1.3,
+        "object": "car",
+        "confidence": 0.494,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 224
+        }
+    },
+    {
+        "frame": 39,
+        "timestamp": 1.3,
+        "object": "car",
+        "confidence": 0.485,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 135,
+            "y1": 141,
+            "x2": 250,
+            "y2": 207
+        }
+    },
+    {
+        "frame": 39,
+        "timestamp": 1.3,
+        "object": "car",
+        "confidence": 0.534,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 911,
+            "y1": 111,
+            "x2": 1063,
+            "y2": 189
+        }
+    },
+    {
+        "frame": 39,
+        "timestamp": 1.3,
+        "object": "car",
+        "confidence": 0.406,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 373,
+            "y1": 99,
+            "x2": 489,
+            "y2": 170
+        }
+    },
+    {
+        "frame": 39,
+        "timestamp": 1.3,
+        "object": "car",
+        "confidence": 0.421,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 982,
+            "y1": 121,
+            "x2": 1064,
+            "y2": 186
+        }
+    },
+    {
+        "frame": 39,
+        "timestamp": 1.3,
+        "object": "car",
+        "confidence": 0.401,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 840,
+            "y1": 53,
+            "x2": 964,
+            "y2": 101
+        }
+    },
+    {
+        "frame": 42,
+        "timestamp": 1.4,
+        "object": "car",
+        "confidence": 0.779,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 600,
+            "y1": 90,
+            "x2": 764,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 42,
+        "timestamp": 1.4,
+        "object": "car",
+        "confidence": 0.494,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 224
+        }
+    },
+    {
+        "frame": 42,
+        "timestamp": 1.4,
+        "object": "car",
+        "confidence": 0.487,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 134,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 42,
+        "timestamp": 1.4,
+        "object": "car",
+        "confidence": 0.548,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 909,
+            "y1": 110,
+            "x2": 1065,
+            "y2": 190
+        }
+    },
+    {
+        "frame": 42,
+        "timestamp": 1.4,
+        "object": "car",
+        "confidence": 0.415,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 371,
+            "y1": 99,
+            "x2": 489,
+            "y2": 171
+        }
+    },
+    {
+        "frame": 42,
+        "timestamp": 1.4,
+        "object": "car",
+        "confidence": 0.415,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 981,
+            "y1": 120,
+            "x2": 1065,
+            "y2": 186
+        }
+    },
+    {
+        "frame": 42,
+        "timestamp": 1.4,
+        "object": "car",
+        "confidence": 0.418,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 840,
+            "y1": 53,
+            "x2": 964,
+            "y2": 101
+        }
+    },
+    {
+        "frame": 45,
+        "timestamp": 1.5,
+        "object": "car",
+        "confidence": 0.777,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 598,
+            "y1": 89,
+            "x2": 766,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 45,
+        "timestamp": 1.5,
+        "object": "car",
+        "confidence": 0.496,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1089,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 45,
+        "timestamp": 1.5,
+        "object": "car",
+        "confidence": 0.478,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 133,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 45,
+        "timestamp": 1.5,
+        "object": "car",
+        "confidence": 0.54,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 908,
+            "y1": 110,
+            "x2": 1066,
+            "y2": 190
+        }
+    },
+    {
+        "frame": 45,
+        "timestamp": 1.5,
+        "object": "car",
+        "confidence": 0.509,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 370,
+            "y1": 98,
+            "x2": 489,
+            "y2": 172
+        }
+    },
+    {
+        "frame": 45,
+        "timestamp": 1.5,
+        "object": "car",
+        "confidence": 0.418,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 982,
+            "y1": 120,
+            "x2": 1068,
+            "y2": 186
+        }
+    },
+    {
+        "frame": 45,
+        "timestamp": 1.5,
+        "object": "car",
+        "confidence": 0.41,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 840,
+            "y1": 53,
+            "x2": 964,
+            "y2": 101
+        }
+    },
+    {
+        "frame": 48,
+        "timestamp": 1.6,
+        "object": "car",
+        "confidence": 0.765,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 597,
+            "y1": 90,
+            "x2": 768,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 48,
+        "timestamp": 1.6,
+        "object": "car",
+        "confidence": 0.496,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1089,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 48,
+        "timestamp": 1.6,
+        "object": "car",
+        "confidence": 0.441,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 138,
+            "y1": 141,
+            "x2": 251,
+            "y2": 207
+        }
+    },
+    {
+        "frame": 48,
+        "timestamp": 1.6,
+        "object": "car",
+        "confidence": 0.52,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 908,
+            "y1": 113,
+            "x2": 1066,
+            "y2": 191
+        }
+    },
+    {
+        "frame": 48,
+        "timestamp": 1.6,
+        "object": "car",
+        "confidence": 0.405,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 969,
+            "y1": 120,
+            "x2": 1058,
+            "y2": 186
+        }
+    },
+    {
+        "frame": 51,
+        "timestamp": 1.7,
+        "object": "car",
+        "confidence": 0.806,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 596,
+            "y1": 90,
+            "x2": 769,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 51,
+        "timestamp": 1.7,
+        "object": "car",
+        "confidence": 0.508,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 51,
+        "timestamp": 1.7,
+        "object": "car",
+        "confidence": 0.434,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 139,
+            "y1": 141,
+            "x2": 252,
+            "y2": 206
+        }
+    },
+    {
+        "frame": 51,
+        "timestamp": 1.7,
+        "object": "car",
+        "confidence": 0.517,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 907,
+            "y1": 111,
+            "x2": 1067,
+            "y2": 190
+        }
+    },
+    {
+        "frame": 51,
+        "timestamp": 1.7,
+        "object": "car",
+        "confidence": 0.421,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 975,
+            "y1": 120,
+            "x2": 1065,
+            "y2": 186
+        }
+    },
+    {
+        "frame": 54,
+        "timestamp": 1.8,
+        "object": "car",
+        "confidence": 0.803,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 595,
+            "y1": 90,
+            "x2": 770,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 54,
+        "timestamp": 1.8,
+        "object": "car",
+        "confidence": 0.505,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 54,
+        "timestamp": 1.8,
+        "object": "car",
+        "confidence": 0.428,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 140,
+            "y1": 141,
+            "x2": 252,
+            "y2": 206
+        }
+    },
+    {
+        "frame": 54,
+        "timestamp": 1.8,
+        "object": "car",
+        "confidence": 0.522,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 906,
+            "y1": 111,
+            "x2": 1068,
+            "y2": 190
+        }
+    },
+    {
+        "frame": 54,
+        "timestamp": 1.8,
+        "object": "car",
+        "confidence": 0.422,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 976,
+            "y1": 120,
+            "x2": 1068,
+            "y2": 186
+        }
+    },
+    {
+        "frame": 57,
+        "timestamp": 1.9,
+        "object": "car",
+        "confidence": 0.798,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 594,
+            "y1": 90,
+            "x2": 771,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 57,
+        "timestamp": 1.9,
+        "object": "car",
+        "confidence": 0.505,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 57,
+        "timestamp": 1.9,
+        "object": "car",
+        "confidence": 0.429,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 141,
+            "y1": 141,
+            "x2": 252,
+            "y2": 206
+        }
+    },
+    {
+        "frame": 57,
+        "timestamp": 1.9,
+        "object": "car",
+        "confidence": 0.515,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 905,
+            "y1": 110,
+            "x2": 1068,
+            "y2": 189
+        }
+    },
+    {
+        "frame": 57,
+        "timestamp": 1.9,
+        "object": "car",
+        "confidence": 0.424,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 977,
+            "y1": 120,
+            "x2": 1070,
+            "y2": 186
+        }
+    },
+    {
+        "frame": 57,
+        "timestamp": 1.9,
+        "object": "car",
+        "confidence": 0.442,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 370,
+            "y1": 98,
+            "x2": 483,
+            "y2": 168
+        }
+    },
+    {
+        "frame": 60,
+        "timestamp": 2.0,
+        "object": "car",
+        "confidence": 0.827,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 593,
+            "y1": 91,
+            "x2": 771,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 60,
+        "timestamp": 2.0,
+        "object": "car",
+        "confidence": 0.486,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 60,
+        "timestamp": 2.0,
+        "object": "car",
+        "confidence": 0.456,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 141,
+            "y1": 141,
+            "x2": 252,
+            "y2": 206
+        }
+    },
+    {
+        "frame": 60,
+        "timestamp": 2.0,
+        "object": "car",
+        "confidence": 0.529,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 906,
+            "y1": 113,
+            "x2": 1068,
+            "y2": 191
+        }
+    },
+    {
+        "frame": 60,
+        "timestamp": 2.0,
+        "object": "car",
+        "confidence": 0.409,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 969,
+            "y1": 120,
+            "x2": 1066,
+            "y2": 186
+        }
+    },
+    {
+        "frame": 63,
+        "timestamp": 2.1,
+        "object": "car",
+        "confidence": 0.823,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 592,
+            "y1": 91,
+            "x2": 772,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 63,
+        "timestamp": 2.1,
+        "object": "car",
+        "confidence": 0.492,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 63,
+        "timestamp": 2.1,
+        "object": "car",
+        "confidence": 0.459,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 141,
+            "y1": 142,
+            "x2": 252,
+            "y2": 206
+        }
+    },
+    {
+        "frame": 63,
+        "timestamp": 2.1,
+        "object": "car",
+        "confidence": 0.518,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 905,
+            "y1": 112,
+            "x2": 1069,
+            "y2": 190
+        }
+    },
+    {
+        "frame": 63,
+        "timestamp": 2.1,
+        "object": "car",
+        "confidence": 0.427,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 975,
+            "y1": 121,
+            "x2": 1072,
+            "y2": 186
+        }
+    },
+    {
+        "frame": 63,
+        "timestamp": 2.1,
+        "object": "person",
+        "confidence": 0.454,
+        "track_id": 496,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 390,
+            "y1": 125,
+            "x2": 417,
+            "y2": 175
+        }
+    },
+    {
+        "frame": 63,
+        "timestamp": 2.1,
+        "object": "car",
+        "confidence": 0.428,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 378,
+            "y1": 97,
+            "x2": 480,
+            "y2": 159
+        }
+    },
+    {
+        "frame": 66,
+        "timestamp": 2.2,
+        "object": "car",
+        "confidence": 0.824,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 591,
+            "y1": 91,
+            "x2": 773,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 66,
+        "timestamp": 2.2,
+        "object": "car",
+        "confidence": 0.492,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 66,
+        "timestamp": 2.2,
+        "object": "car",
+        "confidence": 0.447,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 141,
+            "y1": 142,
+            "x2": 251,
+            "y2": 206
+        }
+    },
+    {
+        "frame": 66,
+        "timestamp": 2.2,
+        "object": "car",
+        "confidence": 0.512,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 905,
+            "y1": 111,
+            "x2": 1069,
+            "y2": 189
+        }
+    },
+    {
+        "frame": 66,
+        "timestamp": 2.2,
+        "object": "car",
+        "confidence": 0.429,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 978,
+            "y1": 121,
+            "x2": 1075,
+            "y2": 186
+        }
+    },
+    {
+        "frame": 66,
+        "timestamp": 2.2,
+        "object": "car",
+        "confidence": 0.426,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 379,
+            "y1": 97,
+            "x2": 479,
+            "y2": 157
+        }
+    },
+    {
+        "frame": 69,
+        "timestamp": 2.3,
+        "object": "car",
+        "confidence": 0.826,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 590,
+            "y1": 91,
+            "x2": 774,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 69,
+        "timestamp": 2.3,
+        "object": "car",
+        "confidence": 0.492,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 69,
+        "timestamp": 2.3,
+        "object": "car",
+        "confidence": 0.45,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 141,
+            "y1": 142,
+            "x2": 251,
+            "y2": 206
+        }
+    },
+    {
+        "frame": 69,
+        "timestamp": 2.3,
+        "object": "car",
+        "confidence": 0.523,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 904,
+            "y1": 111,
+            "x2": 1069,
+            "y2": 189
+        }
+    },
+    {
+        "frame": 69,
+        "timestamp": 2.3,
+        "object": "car",
+        "confidence": 0.427,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 978,
+            "y1": 121,
+            "x2": 1076,
+            "y2": 186
+        }
+    },
+    {
+        "frame": 69,
+        "timestamp": 2.3,
+        "object": "car",
+        "confidence": 0.416,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 379,
+            "y1": 97,
+            "x2": 479,
+            "y2": 156
+        }
+    },
+    {
+        "frame": 72,
+        "timestamp": 2.4,
+        "object": "car",
+        "confidence": 0.818,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 590,
+            "y1": 92,
+            "x2": 774,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 72,
+        "timestamp": 2.4,
+        "object": "car",
+        "confidence": 0.473,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 226
+        }
+    },
+    {
+        "frame": 72,
+        "timestamp": 2.4,
+        "object": "car",
+        "confidence": 0.457,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 141,
+            "y1": 142,
+            "x2": 252,
+            "y2": 206
+        }
+    },
+    {
+        "frame": 72,
+        "timestamp": 2.4,
+        "object": "car",
+        "confidence": 0.505,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 904,
+            "y1": 113,
+            "x2": 1070,
+            "y2": 191
+        }
+    },
+    {
+        "frame": 72,
+        "timestamp": 2.4,
+        "object": "car",
+        "confidence": 0.481,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 380,
+            "y1": 97,
+            "x2": 477,
+            "y2": 154
+        }
+    },
+    {
+        "frame": 75,
+        "timestamp": 2.5,
+        "object": "car",
+        "confidence": 0.811,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 590,
+            "y1": 93,
+            "x2": 774,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 75,
+        "timestamp": 2.5,
+        "object": "car",
+        "confidence": 0.479,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 75,
+        "timestamp": 2.5,
+        "object": "car",
+        "confidence": 0.449,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 142,
+            "y1": 141,
+            "x2": 252,
+            "y2": 206
+        }
+    },
+    {
+        "frame": 75,
+        "timestamp": 2.5,
+        "object": "car",
+        "confidence": 0.512,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 903,
+            "y1": 111,
+            "x2": 1071,
+            "y2": 190
+        }
+    },
+    {
+        "frame": 75,
+        "timestamp": 2.5,
+        "object": "car",
+        "confidence": 0.485,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 379,
+            "y1": 97,
+            "x2": 476,
+            "y2": 153
+        }
+    },
+    {
+        "frame": 75,
+        "timestamp": 2.5,
+        "object": "car",
+        "confidence": 0.405,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 977,
+            "y1": 121,
+            "x2": 1076,
+            "y2": 186
+        }
+    },
+    {
+        "frame": 78,
+        "timestamp": 2.6,
+        "object": "car",
+        "confidence": 0.814,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 588,
+            "y1": 92,
+            "x2": 776,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 78,
+        "timestamp": 2.6,
+        "object": "car",
+        "confidence": 0.48,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 78,
+        "timestamp": 2.6,
+        "object": "car",
+        "confidence": 0.459,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 138,
+            "y1": 142,
+            "x2": 250,
+            "y2": 207
+        }
+    },
+    {
+        "frame": 78,
+        "timestamp": 2.6,
+        "object": "car",
+        "confidence": 0.509,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 903,
+            "y1": 110,
+            "x2": 1071,
+            "y2": 189
+        }
+    },
+    {
+        "frame": 78,
+        "timestamp": 2.6,
+        "object": "car",
+        "confidence": 0.44,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 379,
+            "y1": 97,
+            "x2": 477,
+            "y2": 153
+        }
+    },
+    {
+        "frame": 78,
+        "timestamp": 2.6,
+        "object": "car",
+        "confidence": 0.408,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 977,
+            "y1": 123,
+            "x2": 1081,
+            "y2": 192
+        }
+    },
+    {
+        "frame": 81,
+        "timestamp": 2.7,
+        "object": "car",
+        "confidence": 0.813,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 588,
+            "y1": 92,
+            "x2": 777,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 81,
+        "timestamp": 2.7,
+        "object": "car",
+        "confidence": 0.477,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1197,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 81,
+        "timestamp": 2.7,
+        "object": "car",
+        "confidence": 0.48,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 137,
+            "y1": 142,
+            "x2": 249,
+            "y2": 207
+        }
+    },
+    {
+        "frame": 81,
+        "timestamp": 2.7,
+        "object": "car",
+        "confidence": 0.514,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 902,
+            "y1": 110,
+            "x2": 1072,
+            "y2": 189
+        }
+    },
+    {
+        "frame": 81,
+        "timestamp": 2.7,
+        "object": "car",
+        "confidence": 0.416,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 378,
+            "y1": 97,
+            "x2": 479,
+            "y2": 153
+        }
+    },
+    {
+        "frame": 81,
+        "timestamp": 2.7,
+        "object": "car",
+        "confidence": 0.403,
+        "track_id": 495,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 976,
+            "y1": 122,
+            "x2": 1077,
+            "y2": 189
+        }
+    },
+    {
+        "frame": 84,
+        "timestamp": 2.8,
+        "object": "car",
+        "confidence": 0.822,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 588,
+            "y1": 92,
+            "x2": 777,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 84,
+        "timestamp": 2.8,
+        "object": "car",
+        "confidence": 0.505,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1089,
+            "y1": 153,
+            "x2": 1196,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 84,
+        "timestamp": 2.8,
+        "object": "car",
+        "confidence": 0.539,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 135,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 84,
+        "timestamp": 2.8,
+        "object": "car",
+        "confidence": 0.513,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 903,
+            "y1": 113,
+            "x2": 1072,
+            "y2": 192
+        }
+    },
+    {
+        "frame": 87,
+        "timestamp": 2.9,
+        "object": "car",
+        "confidence": 0.811,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 587,
+            "y1": 92,
+            "x2": 778,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 87,
+        "timestamp": 2.9,
+        "object": "car",
+        "confidence": 0.546,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1089,
+            "y1": 153,
+            "x2": 1196,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 87,
+        "timestamp": 2.9,
+        "object": "car",
+        "confidence": 0.554,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 135,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 87,
+        "timestamp": 2.9,
+        "object": "car",
+        "confidence": 0.535,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 903,
+            "y1": 114,
+            "x2": 1072,
+            "y2": 192
+        }
+    },
+    {
+        "frame": 87,
+        "timestamp": 2.9,
+        "object": "car",
+        "confidence": 0.401,
+        "track_id": 492,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 320,
+            "y1": 97,
+            "x2": 484,
+            "y2": 176
+        }
+    },
+    {
+        "frame": 90,
+        "timestamp": 3.0,
+        "object": "car",
+        "confidence": 0.794,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 587,
+            "y1": 92,
+            "x2": 778,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 90,
+        "timestamp": 3.0,
+        "object": "car",
+        "confidence": 0.541,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1089,
+            "y1": 153,
+            "x2": 1196,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 90,
+        "timestamp": 3.0,
+        "object": "car",
+        "confidence": 0.552,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 135,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 90,
+        "timestamp": 3.0,
+        "object": "car",
+        "confidence": 0.522,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 903,
+            "y1": 115,
+            "x2": 1072,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 90,
+        "timestamp": 3.0,
+        "object": "car",
+        "confidence": 0.404,
+        "track_id": 492,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 320,
+            "y1": 97,
+            "x2": 484,
+            "y2": 176
+        }
+    },
+    {
+        "frame": 93,
+        "timestamp": 3.1,
+        "object": "car",
+        "confidence": 0.819,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 586,
+            "y1": 92,
+            "x2": 779,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 93,
+        "timestamp": 3.1,
+        "object": "car",
+        "confidence": 0.538,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1089,
+            "y1": 153,
+            "x2": 1196,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 93,
+        "timestamp": 3.1,
+        "object": "car",
+        "confidence": 0.523,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 135,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 93,
+        "timestamp": 3.1,
+        "object": "car",
+        "confidence": 0.516,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 903,
+            "y1": 115,
+            "x2": 1073,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 96,
+        "timestamp": 3.2,
+        "object": "car",
+        "confidence": 0.824,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 584,
+            "y1": 92,
+            "x2": 781,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 96,
+        "timestamp": 3.2,
+        "object": "car",
+        "confidence": 0.486,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1089,
+            "y1": 153,
+            "x2": 1195,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 96,
+        "timestamp": 3.2,
+        "object": "car",
+        "confidence": 0.484,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 136,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 96,
+        "timestamp": 3.2,
+        "object": "car",
+        "confidence": 0.499,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 903,
+            "y1": 115,
+            "x2": 1073,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 99,
+        "timestamp": 3.3,
+        "object": "car",
+        "confidence": 0.798,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 586,
+            "y1": 92,
+            "x2": 779,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 99,
+        "timestamp": 3.3,
+        "object": "car",
+        "confidence": 0.482,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1089,
+            "y1": 153,
+            "x2": 1195,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 99,
+        "timestamp": 3.3,
+        "object": "car",
+        "confidence": 0.494,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 136,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 99,
+        "timestamp": 3.3,
+        "object": "car",
+        "confidence": 0.522,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 902,
+            "y1": 115,
+            "x2": 1073,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 99,
+        "timestamp": 3.3,
+        "object": "car",
+        "confidence": 0.463,
+        "track_id": 492,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 318,
+            "y1": 98,
+            "x2": 481,
+            "y2": 176
+        }
+    },
+    {
+        "frame": 102,
+        "timestamp": 3.4,
+        "object": "car",
+        "confidence": 0.788,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 584,
+            "y1": 90,
+            "x2": 782,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 102,
+        "timestamp": 3.4,
+        "object": "car",
+        "confidence": 0.482,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1089,
+            "y1": 153,
+            "x2": 1195,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 102,
+        "timestamp": 3.4,
+        "object": "car",
+        "confidence": 0.502,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 136,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 102,
+        "timestamp": 3.4,
+        "object": "car",
+        "confidence": 0.492,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 902,
+            "y1": 115,
+            "x2": 1073,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 102,
+        "timestamp": 3.4,
+        "object": "car",
+        "confidence": 0.414,
+        "track_id": 492,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 317,
+            "y1": 98,
+            "x2": 481,
+            "y2": 176
+        }
+    },
+    {
+        "frame": 105,
+        "timestamp": 3.5,
+        "object": "car",
+        "confidence": 0.803,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 582,
+            "y1": 88,
+            "x2": 785,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 105,
+        "timestamp": 3.5,
+        "object": "car",
+        "confidence": 0.481,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1195,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 105,
+        "timestamp": 3.5,
+        "object": "car",
+        "confidence": 0.516,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 135,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 105,
+        "timestamp": 3.5,
+        "object": "car",
+        "confidence": 0.492,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 902,
+            "y1": 115,
+            "x2": 1073,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 105,
+        "timestamp": 3.5,
+        "object": "car",
+        "confidence": 0.466,
+        "track_id": 492,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 318,
+            "y1": 98,
+            "x2": 482,
+            "y2": 176
+        }
+    },
+    {
+        "frame": 108,
+        "timestamp": 3.6,
+        "object": "car",
+        "confidence": 0.713,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 580,
+            "y1": 89,
+            "x2": 785,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 108,
+        "timestamp": 3.6,
+        "object": "car",
+        "confidence": 0.491,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1089,
+            "y1": 153,
+            "x2": 1195,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 108,
+        "timestamp": 3.6,
+        "object": "car",
+        "confidence": 0.487,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 135,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 108,
+        "timestamp": 3.6,
+        "object": "car",
+        "confidence": 0.497,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 901,
+            "y1": 112,
+            "x2": 1074,
+            "y2": 190
+        }
+    },
+    {
+        "frame": 108,
+        "timestamp": 3.6,
+        "object": "car",
+        "confidence": 0.421,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 841,
+            "y1": 54,
+            "x2": 964,
+            "y2": 101
+        }
+    },
+    {
+        "frame": 111,
+        "timestamp": 3.7,
+        "object": "car",
+        "confidence": 0.72,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 580,
+            "y1": 89,
+            "x2": 785,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 111,
+        "timestamp": 3.7,
+        "object": "car",
+        "confidence": 0.492,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1195,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 111,
+        "timestamp": 3.7,
+        "object": "car",
+        "confidence": 0.506,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 134,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 111,
+        "timestamp": 3.7,
+        "object": "car",
+        "confidence": 0.501,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 900,
+            "y1": 110,
+            "x2": 1074,
+            "y2": 189
+        }
+    },
+    {
+        "frame": 111,
+        "timestamp": 3.7,
+        "object": "car",
+        "confidence": 0.422,
+        "track_id": 492,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 319,
+            "y1": 98,
+            "x2": 483,
+            "y2": 176
+        }
+    },
+    {
+        "frame": 114,
+        "timestamp": 3.8,
+        "object": "car",
+        "confidence": 0.706,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 577,
+            "y1": 88,
+            "x2": 786,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 114,
+        "timestamp": 3.8,
+        "object": "car",
+        "confidence": 0.501,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1196,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 114,
+        "timestamp": 3.8,
+        "object": "car",
+        "confidence": 0.509,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 135,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 114,
+        "timestamp": 3.8,
+        "object": "car",
+        "confidence": 0.515,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 900,
+            "y1": 110,
+            "x2": 1074,
+            "y2": 189
+        }
+    },
+    {
+        "frame": 114,
+        "timestamp": 3.8,
+        "object": "car",
+        "confidence": 0.401,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 839,
+            "y1": 53,
+            "x2": 965,
+            "y2": 102
+        }
+    },
+    {
+        "frame": 117,
+        "timestamp": 3.9,
+        "object": "car",
+        "confidence": 0.698,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 571,
+            "y1": 86,
+            "x2": 785,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 117,
+        "timestamp": 3.9,
+        "object": "car",
+        "confidence": 0.502,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 153,
+            "x2": 1196,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 117,
+        "timestamp": 3.9,
+        "object": "car",
+        "confidence": 0.516,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 134,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 117,
+        "timestamp": 3.9,
+        "object": "car",
+        "confidence": 0.509,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 900,
+            "y1": 109,
+            "x2": 1074,
+            "y2": 188
+        }
+    },
+    {
+        "frame": 120,
+        "timestamp": 4.0,
+        "object": "car",
+        "confidence": 0.767,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 563,
+            "y1": 87,
+            "x2": 777,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 120,
+        "timestamp": 4.0,
+        "object": "car",
+        "confidence": 0.49,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 152,
+            "x2": 1195,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 120,
+        "timestamp": 4.0,
+        "object": "car",
+        "confidence": 0.496,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 134,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 120,
+        "timestamp": 4.0,
+        "object": "car",
+        "confidence": 0.507,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 901,
+            "y1": 110,
+            "x2": 1074,
+            "y2": 188
+        }
+    },
+    {
+        "frame": 120,
+        "timestamp": 4.0,
+        "object": "car",
+        "confidence": 0.441,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 840,
+            "y1": 54,
+            "x2": 965,
+            "y2": 101
+        }
+    },
+    {
+        "frame": 123,
+        "timestamp": 4.1,
+        "object": "car",
+        "confidence": 0.742,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 560,
+            "y1": 87,
+            "x2": 775,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 123,
+        "timestamp": 4.1,
+        "object": "car",
+        "confidence": 0.491,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 152,
+            "x2": 1195,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 123,
+        "timestamp": 4.1,
+        "object": "car",
+        "confidence": 0.488,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 134,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 123,
+        "timestamp": 4.1,
+        "object": "car",
+        "confidence": 0.505,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 901,
+            "y1": 110,
+            "x2": 1073,
+            "y2": 187
+        }
+    },
+    {
+        "frame": 123,
+        "timestamp": 4.1,
+        "object": "car",
+        "confidence": 0.416,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 839,
+            "y1": 54,
+            "x2": 965,
+            "y2": 102
+        }
+    },
+    {
+        "frame": 126,
+        "timestamp": 4.2,
+        "object": "car",
+        "confidence": 0.773,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 562,
+            "y1": 89,
+            "x2": 774,
+            "y2": 166
+        }
+    },
+    {
+        "frame": 126,
+        "timestamp": 4.2,
+        "object": "car",
+        "confidence": 0.485,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 152,
+            "x2": 1195,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 126,
+        "timestamp": 4.2,
+        "object": "car",
+        "confidence": 0.495,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 134,
+            "y1": 142,
+            "x2": 250,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 126,
+        "timestamp": 4.2,
+        "object": "car",
+        "confidence": 0.493,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 902,
+            "y1": 110,
+            "x2": 1073,
+            "y2": 187
+        }
+    },
+    {
+        "frame": 129,
+        "timestamp": 4.3,
+        "object": "car",
+        "confidence": 0.782,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 562,
+            "y1": 90,
+            "x2": 776,
+            "y2": 166
+        }
+    },
+    {
+        "frame": 129,
+        "timestamp": 4.3,
+        "object": "car",
+        "confidence": 0.475,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 152,
+            "x2": 1195,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 129,
+        "timestamp": 4.3,
+        "object": "car",
+        "confidence": 0.507,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 134,
+            "y1": 142,
+            "x2": 250,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 129,
+        "timestamp": 4.3,
+        "object": "car",
+        "confidence": 0.507,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 901,
+            "y1": 110,
+            "x2": 1073,
+            "y2": 187
+        }
+    },
+    {
+        "frame": 129,
+        "timestamp": 4.3,
+        "object": "car",
+        "confidence": 0.403,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 378,
+            "y1": 97,
+            "x2": 482,
+            "y2": 155
+        }
+    },
+    {
+        "frame": 129,
+        "timestamp": 4.3,
+        "object": "car",
+        "confidence": 0.413,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 838,
+            "y1": 54,
+            "x2": 966,
+            "y2": 102
+        }
+    },
+    {
+        "frame": 132,
+        "timestamp": 4.4,
+        "object": "car",
+        "confidence": 0.714,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 565,
+            "y1": 90,
+            "x2": 779,
+            "y2": 166
+        }
+    },
+    {
+        "frame": 132,
+        "timestamp": 4.4,
+        "object": "car",
+        "confidence": 0.428,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1089,
+            "y1": 153,
+            "x2": 1196,
+            "y2": 227
+        }
+    },
+    {
+        "frame": 132,
+        "timestamp": 4.4,
+        "object": "car",
+        "confidence": 0.507,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 134,
+            "y1": 142,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 132,
+        "timestamp": 4.4,
+        "object": "car",
+        "confidence": 0.579,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 901,
+            "y1": 112,
+            "x2": 1076,
+            "y2": 191
+        }
+    },
+    {
+        "frame": 132,
+        "timestamp": 4.4,
+        "object": "car",
+        "confidence": 0.493,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 373,
+            "y1": 97,
+            "x2": 486,
+            "y2": 159
+        }
+    },
+    {
+        "frame": 132,
+        "timestamp": 4.4,
+        "object": "car",
+        "confidence": 0.494,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 838,
+            "y1": 53,
+            "x2": 967,
+            "y2": 102
+        }
+    },
+    {
+        "frame": 135,
+        "timestamp": 4.5,
+        "object": "car",
+        "confidence": 0.699,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 568,
+            "y1": 89,
+            "x2": 783,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 135,
+        "timestamp": 4.5,
+        "object": "car",
+        "confidence": 0.42,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1088,
+            "y1": 153,
+            "x2": 1196,
+            "y2": 228
+        }
+    },
+    {
+        "frame": 135,
+        "timestamp": 4.5,
+        "object": "car",
+        "confidence": 0.54,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 134,
+            "y1": 142,
+            "x2": 249,
+            "y2": 207
+        }
+    },
+    {
+        "frame": 135,
+        "timestamp": 4.5,
+        "object": "car",
+        "confidence": 0.576,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 900,
+            "y1": 113,
+            "x2": 1077,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 135,
+        "timestamp": 4.5,
+        "object": "car",
+        "confidence": 0.51,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 373,
+            "y1": 96,
+            "x2": 487,
+            "y2": 161
+        }
+    },
+    {
+        "frame": 135,
+        "timestamp": 4.5,
+        "object": "car",
+        "confidence": 0.508,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 838,
+            "y1": 53,
+            "x2": 967,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 138,
+        "timestamp": 4.6,
+        "object": "car",
+        "confidence": 0.711,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 571,
+            "y1": 89,
+            "x2": 786,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 138,
+        "timestamp": 4.6,
+        "object": "car",
+        "confidence": 0.419,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1087,
+            "y1": 153,
+            "x2": 1195,
+            "y2": 228
+        }
+    },
+    {
+        "frame": 138,
+        "timestamp": 4.6,
+        "object": "car",
+        "confidence": 0.523,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 135,
+            "y1": 142,
+            "x2": 249,
+            "y2": 207
+        }
+    },
+    {
+        "frame": 138,
+        "timestamp": 4.6,
+        "object": "car",
+        "confidence": 0.583,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 900,
+            "y1": 113,
+            "x2": 1077,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 138,
+        "timestamp": 4.6,
+        "object": "car",
+        "confidence": 0.495,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 373,
+            "y1": 96,
+            "x2": 488,
+            "y2": 162
+        }
+    },
+    {
+        "frame": 138,
+        "timestamp": 4.6,
+        "object": "car",
+        "confidence": 0.508,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 838,
+            "y1": 53,
+            "x2": 968,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 141,
+        "timestamp": 4.7,
+        "object": "car",
+        "confidence": 0.768,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 576,
+            "y1": 88,
+            "x2": 789,
+            "y2": 165
+        }
+    },
+    {
+        "frame": 141,
+        "timestamp": 4.7,
+        "object": "car",
+        "confidence": 0.403,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1087,
+            "y1": 153,
+            "x2": 1195,
+            "y2": 228
+        }
+    },
+    {
+        "frame": 141,
+        "timestamp": 4.7,
+        "object": "car",
+        "confidence": 0.547,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 135,
+            "y1": 142,
+            "x2": 249,
+            "y2": 207
+        }
+    },
+    {
+        "frame": 141,
+        "timestamp": 4.7,
+        "object": "car",
+        "confidence": 0.579,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 900,
+            "y1": 113,
+            "x2": 1077,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 141,
+        "timestamp": 4.7,
+        "object": "car",
+        "confidence": 0.473,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 373,
+            "y1": 96,
+            "x2": 488,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 141,
+        "timestamp": 4.7,
+        "object": "car",
+        "confidence": 0.505,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 838,
+            "y1": 53,
+            "x2": 968,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 144,
+        "timestamp": 4.8,
+        "object": "car",
+        "confidence": 0.746,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 581,
+            "y1": 91,
+            "x2": 785,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 144,
+        "timestamp": 4.8,
+        "object": "car",
+        "confidence": 0.435,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1087,
+            "y1": 153,
+            "x2": 1195,
+            "y2": 228
+        }
+    },
+    {
+        "frame": 144,
+        "timestamp": 4.8,
+        "object": "car",
+        "confidence": 0.501,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 135,
+            "y1": 142,
+            "x2": 248,
+            "y2": 207
+        }
+    },
+    {
+        "frame": 144,
+        "timestamp": 4.8,
+        "object": "car",
+        "confidence": 0.548,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 900,
+            "y1": 113,
+            "x2": 1077,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 144,
+        "timestamp": 4.8,
+        "object": "car",
+        "confidence": 0.423,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 837,
+            "y1": 52,
+            "x2": 968,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 147,
+        "timestamp": 4.9,
+        "object": "car",
+        "confidence": 0.753,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 583,
+            "y1": 92,
+            "x2": 783,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 147,
+        "timestamp": 4.9,
+        "object": "car",
+        "confidence": 0.435,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1087,
+            "y1": 153,
+            "x2": 1194,
+            "y2": 228
+        }
+    },
+    {
+        "frame": 147,
+        "timestamp": 4.9,
+        "object": "car",
+        "confidence": 0.522,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 135,
+            "y1": 142,
+            "x2": 249,
+            "y2": 207
+        }
+    },
+    {
+        "frame": 147,
+        "timestamp": 4.9,
+        "object": "car",
+        "confidence": 0.57,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 113,
+            "x2": 1077,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 147,
+        "timestamp": 4.9,
+        "object": "car",
+        "confidence": 0.443,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 836,
+            "y1": 52,
+            "x2": 969,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 147,
+        "timestamp": 4.9,
+        "object": "car",
+        "confidence": 0.402,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 373,
+            "y1": 97,
+            "x2": 487,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 150,
+        "timestamp": 5.0,
+        "object": "car",
+        "confidence": 0.727,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 578,
+            "y1": 91,
+            "x2": 783,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 150,
+        "timestamp": 5.0,
+        "object": "car",
+        "confidence": 0.449,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1086,
+            "y1": 153,
+            "x2": 1191,
+            "y2": 227
+        }
+    },
+    {
+        "frame": 150,
+        "timestamp": 5.0,
+        "object": "car",
+        "confidence": 0.514,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 136,
+            "y1": 142,
+            "x2": 249,
+            "y2": 207
+        }
+    },
+    {
+        "frame": 150,
+        "timestamp": 5.0,
+        "object": "car",
+        "confidence": 0.552,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 113,
+            "x2": 1077,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 150,
+        "timestamp": 5.0,
+        "object": "car",
+        "confidence": 0.474,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 374,
+            "y1": 97,
+            "x2": 488,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 153,
+        "timestamp": 5.1,
+        "object": "car",
+        "confidence": 0.764,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 575,
+            "y1": 90,
+            "x2": 783,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 153,
+        "timestamp": 5.1,
+        "object": "car",
+        "confidence": 0.445,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1086,
+            "y1": 153,
+            "x2": 1190,
+            "y2": 227
+        }
+    },
+    {
+        "frame": 153,
+        "timestamp": 5.1,
+        "object": "car",
+        "confidence": 0.497,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 137,
+            "y1": 142,
+            "x2": 249,
+            "y2": 207
+        }
+    },
+    {
+        "frame": 153,
+        "timestamp": 5.1,
+        "object": "car",
+        "confidence": 0.565,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 113,
+            "x2": 1077,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 153,
+        "timestamp": 5.1,
+        "object": "car",
+        "confidence": 0.508,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 375,
+            "y1": 96,
+            "x2": 488,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 153,
+        "timestamp": 5.1,
+        "object": "car",
+        "confidence": 0.408,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 836,
+            "y1": 52,
+            "x2": 969,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 156,
+        "timestamp": 5.2,
+        "object": "car",
+        "confidence": 0.788,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 582,
+            "y1": 92,
+            "x2": 783,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 156,
+        "timestamp": 5.2,
+        "object": "car",
+        "confidence": 0.462,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1086,
+            "y1": 153,
+            "x2": 1190,
+            "y2": 227
+        }
+    },
+    {
+        "frame": 156,
+        "timestamp": 5.2,
+        "object": "car",
+        "confidence": 0.465,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 136,
+            "y1": 143,
+            "x2": 248,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 156,
+        "timestamp": 5.2,
+        "object": "car",
+        "confidence": 0.612,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 898,
+            "y1": 112,
+            "x2": 1078,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 156,
+        "timestamp": 5.2,
+        "object": "car",
+        "confidence": 0.441,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 837,
+            "y1": 52,
+            "x2": 968,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 156,
+        "timestamp": 5.2,
+        "object": "car",
+        "confidence": 0.466,
+        "track_id": 492,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 320,
+            "y1": 99,
+            "x2": 484,
+            "y2": 176
+        }
+    },
+    {
+        "frame": 159,
+        "timestamp": 5.3,
+        "object": "car",
+        "confidence": 0.765,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 584,
+            "y1": 92,
+            "x2": 782,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 159,
+        "timestamp": 5.3,
+        "object": "car",
+        "confidence": 0.466,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1086,
+            "y1": 153,
+            "x2": 1190,
+            "y2": 228
+        }
+    },
+    {
+        "frame": 159,
+        "timestamp": 5.3,
+        "object": "car",
+        "confidence": 0.479,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 137,
+            "y1": 143,
+            "x2": 248,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 159,
+        "timestamp": 5.3,
+        "object": "car",
+        "confidence": 0.62,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 898,
+            "y1": 112,
+            "x2": 1079,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 159,
+        "timestamp": 5.3,
+        "object": "car",
+        "confidence": 0.443,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 837,
+            "y1": 52,
+            "x2": 968,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 159,
+        "timestamp": 5.3,
+        "object": "car",
+        "confidence": 0.429,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 375,
+            "y1": 97,
+            "x2": 488,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 162,
+        "timestamp": 5.4,
+        "object": "car",
+        "confidence": 0.777,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 587,
+            "y1": 93,
+            "x2": 782,
+            "y2": 162
+        }
+    },
+    {
+        "frame": 162,
+        "timestamp": 5.4,
+        "object": "car",
+        "confidence": 0.475,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1087,
+            "y1": 153,
+            "x2": 1189,
+            "y2": 227
+        }
+    },
+    {
+        "frame": 162,
+        "timestamp": 5.4,
+        "object": "car",
+        "confidence": 0.475,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 137,
+            "y1": 143,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 162,
+        "timestamp": 5.4,
+        "object": "car",
+        "confidence": 0.608,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 898,
+            "y1": 112,
+            "x2": 1078,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 162,
+        "timestamp": 5.4,
+        "object": "car",
+        "confidence": 0.441,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 837,
+            "y1": 52,
+            "x2": 968,
+            "y2": 104
+        }
+    },
+    {
+        "frame": 162,
+        "timestamp": 5.4,
+        "object": "car",
+        "confidence": 0.407,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 375,
+            "y1": 97,
+            "x2": 487,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 165,
+        "timestamp": 5.5,
+        "object": "car",
+        "confidence": 0.782,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 588,
+            "y1": 94,
+            "x2": 781,
+            "y2": 162
+        }
+    },
+    {
+        "frame": 165,
+        "timestamp": 5.5,
+        "object": "car",
+        "confidence": 0.457,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1088,
+            "y1": 153,
+            "x2": 1189,
+            "y2": 226
+        }
+    },
+    {
+        "frame": 165,
+        "timestamp": 5.5,
+        "object": "car",
+        "confidence": 0.454,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 138,
+            "y1": 142,
+            "x2": 250,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 165,
+        "timestamp": 5.5,
+        "object": "car",
+        "confidence": 0.61,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 898,
+            "y1": 112,
+            "x2": 1078,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 165,
+        "timestamp": 5.5,
+        "object": "car",
+        "confidence": 0.442,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 837,
+            "y1": 52,
+            "x2": 968,
+            "y2": 104
+        }
+    },
+    {
+        "frame": 165,
+        "timestamp": 5.5,
+        "object": "car",
+        "confidence": 0.401,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 375,
+            "y1": 97,
+            "x2": 487,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 168,
+        "timestamp": 5.6,
+        "object": "car",
+        "confidence": 0.772,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 586,
+            "y1": 93,
+            "x2": 779,
+            "y2": 161
+        }
+    },
+    {
+        "frame": 168,
+        "timestamp": 5.6,
+        "object": "car",
+        "confidence": 0.415,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1090,
+            "y1": 152,
+            "x2": 1191,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 168,
+        "timestamp": 5.6,
+        "object": "car",
+        "confidence": 0.492,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 135,
+            "y1": 142,
+            "x2": 248,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 168,
+        "timestamp": 5.6,
+        "object": "car",
+        "confidence": 0.59,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 112,
+            "x2": 1078,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 168,
+        "timestamp": 5.6,
+        "object": "car",
+        "confidence": 0.439,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 838,
+            "y1": 52,
+            "x2": 967,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 168,
+        "timestamp": 5.6,
+        "object": "car",
+        "confidence": 0.417,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 377,
+            "y1": 98,
+            "x2": 486,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 171,
+        "timestamp": 5.7,
+        "object": "car",
+        "confidence": 0.758,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 585,
+            "y1": 93,
+            "x2": 779,
+            "y2": 161
+        }
+    },
+    {
+        "frame": 171,
+        "timestamp": 5.7,
+        "object": "car",
+        "confidence": 0.478,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 136,
+            "y1": 143,
+            "x2": 248,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 171,
+        "timestamp": 5.7,
+        "object": "car",
+        "confidence": 0.593,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 111,
+            "x2": 1078,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 171,
+        "timestamp": 5.7,
+        "object": "car",
+        "confidence": 0.453,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 837,
+            "y1": 52,
+            "x2": 968,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 171,
+        "timestamp": 5.7,
+        "object": "car",
+        "confidence": 0.414,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 378,
+            "y1": 98,
+            "x2": 485,
+            "y2": 162
+        }
+    },
+    {
+        "frame": 174,
+        "timestamp": 5.8,
+        "object": "car",
+        "confidence": 0.717,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 582,
+            "y1": 93,
+            "x2": 781,
+            "y2": 162
+        }
+    },
+    {
+        "frame": 174,
+        "timestamp": 5.8,
+        "object": "car",
+        "confidence": 0.493,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 137,
+            "y1": 143,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 174,
+        "timestamp": 5.8,
+        "object": "car",
+        "confidence": 0.607,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 898,
+            "y1": 111,
+            "x2": 1078,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 174,
+        "timestamp": 5.8,
+        "object": "car",
+        "confidence": 0.451,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 837,
+            "y1": 52,
+            "x2": 968,
+            "y2": 104
+        }
+    },
+    {
+        "frame": 174,
+        "timestamp": 5.8,
+        "object": "car",
+        "confidence": 0.452,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 378,
+            "y1": 98,
+            "x2": 486,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 174,
+        "timestamp": 5.8,
+        "object": "car",
+        "confidence": 0.405,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1091,
+            "y1": 152,
+            "x2": 1192,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 177,
+        "timestamp": 5.9,
+        "object": "car",
+        "confidence": 0.733,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 582,
+            "y1": 93,
+            "x2": 781,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 177,
+        "timestamp": 5.9,
+        "object": "car",
+        "confidence": 0.494,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 138,
+            "y1": 143,
+            "x2": 249,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 177,
+        "timestamp": 5.9,
+        "object": "car",
+        "confidence": 0.61,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 898,
+            "y1": 111,
+            "x2": 1078,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 177,
+        "timestamp": 5.9,
+        "object": "car",
+        "confidence": 0.466,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 837,
+            "y1": 52,
+            "x2": 968,
+            "y2": 104
+        }
+    },
+    {
+        "frame": 177,
+        "timestamp": 5.9,
+        "object": "car",
+        "confidence": 0.436,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 378,
+            "y1": 98,
+            "x2": 486,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 177,
+        "timestamp": 5.9,
+        "object": "car",
+        "confidence": 0.41,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1091,
+            "y1": 152,
+            "x2": 1193,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 180,
+        "timestamp": 6.0,
+        "object": "car",
+        "confidence": 0.756,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 579,
+            "y1": 92,
+            "x2": 783,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 180,
+        "timestamp": 6.0,
+        "object": "car",
+        "confidence": 0.489,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 137,
+            "y1": 143,
+            "x2": 248,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 180,
+        "timestamp": 6.0,
+        "object": "car",
+        "confidence": 0.587,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 111,
+            "x2": 1078,
+            "y2": 195
+        }
+    },
+    {
+        "frame": 180,
+        "timestamp": 6.0,
+        "object": "car",
+        "confidence": 0.416,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 838,
+            "y1": 52,
+            "x2": 967,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 180,
+        "timestamp": 6.0,
+        "object": "car",
+        "confidence": 0.425,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 377,
+            "y1": 98,
+            "x2": 485,
+            "y2": 162
+        }
+    },
+    {
+        "frame": 180,
+        "timestamp": 6.0,
+        "object": "car",
+        "confidence": 0.403,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1091,
+            "y1": 152,
+            "x2": 1192,
+            "y2": 224
+        }
+    },
+    {
+        "frame": 183,
+        "timestamp": 6.1,
+        "object": "car",
+        "confidence": 0.714,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 579,
+            "y1": 93,
+            "x2": 782,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 183,
+        "timestamp": 6.1,
+        "object": "car",
+        "confidence": 0.522,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 138,
+            "y1": 143,
+            "x2": 248,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 183,
+        "timestamp": 6.1,
+        "object": "car",
+        "confidence": 0.597,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 111,
+            "x2": 1077,
+            "y2": 195
+        }
+    },
+    {
+        "frame": 183,
+        "timestamp": 6.1,
+        "object": "car",
+        "confidence": 0.42,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 838,
+            "y1": 52,
+            "x2": 968,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 183,
+        "timestamp": 6.1,
+        "object": "car",
+        "confidence": 0.416,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 377,
+            "y1": 98,
+            "x2": 484,
+            "y2": 162
+        }
+    },
+    {
+        "frame": 186,
+        "timestamp": 6.2,
+        "object": "car",
+        "confidence": 0.709,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 581,
+            "y1": 94,
+            "x2": 781,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 186,
+        "timestamp": 6.2,
+        "object": "car",
+        "confidence": 0.541,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 137,
+            "y1": 143,
+            "x2": 248,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 186,
+        "timestamp": 6.2,
+        "object": "car",
+        "confidence": 0.606,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 112,
+            "x2": 1077,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 186,
+        "timestamp": 6.2,
+        "object": "car",
+        "confidence": 0.418,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 837,
+            "y1": 52,
+            "x2": 968,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 186,
+        "timestamp": 6.2,
+        "object": "car",
+        "confidence": 0.405,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 378,
+            "y1": 98,
+            "x2": 484,
+            "y2": 161
+        }
+    },
+    {
+        "frame": 186,
+        "timestamp": 6.2,
+        "object": "car",
+        "confidence": 0.429,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1091,
+            "y1": 152,
+            "x2": 1192,
+            "y2": 224
+        }
+    },
+    {
+        "frame": 189,
+        "timestamp": 6.3,
+        "object": "car",
+        "confidence": 0.711,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 583,
+            "y1": 95,
+            "x2": 780,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 189,
+        "timestamp": 6.3,
+        "object": "car",
+        "confidence": 0.526,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 137,
+            "y1": 143,
+            "x2": 248,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 189,
+        "timestamp": 6.3,
+        "object": "car",
+        "confidence": 0.617,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 112,
+            "x2": 1077,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 189,
+        "timestamp": 6.3,
+        "object": "car",
+        "confidence": 0.422,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 837,
+            "y1": 52,
+            "x2": 968,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 189,
+        "timestamp": 6.3,
+        "object": "car",
+        "confidence": 0.425,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1091,
+            "y1": 152,
+            "x2": 1192,
+            "y2": 224
+        }
+    },
+    {
+        "frame": 192,
+        "timestamp": 6.4,
+        "object": "car",
+        "confidence": 0.664,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 578,
+            "y1": 93,
+            "x2": 783,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 192,
+        "timestamp": 6.4,
+        "object": "car",
+        "confidence": 0.544,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 135,
+            "y1": 142,
+            "x2": 247,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 192,
+        "timestamp": 6.4,
+        "object": "car",
+        "confidence": 0.604,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 111,
+            "x2": 1078,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 192,
+        "timestamp": 6.4,
+        "object": "car",
+        "confidence": 0.506,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 839,
+            "y1": 53,
+            "x2": 965,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 192,
+        "timestamp": 6.4,
+        "object": "car",
+        "confidence": 0.472,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1093,
+            "y1": 153,
+            "x2": 1196,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 192,
+        "timestamp": 6.4,
+        "object": "car",
+        "confidence": 0.424,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 379,
+            "y1": 98,
+            "x2": 483,
+            "y2": 160
+        }
+    },
+    {
+        "frame": 195,
+        "timestamp": 6.5,
+        "object": "car",
+        "confidence": 0.645,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 589,
+            "y1": 94,
+            "x2": 788,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 195,
+        "timestamp": 6.5,
+        "object": "car",
+        "confidence": 0.533,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 134,
+            "y1": 142,
+            "x2": 247,
+            "y2": 209
+        }
+    },
+    {
+        "frame": 195,
+        "timestamp": 6.5,
+        "object": "car",
+        "confidence": 0.601,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 110,
+            "x2": 1078,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 195,
+        "timestamp": 6.5,
+        "object": "car",
+        "confidence": 0.477,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 838,
+            "y1": 53,
+            "x2": 966,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 195,
+        "timestamp": 6.5,
+        "object": "car",
+        "confidence": 0.444,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1094,
+            "y1": 153,
+            "x2": 1198,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 195,
+        "timestamp": 6.5,
+        "object": "car",
+        "confidence": 0.426,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 380,
+            "y1": 98,
+            "x2": 483,
+            "y2": 159
+        }
+    },
+    {
+        "frame": 198,
+        "timestamp": 6.6,
+        "object": "car",
+        "confidence": 0.761,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 597,
+            "y1": 93,
+            "x2": 792,
+            "y2": 162
+        }
+    },
+    {
+        "frame": 198,
+        "timestamp": 6.6,
+        "object": "car",
+        "confidence": 0.521,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 134,
+            "y1": 142,
+            "x2": 247,
+            "y2": 209
+        }
+    },
+    {
+        "frame": 198,
+        "timestamp": 6.6,
+        "object": "car",
+        "confidence": 0.613,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 110,
+            "x2": 1078,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 198,
+        "timestamp": 6.6,
+        "object": "car",
+        "confidence": 0.487,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 838,
+            "y1": 53,
+            "x2": 966,
+            "y2": 104
+        }
+    },
+    {
+        "frame": 198,
+        "timestamp": 6.6,
+        "object": "car",
+        "confidence": 0.454,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1094,
+            "y1": 153,
+            "x2": 1198,
+            "y2": 225
+        }
+    },
+    {
+        "frame": 198,
+        "timestamp": 6.6,
+        "object": "car",
+        "confidence": 0.407,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 383,
+            "y1": 99,
+            "x2": 478,
+            "y2": 154
+        }
+    },
+    {
+        "frame": 201,
+        "timestamp": 6.7,
+        "object": "car",
+        "confidence": 0.699,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 594,
+            "y1": 93,
+            "x2": 790,
+            "y2": 162
+        }
+    },
+    {
+        "frame": 201,
+        "timestamp": 6.7,
+        "object": "car",
+        "confidence": 0.528,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 134,
+            "y1": 142,
+            "x2": 247,
+            "y2": 209
+        }
+    },
+    {
+        "frame": 201,
+        "timestamp": 6.7,
+        "object": "car",
+        "confidence": 0.596,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 110,
+            "x2": 1077,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 201,
+        "timestamp": 6.7,
+        "object": "car",
+        "confidence": 0.487,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 838,
+            "y1": 53,
+            "x2": 966,
+            "y2": 104
+        }
+    },
+    {
+        "frame": 201,
+        "timestamp": 6.7,
+        "object": "car",
+        "confidence": 0.407,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1094,
+            "y1": 153,
+            "x2": 1198,
+            "y2": 224
+        }
+    },
+    {
+        "frame": 201,
+        "timestamp": 6.7,
+        "object": "car",
+        "confidence": 0.417,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 384,
+            "y1": 99,
+            "x2": 476,
+            "y2": 151
+        }
+    },
+    {
+        "frame": 204,
+        "timestamp": 6.8,
+        "object": "car",
+        "confidence": 0.721,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 598,
+            "y1": 93,
+            "x2": 790,
+            "y2": 162
+        }
+    },
+    {
+        "frame": 204,
+        "timestamp": 6.8,
+        "object": "car",
+        "confidence": 0.518,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 134,
+            "y1": 142,
+            "x2": 247,
+            "y2": 208
+        }
+    },
+    {
+        "frame": 204,
+        "timestamp": 6.8,
+        "object": "car",
+        "confidence": 0.613,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 110,
+            "x2": 1078,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 204,
+        "timestamp": 6.8,
+        "object": "car",
+        "confidence": 0.534,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 839,
+            "y1": 53,
+            "x2": 964,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 204,
+        "timestamp": 6.8,
+        "object": "car",
+        "confidence": 0.438,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1095,
+            "y1": 152,
+            "x2": 1196,
+            "y2": 221
+        }
+    },
+    {
+        "frame": 207,
+        "timestamp": 6.9,
+        "object": "car",
+        "confidence": 0.752,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 595,
+            "y1": 92,
+            "x2": 792,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 207,
+        "timestamp": 6.9,
+        "object": "car",
+        "confidence": 0.532,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 133,
+            "y1": 142,
+            "x2": 247,
+            "y2": 209
+        }
+    },
+    {
+        "frame": 207,
+        "timestamp": 6.9,
+        "object": "car",
+        "confidence": 0.636,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 110,
+            "x2": 1078,
+            "y2": 193
+        }
+    },
+    {
+        "frame": 207,
+        "timestamp": 6.9,
+        "object": "car",
+        "confidence": 0.522,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 839,
+            "y1": 53,
+            "x2": 965,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 207,
+        "timestamp": 6.9,
+        "object": "car",
+        "confidence": 0.43,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1094,
+            "y1": 152,
+            "x2": 1196,
+            "y2": 221
+        }
+    },
+    {
+        "frame": 210,
+        "timestamp": 7.0,
+        "object": "car",
+        "confidence": 0.727,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 590,
+            "y1": 88,
+            "x2": 798,
+            "y2": 164
+        }
+    },
+    {
+        "frame": 210,
+        "timestamp": 7.0,
+        "object": "car",
+        "confidence": 0.529,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 133,
+            "y1": 142,
+            "x2": 247,
+            "y2": 209
+        }
+    },
+    {
+        "frame": 210,
+        "timestamp": 7.0,
+        "object": "car",
+        "confidence": 0.647,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 109,
+            "x2": 1078,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 210,
+        "timestamp": 7.0,
+        "object": "car",
+        "confidence": 0.526,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 838,
+            "y1": 53,
+            "x2": 965,
+            "y2": 104
+        }
+    },
+    {
+        "frame": 210,
+        "timestamp": 7.0,
+        "object": "car",
+        "confidence": 0.435,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1094,
+            "y1": 152,
+            "x2": 1196,
+            "y2": 221
+        }
+    },
+    {
+        "frame": 210,
+        "timestamp": 7.0,
+        "object": "car",
+        "confidence": 0.424,
+        "track_id": 492,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 319,
+            "y1": 98,
+            "x2": 492,
+            "y2": 177
+        }
+    },
+    {
+        "frame": 213,
+        "timestamp": 7.1,
+        "object": "car",
+        "confidence": 0.566,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 594,
+            "y1": 88,
+            "x2": 796,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 213,
+        "timestamp": 7.1,
+        "object": "car",
+        "confidence": 0.529,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 133,
+            "y1": 142,
+            "x2": 247,
+            "y2": 209
+        }
+    },
+    {
+        "frame": 213,
+        "timestamp": 7.1,
+        "object": "car",
+        "confidence": 0.634,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 899,
+            "y1": 109,
+            "x2": 1078,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 213,
+        "timestamp": 7.1,
+        "object": "car",
+        "confidence": 0.521,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 838,
+            "y1": 53,
+            "x2": 965,
+            "y2": 104
+        }
+    },
+    {
+        "frame": 213,
+        "timestamp": 7.1,
+        "object": "car",
+        "confidence": 0.448,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1093,
+            "y1": 152,
+            "x2": 1197,
+            "y2": 221
+        }
+    },
+    {
+        "frame": 213,
+        "timestamp": 7.1,
+        "object": "car",
+        "confidence": 0.465,
+        "track_id": 492,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 318,
+            "y1": 98,
+            "x2": 491,
+            "y2": 176
+        }
+    },
+    {
+        "frame": 216,
+        "timestamp": 7.2,
+        "object": "car",
+        "confidence": 0.663,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 597,
+            "y1": 91,
+            "x2": 789,
+            "y2": 163
+        }
+    },
+    {
+        "frame": 216,
+        "timestamp": 7.2,
+        "object": "car",
+        "confidence": 0.528,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 133,
+            "y1": 142,
+            "x2": 248,
+            "y2": 209
+        }
+    },
+    {
+        "frame": 216,
+        "timestamp": 7.2,
+        "object": "car",
+        "confidence": 0.633,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 900,
+            "y1": 110,
+            "x2": 1078,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 216,
+        "timestamp": 7.2,
+        "object": "car",
+        "confidence": 0.511,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 839,
+            "y1": 54,
+            "x2": 965,
+            "y2": 103
+        }
+    },
+    {
+        "frame": 216,
+        "timestamp": 7.2,
+        "object": "car",
+        "confidence": 0.424,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1092,
+            "y1": 152,
+            "x2": 1197,
+            "y2": 222
+        }
+    },
+    {
+        "frame": 216,
+        "timestamp": 7.2,
+        "object": "car",
+        "confidence": 0.459,
+        "track_id": 492,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 317,
+            "y1": 98,
+            "x2": 488,
+            "y2": 176
+        }
+    },
+    {
+        "frame": 219,
+        "timestamp": 7.3,
+        "object": "car",
+        "confidence": 0.707,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 600,
+            "y1": 91,
+            "x2": 788,
+            "y2": 162
+        }
+    },
+    {
+        "frame": 219,
+        "timestamp": 7.3,
+        "object": "car",
+        "confidence": 0.556,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 133,
+            "y1": 142,
+            "x2": 248,
+            "y2": 209
+        }
+    },
+    {
+        "frame": 219,
+        "timestamp": 7.3,
+        "object": "car",
+        "confidence": 0.634,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 900,
+            "y1": 110,
+            "x2": 1078,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 219,
+        "timestamp": 7.3,
+        "object": "car",
+        "confidence": 0.48,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 839,
+            "y1": 54,
+            "x2": 965,
+            "y2": 104
+        }
+    },
+    {
+        "frame": 219,
+        "timestamp": 7.3,
+        "object": "car",
+        "confidence": 0.441,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1091,
+            "y1": 152,
+            "x2": 1198,
+            "y2": 223
+        }
+    },
+    {
+        "frame": 219,
+        "timestamp": 7.3,
+        "object": "car",
+        "confidence": 0.461,
+        "track_id": 492,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 317,
+            "y1": 98,
+            "x2": 487,
+            "y2": 176
+        }
+    },
+    {
+        "frame": 222,
+        "timestamp": 7.4,
+        "object": "car",
+        "confidence": 0.745,
+        "track_id": 485,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 602,
+            "y1": 92,
+            "x2": 786,
+            "y2": 162
+        }
+    },
+    {
+        "frame": 222,
+        "timestamp": 7.4,
+        "object": "car",
+        "confidence": 0.56,
+        "track_id": 489,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 133,
+            "y1": 142,
+            "x2": 248,
+            "y2": 209
+        }
+    },
+    {
+        "frame": 222,
+        "timestamp": 7.4,
+        "object": "car",
+        "confidence": 0.64,
+        "track_id": 377,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 900,
+            "y1": 110,
+            "x2": 1077,
+            "y2": 194
+        }
+    },
+    {
+        "frame": 222,
+        "timestamp": 7.4,
+        "object": "car",
+        "confidence": 0.48,
+        "track_id": 490,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 839,
+            "y1": 54,
+            "x2": 966,
+            "y2": 104
+        }
+    },
+    {
+        "frame": 222,
+        "timestamp": 7.4,
+        "object": "car",
+        "confidence": 0.446,
+        "track_id": 488,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 1091,
+            "y1": 153,
+            "x2": 1199,
+            "y2": 224
+        }
+    },
+    {
+        "frame": 222,
+        "timestamp": 7.4,
+        "object": "car",
+        "confidence": 0.546,
+        "track_id": 494,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 381,
+            "y1": 98,
+            "x2": 479,
+            "y2": 152
+        }
+    }
+]

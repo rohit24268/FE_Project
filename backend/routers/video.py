@@ -51,7 +51,9 @@ async def analyze_cctv(
         "analysis_id": result["analysis_id"],
         "total_detections": result["total_detections"],
         "object_counts": result["object_counts"],
+        "threat_analysis": result.get("threat_analysis"),
         "annotated_video": f"/results/{result['analysis_id']}_annotated.mp4",
         "detections_file": f"/results/{result['analysis_id']}_detections.json",
+        "threats_file": f"/results/{result['analysis_id']}_threats.json",
         "detections": result["detections"]
     }

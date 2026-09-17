@@ -5,6 +5,11 @@ import json
 import uuid
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from services.ai_investigator import analyze_crop_attributes
+from services.threat_service import (
+    get_base_threat_weight,
+    score_frame_threat,
+    analyze_video_threats,
+)
 
 
 # --------------------------------------------------
@@ -37,6 +42,11 @@ def analyze_video(video_path: str, result_dir: str):
     output_json = (
         result_path /
         f"{analysis_id}_detections.json"
+    )
+
+    output_threats_json = (
+        result_path /
+        f"{analysis_id}_threats.json"
     )
 
 
@@ -180,6 +190,8 @@ def analyze_video(video_path: str, result_dir: str):
         # DETECTIONS
         # --------------------------------------------------
 
+        current_frame_detections = []
+
         for result in results:
 
             if result.boxes is None:
@@ -235,6 +247,8 @@ def analyze_video(video_path: str, result_dir: str):
                     original_fps
                 )
 
+                # Threat Classification
+                base_weight, threat_cat = get_base_threat_weight(object_name)
 
                 detection = {
 
@@ -259,6 +273,12 @@ def analyze_video(video_path: str, result_dir: str):
                     "track_id":
                         track_id,
 
+                    "is_threat":
+                        threat_cat != "NONE",
+
+                    "threat_category":
+                        threat_cat,
+
                     "bounding_box": {
 
                         "x1": x1,
@@ -275,13 +295,44 @@ def analyze_video(video_path: str, result_dir: str):
                 detections.append(
                     detection
                 )
+                current_frame_detections.append(
+                    detection
+                )
 
 
         # --------------------------------------------------
-        # DRAW DETECTIONS
+        # DRAW DETECTIONS & THREAT OVERLAY
         # --------------------------------------------------
 
         annotated_frame = results[0].plot()
+
+        # Threat Alert Overlay
+        f_threat = score_frame_threat(current_frame_detections)
+        if f_threat["threat_level"] in ("HIGH", "CRITICAL"):
+            threat_names = ", ".join(set(o["object"] for o in f_threat["threat_objects"]))
+            alert_text = f"THREAT ALERT: {f_threat['threat_level']} [{threat_names}]"
+            cv2.putText(
+                annotated_frame,
+                alert_text,
+                (20, 45),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                0.85,
+                (0, 0, 255),
+                2,
+                cv2.LINE_AA,
+            )
+        elif f_threat["threat_level"] == "MEDIUM":
+            alert_text = f"CAUTION: {f_threat['threat_level']} THREAT DETECTED"
+            cv2.putText(
+                annotated_frame,
+                alert_text,
+                (20, 45),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                0.75,
+                (0, 165, 255),
+                2,
+                cv2.LINE_AA,
+            )
 
 
         # --------------------------------------------------
@@ -354,7 +405,7 @@ def analyze_video(video_path: str, result_dir: str):
 
 
     # --------------------------------------------------
-    # SAVE JSON
+    # SAVE DETECTIONS & THREAT ANALYSIS JSON
     # --------------------------------------------------
 
     with open(
@@ -364,6 +415,19 @@ def analyze_video(video_path: str, result_dir: str):
 
         json.dump(
             detections,
+            file,
+            indent=4
+        )
+
+    threat_analysis = analyze_video_threats(detections)
+
+    with open(
+        output_threats_json,
+        "w"
+    ) as file:
+
+        json.dump(
+            threat_analysis,
             file,
             indent=4
         )
@@ -410,6 +474,11 @@ def analyze_video(video_path: str, result_dir: str):
         f"Total detections: "
         f"{len(detections)}"
     )
+    print(
+        f"Threat Level: {threat_analysis['overall_threat_level']} "
+        f"(Peak Score: {threat_analysis['max_threat_score']}, "
+        f"Incidents: {threat_analysis['total_incidents']})"
+    )
     print("--------------------------------")
 
 
@@ -428,11 +497,17 @@ def analyze_video(video_path: str, result_dir: str):
         "detections_file":
             str(output_json),
 
+        "threats_file":
+            str(output_threats_json),
+
         "total_detections":
             len(detections),
 
         "object_counts":
             object_counts,
+
+        "threat_analysis":
+            threat_analysis,
 
         "detections":
             detections

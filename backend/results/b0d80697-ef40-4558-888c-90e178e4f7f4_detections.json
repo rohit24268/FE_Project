@@ -1,0 +1,842 @@
+[
+    {
+        "frame": 0,
+        "timestamp": 0.0,
+        "object": "person",
+        "confidence": 0.889,
+        "track_id": null,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 275,
+            "y1": 259,
+            "x2": 683,
+            "y2": 713
+        }
+    },
+    {
+        "frame": 3,
+        "timestamp": 0.1,
+        "object": "person",
+        "confidence": 0.876,
+        "track_id": 502,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 273,
+            "y1": 259,
+            "x2": 680,
+            "y2": 712
+        }
+    },
+    {
+        "frame": 6,
+        "timestamp": 0.2,
+        "object": "person",
+        "confidence": 0.89,
+        "track_id": 502,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 271,
+            "y1": 258,
+            "x2": 681,
+            "y2": 714
+        }
+    },
+    {
+        "frame": 9,
+        "timestamp": 0.3,
+        "object": "person",
+        "confidence": 0.719,
+        "track_id": 502,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 266,
+            "y1": 256,
+            "x2": 676,
+            "y2": 711
+        }
+    },
+    {
+        "frame": 15,
+        "timestamp": 0.5,
+        "object": "person",
+        "confidence": 0.759,
+        "track_id": 502,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 250,
+            "y1": 251,
+            "x2": 664,
+            "y2": 715
+        }
+    },
+    {
+        "frame": 207,
+        "timestamp": 6.9,
+        "object": "person",
+        "confidence": 0.457,
+        "track_id": null,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 541,
+            "y1": 163,
+            "x2": 667,
+            "y2": 422
+        }
+    },
+    {
+        "frame": 231,
+        "timestamp": 7.7,
+        "object": "traffic light",
+        "confidence": 0.423,
+        "track_id": null,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 511,
+            "y1": 187,
+            "x2": 636,
+            "y2": 435
+        }
+    },
+    {
+        "frame": 231,
+        "timestamp": 7.7,
+        "object": "baseball bat",
+        "confidence": 0.404,
+        "track_id": null,
+        "is_threat": true,
+        "threat_category": "BLUNT_WEAPON",
+        "bounding_box": {
+            "x1": 595,
+            "y1": 297,
+            "x2": 864,
+            "y2": 375
+        }
+    },
+    {
+        "frame": 237,
+        "timestamp": 7.9,
+        "object": "person",
+        "confidence": 0.413,
+        "track_id": null,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 470,
+            "y1": 200,
+            "x2": 832,
+            "y2": 644
+        }
+    },
+    {
+        "frame": 240,
+        "timestamp": 8.0,
+        "object": "person",
+        "confidence": 0.797,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 393,
+            "y1": 205,
+            "x2": 754,
+            "y2": 649
+        }
+    },
+    {
+        "frame": 243,
+        "timestamp": 8.1,
+        "object": "person",
+        "confidence": 0.48,
+        "track_id": null,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 429,
+            "y1": 215,
+            "x2": 615,
+            "y2": 487
+        }
+    },
+    {
+        "frame": 246,
+        "timestamp": 8.2,
+        "object": "person",
+        "confidence": 0.875,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 403,
+            "y1": 219,
+            "x2": 764,
+            "y2": 664
+        }
+    },
+    {
+        "frame": 249,
+        "timestamp": 8.3,
+        "object": "person",
+        "confidence": 0.812,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 407,
+            "y1": 231,
+            "x2": 763,
+            "y2": 671
+        }
+    },
+    {
+        "frame": 252,
+        "timestamp": 8.4,
+        "object": "person",
+        "confidence": 0.85,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 397,
+            "y1": 240,
+            "x2": 767,
+            "y2": 700
+        }
+    },
+    {
+        "frame": 255,
+        "timestamp": 8.5,
+        "object": "person",
+        "confidence": 0.884,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 397,
+            "y1": 249,
+            "x2": 769,
+            "y2": 713
+        }
+    },
+    {
+        "frame": 258,
+        "timestamp": 8.6,
+        "object": "person",
+        "confidence": 0.71,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 405,
+            "y1": 255,
+            "x2": 772,
+            "y2": 714
+        }
+    },
+    {
+        "frame": 261,
+        "timestamp": 8.7,
+        "object": "person",
+        "confidence": 0.476,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 414,
+            "y1": 260,
+            "x2": 777,
+            "y2": 713
+        }
+    },
+    {
+        "frame": 267,
+        "timestamp": 8.9,
+        "object": "person",
+        "confidence": 0.584,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 439,
+            "y1": 276,
+            "x2": 799,
+            "y2": 715
+        }
+    },
+    {
+        "frame": 270,
+        "timestamp": 9.0,
+        "object": "person",
+        "confidence": 0.852,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 437,
+            "y1": 281,
+            "x2": 800,
+            "y2": 717
+        }
+    },
+    {
+        "frame": 273,
+        "timestamp": 9.1,
+        "object": "person",
+        "confidence": 0.862,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 436,
+            "y1": 286,
+            "x2": 800,
+            "y2": 714
+        }
+    },
+    {
+        "frame": 276,
+        "timestamp": 9.2,
+        "object": "fire hydrant",
+        "confidence": 0.495,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 366,
+            "y1": 291,
+            "x2": 717,
+            "y2": 715
+        }
+    },
+    {
+        "frame": 279,
+        "timestamp": 9.3,
+        "object": "person",
+        "confidence": 0.867,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 409,
+            "y1": 294,
+            "x2": 769,
+            "y2": 714
+        }
+    },
+    {
+        "frame": 282,
+        "timestamp": 9.4,
+        "object": "person",
+        "confidence": 0.85,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 422,
+            "y1": 298,
+            "x2": 790,
+            "y2": 715
+        }
+    },
+    {
+        "frame": 285,
+        "timestamp": 9.5,
+        "object": "person",
+        "confidence": 0.858,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 428,
+            "y1": 301,
+            "x2": 804,
+            "y2": 716
+        }
+    },
+    {
+        "frame": 288,
+        "timestamp": 9.6,
+        "object": "person",
+        "confidence": 0.773,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 361,
+            "y1": 300,
+            "x2": 726,
+            "y2": 715
+        }
+    },
+    {
+        "frame": 291,
+        "timestamp": 9.7,
+        "object": "person",
+        "confidence": 0.862,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 406,
+            "y1": 299,
+            "x2": 783,
+            "y2": 716
+        }
+    },
+    {
+        "frame": 294,
+        "timestamp": 9.8,
+        "object": "person",
+        "confidence": 0.803,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 420,
+            "y1": 295,
+            "x2": 808,
+            "y2": 716
+        }
+    },
+    {
+        "frame": 297,
+        "timestamp": 9.9,
+        "object": "person",
+        "confidence": 0.934,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 423,
+            "y1": 292,
+            "x2": 822,
+            "y2": 716
+        }
+    },
+    {
+        "frame": 300,
+        "timestamp": 10.0,
+        "object": "person",
+        "confidence": 0.843,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 353,
+            "y1": 286,
+            "x2": 739,
+            "y2": 715
+        }
+    },
+    {
+        "frame": 303,
+        "timestamp": 10.1,
+        "object": "person",
+        "confidence": 0.887,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 403,
+            "y1": 281,
+            "x2": 801,
+            "y2": 714
+        }
+    },
+    {
+        "frame": 306,
+        "timestamp": 10.2,
+        "object": "person",
+        "confidence": 0.91,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 419,
+            "y1": 277,
+            "x2": 827,
+            "y2": 714
+        }
+    },
+    {
+        "frame": 309,
+        "timestamp": 10.3,
+        "object": "person",
+        "confidence": 0.912,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 421,
+            "y1": 274,
+            "x2": 838,
+            "y2": 714
+        }
+    },
+    {
+        "frame": 312,
+        "timestamp": 10.4,
+        "object": "person",
+        "confidence": 0.69,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 350,
+            "y1": 274,
+            "x2": 750,
+            "y2": 715
+        }
+    },
+    {
+        "frame": 315,
+        "timestamp": 10.5,
+        "object": "person",
+        "confidence": 0.487,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 329,
+            "y1": 273,
+            "x2": 712,
+            "y2": 713
+        }
+    },
+    {
+        "frame": 318,
+        "timestamp": 10.6,
+        "object": "person",
+        "confidence": 0.672,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 388,
+            "y1": 274,
+            "x2": 779,
+            "y2": 713
+        }
+    },
+    {
+        "frame": 321,
+        "timestamp": 10.7,
+        "object": "person",
+        "confidence": 0.911,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 408,
+            "y1": 273,
+            "x2": 807,
+            "y2": 714
+        }
+    },
+    {
+        "frame": 327,
+        "timestamp": 10.9,
+        "object": "person",
+        "confidence": 0.74,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 389,
+            "y1": 269,
+            "x2": 788,
+            "y2": 713
+        }
+    },
+    {
+        "frame": 330,
+        "timestamp": 11.0,
+        "object": "person",
+        "confidence": 0.828,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 380,
+            "y1": 266,
+            "x2": 777,
+            "y2": 714
+        }
+    },
+    {
+        "frame": 333,
+        "timestamp": 11.1,
+        "object": "person",
+        "confidence": 0.845,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 407,
+            "y1": 264,
+            "x2": 811,
+            "y2": 715
+        }
+    },
+    {
+        "frame": 336,
+        "timestamp": 11.2,
+        "object": "person",
+        "confidence": 0.748,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 350,
+            "y1": 263,
+            "x2": 735,
+            "y2": 714
+        }
+    },
+    {
+        "frame": 339,
+        "timestamp": 11.3,
+        "object": "person",
+        "confidence": 0.825,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 401,
+            "y1": 262,
+            "x2": 793,
+            "y2": 715
+        }
+    },
+    {
+        "frame": 342,
+        "timestamp": 11.4,
+        "object": "person",
+        "confidence": 0.765,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 411,
+            "y1": 261,
+            "x2": 807,
+            "y2": 715
+        }
+    },
+    {
+        "frame": 345,
+        "timestamp": 11.5,
+        "object": "person",
+        "confidence": 0.749,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 410,
+            "y1": 261,
+            "x2": 808,
+            "y2": 715
+        }
+    },
+    {
+        "frame": 348,
+        "timestamp": 11.6,
+        "object": "person",
+        "confidence": 0.746,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 354,
+            "y1": 261,
+            "x2": 733,
+            "y2": 714
+        }
+    },
+    {
+        "frame": 351,
+        "timestamp": 11.7,
+        "object": "person",
+        "confidence": 0.472,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 336,
+            "y1": 262,
+            "x2": 698,
+            "y2": 714
+        }
+    },
+    {
+        "frame": 354,
+        "timestamp": 11.8,
+        "object": "person",
+        "confidence": 0.435,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 335,
+            "y1": 264,
+            "x2": 678,
+            "y2": 709
+        }
+    },
+    {
+        "frame": 357,
+        "timestamp": 11.9,
+        "object": "person",
+        "confidence": 0.495,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 340,
+            "y1": 267,
+            "x2": 665,
+            "y2": 706
+        }
+    },
+    {
+        "frame": 360,
+        "timestamp": 12.0,
+        "object": "person",
+        "confidence": 0.658,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 364,
+            "y1": 270,
+            "x2": 633,
+            "y2": 642
+        }
+    },
+    {
+        "frame": 363,
+        "timestamp": 12.1,
+        "object": "person",
+        "confidence": 0.726,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 361,
+            "y1": 271,
+            "x2": 654,
+            "y2": 690
+        }
+    },
+    {
+        "frame": 366,
+        "timestamp": 12.2,
+        "object": "person",
+        "confidence": 0.692,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 363,
+            "y1": 272,
+            "x2": 657,
+            "y2": 704
+        }
+    },
+    {
+        "frame": 369,
+        "timestamp": 12.3,
+        "object": "person",
+        "confidence": 0.44,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 364,
+            "y1": 271,
+            "x2": 654,
+            "y2": 711
+        }
+    },
+    {
+        "frame": 372,
+        "timestamp": 12.4,
+        "object": "person",
+        "confidence": 0.721,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 367,
+            "y1": 272,
+            "x2": 650,
+            "y2": 713
+        }
+    },
+    {
+        "frame": 375,
+        "timestamp": 12.5,
+        "object": "person",
+        "confidence": 0.727,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 373,
+            "y1": 272,
+            "x2": 649,
+            "y2": 714
+        }
+    },
+    {
+        "frame": 378,
+        "timestamp": 12.6,
+        "object": "person",
+        "confidence": 0.555,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 377,
+            "y1": 273,
+            "x2": 646,
+            "y2": 715
+        }
+    },
+    {
+        "frame": 381,
+        "timestamp": 12.7,
+        "object": "person",
+        "confidence": 0.461,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 383,
+            "y1": 274,
+            "x2": 645,
+            "y2": 715
+        }
+    },
+    {
+        "frame": 384,
+        "timestamp": 12.8,
+        "object": "person",
+        "confidence": 0.776,
+        "track_id": 506,
+        "is_threat": false,
+        "threat_category": "NONE",
+        "bounding_box": {
+            "x1": 384,
+            "y1": 275,
+            "x2": 641,
+            "y2": 715
+        }
+    }
+]

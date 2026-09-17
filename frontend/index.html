@@ -117,10 +117,28 @@
             </video>
             <div class="video-actions">
               <a class="secondary-btn" id="downloadVideoLink" href="#" download>Download Annotated Video</a>
+              <a class="secondary-btn" id="threatsJsonLink" href="#" target="_blank" rel="noreferrer">Threat Report (JSON)</a>
             </div>
           </div>
 
+          <!-- Threat Assessment Banner -->
+          <div class="threat-banner threat-safe" id="threatBanner">
+            <div class="threat-badge-group">
+              <span class="threat-level-pill" id="threatLevelPill">SAFE</span>
+              <span class="threat-score-label">Peak Threat Risk: <strong id="threatScoreValue">0%</strong></span>
+            </div>
+            <div class="threat-incidents-count" id="threatIncidentsCount">0 Incidents Detected</div>
+          </div>
+
           <div class="result-summary">
+            <div class="result-stat">
+              <span>Threat Level</span>
+              <strong id="statThreatLevel">SAFE</strong>
+            </div>
+            <div class="result-stat">
+              <span>Threat Incidents</span>
+              <strong id="statThreatIncidents">0</strong>
+            </div>
             <div class="result-stat">
               <span>Total detections</span>
               <strong id="totalDetections">0</strong>
@@ -128,6 +146,17 @@
             <div class="result-stat result-objects">
               <span>Objects detected</span>
               <div id="objectCounts">No objects detected</div>
+            </div>
+          </div>
+
+          <!-- Threat Incidents Timeline -->
+          <div class="incidents-section" id="incidentsSection">
+            <div class="section-title-row">
+              <h3>Threat Incidents & Key Markers</h3>
+              <span class="subtext">Click any incident to jump video directly to that moment</span>
+            </div>
+            <div class="incidents-list" id="incidentsList">
+              <div class="no-incidents">No high-risk threat incidents identified in this footage.</div>
             </div>
           </div>
 
@@ -148,6 +177,34 @@
             </table>
           </div>
           <p class="result-note" id="resultNote"></p>
+        </section>
+
+        <!-- AI Forensic Chat Panel -->
+        <section class="panel chat-panel" id="investigationChatPanel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow small">Gemini 3.6 Flash</p>
+              <h2>AI Threat Forensic Assistant</h2>
+            </div>
+            <span class="status-pill ok" id="chatStatusPill">Ready</span>
+          </div>
+
+          <div class="chat-quick-prompts" id="chatQuickPrompts">
+            <button type="button" class="prompt-chip" data-prompt="Was any lethal weapon, gun, or knife detected in this footage?">Weapons Detected?</button>
+            <button type="button" class="prompt-chip" data-prompt="At what exact timestamps did threat incidents occur and who was armed?">Incident Timestamps?</button>
+            <button type="button" class="prompt-chip" data-prompt="Generate a formal security incident summary report for police or security dispatch.">Dispatch Incident Report</button>
+          </div>
+
+          <div class="chat-messages" id="chatMessages">
+            <div class="chat-bubble model">
+              <p>Hello Investigator. I am ForenSight's <strong>Threat & Incident Response AI Analyst</strong>. Once footage is analyzed, ask me anything about detected weapons, suspect trajectories, timeline reconstruction, or dispatch reporting.</p>
+            </div>
+          </div>
+
+          <form class="chat-input-form" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Ask the AI investigator about threats, timestamps, or suspects..." autocomplete="off" />
+            <button type="submit" class="primary-btn" id="chatSendBtn">Ask</button>
+          </form>
         </section>
 
         <section class="panel recent-panel" id="recentInvestigationsPanel">
