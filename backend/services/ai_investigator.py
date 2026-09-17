@@ -35,6 +35,43 @@ MAX_SAMPLE_EVENTS = 400
 
 
 # --------------------------------------------------
+# MULTIMODAL CROP ANALYSIS (METHOD A)
+# --------------------------------------------------
+
+def analyze_crop_attributes(image_bytes: bytes) -> str:
+    """
+    Analyzes a cropped object image using Gemini 3.6 Flash multimodal capabilities
+    and returns a concise description of visual attributes (clothing color, type, vehicle color, etc.).
+    """
+    if not image_bytes:
+        return ""
+
+    try:
+        client = _get_client()
+        image_part = types.Part.from_bytes(
+            data=image_bytes,
+            mime_type="image/jpeg"
+        )
+        prompt = (
+            "In 1 short sentence (under 12 words), describe the visual attributes of "
+            "this detected object/person from CCTV (e.g. clothing color and apparel if person, "
+            "vehicle color and type if vehicle)."
+        )
+        response = client.models.generate_content(
+            model=MODEL,
+            contents=[image_part, prompt],
+            config=types.GenerateContentConfig(
+                max_output_tokens=60,
+                temperature=0.2,
+            )
+        )
+        return (response.text or "").strip()
+    except Exception as e:
+        print(f"Crop analysis error: {e}")
+        return ""
+
+
+# --------------------------------------------------
 # BUILD CASE CONTEXT FROM RAW DETECTIONS
 # --------------------------------------------------
 
@@ -53,12 +90,14 @@ def build_case_context(detections: list) -> str:
     first_seen = {}
     last_seen = {}
     track_ids_by_object = defaultdict(set)
+    track_attributes = {}
 
     for d in detections:
 
         obj = d.get("object", "unknown")
         ts = d.get("timestamp", 0)
         track_id = d.get("track_id")
+        attr = d.get("attributes")
 
         object_counts[obj] += 1
 
@@ -70,6 +109,8 @@ def build_case_context(detections: list) -> str:
 
         if track_id is not None:
             track_ids_by_object[obj].add(track_id)
+            if attr and track_id not in track_attributes:
+                track_attributes[track_id] = attr
 
     total_duration = max(last_seen.values()) if last_seen else 0
 
@@ -93,6 +134,11 @@ def build_case_context(detections: list) -> str:
             f"last seen at {last_seen[obj]:.2f}s"
         )
 
+    if track_attributes:
+        summary_lines.append("\nTracked Target Visual Attributes (Method A Multimodal Analysis):")
+        for tid, attr in sorted(track_attributes.items()):
+            summary_lines.append(f"- Track ID #{tid}: {attr}")
+
     # --------------------------------------------------
     # SAMPLE EVENT LOG (kept small to control token usage)
     # --------------------------------------------------
@@ -102,12 +148,14 @@ def build_case_context(detections: list) -> str:
 
     event_lines = [
         "\nSampled detection event log "
-        "(frame, timestamp_s, object, track_id, confidence, bbox):"
+        "(frame, timestamp_s, object, track_id, confidence, bbox, attributes):"
     ]
 
     for d in sampled:
 
         bbox = d.get("bounding_box", {})
+        attr = d.get("attributes", "")
+        attr_str = f", attributes: '{attr}'" if attr else ""
 
         event_lines.append(
             f"{d.get('frame')}, {d.get('timestamp')}, "
@@ -115,6 +163,7 @@ def build_case_context(detections: list) -> str:
             f"{d.get('confidence')}, "
             f"[{bbox.get('x1')},{bbox.get('y1')},"
             f"{bbox.get('x2')},{bbox.get('y2')}]"
+            f"{attr_str}"
         )
 
     return "\n".join(summary_lines) + "\n" + "\n".join(event_lines)

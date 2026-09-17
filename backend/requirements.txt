@@ -5,3 +5,14 @@ opencv-python
 ultralytics
 google-genai
 python-dotenv
+
+#How to run
+# Frotend
+#cd frontend
+#python -m http.server 5500
+# open: http://localhost:5500
+
+# backend
+# cd backend
+# .\.venv\Scripts\Activate.ps1
+# uvicorn main:app --reload

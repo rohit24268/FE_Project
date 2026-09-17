@@ -3,6 +3,8 @@ from pathlib import Path
 import cv2
 import json
 import uuid
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from services.ai_investigator import analyze_crop_attributes
 
 
 # --------------------------------------------------
@@ -117,9 +119,9 @@ def analyze_video(video_path: str, result_dir: str):
     # --------------------------------------------------
 
     detections = []
+    track_crops = {}
 
     frame_number = 0
-
     processed_frames = 0
 
 
@@ -213,10 +215,18 @@ def analyze_video(video_path: str, result_dir: str):
                 track_id = None
 
                 if box.id is not None:
-
                     track_id = int(
                         box.id[0]
                     )
+                    if track_id not in track_crops:
+                        h, w, _ = frame.shape
+                        cy1, cy2 = max(0, y1), min(h, y2)
+                        cx1, cx2 = max(0, x1), min(w, x2)
+                        if (cy2 - cy1) > 20 and (cx2 - cx1) > 20:
+                            crop = frame[cy1:cy2, cx1:cx2]
+                            success_enc, encoded_img = cv2.imencode(".jpg", crop)
+                            if success_enc:
+                                track_crops[track_id] = encoded_img.tobytes()
 
 
                 # Timestamp
@@ -304,6 +314,43 @@ def analyze_video(video_path: str, result_dir: str):
 
     cap.release()
     writer.release()
+
+
+    # --------------------------------------------------
+    # METHOD A: PARALLEL MULTIMODAL CROP ANALYSIS
+    # --------------------------------------------------
+
+    track_attributes = {}
+    if track_crops:
+        sample_crops = dict(list(track_crops.items())[:15])
+        print("--------------------------------")
+        print(f"Running Method A Parallel Multimodal Analysis on {len(sample_crops)} unique track(s)...")
+
+        def _process_track_crop(item):
+            tid, crop_bytes = item
+            try:
+                attr = analyze_crop_attributes(crop_bytes)
+                if attr:
+                    return tid, attr
+            except Exception as e:
+                print(f"Failed to analyze track #{tid}: {e}")
+            return tid, None
+
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            futures = [executor.submit(_process_track_crop, item) for item in sample_crops.items()]
+            for future in as_completed(futures):
+                tid, attr = future.result()
+                if attr:
+                    track_attributes[tid] = attr
+                    print(f"Track #{tid} visual attributes: {attr}")
+
+        print("--------------------------------")
+
+    # Enrich detections with visual attributes
+    for detection in detections:
+        tid = detection.get("track_id")
+        if tid in track_attributes:
+            detection["attributes"] = track_attributes[tid]
 
 
     # --------------------------------------------------
