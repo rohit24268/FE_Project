@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from core.config import RESULT_DIR
-from routers import video, investigate
+from routers import video, investigate, cases, evidence, reports
 
 app = FastAPI(
     title="ForenSight AI",
@@ -42,3 +42,6 @@ def home():
 
 app.include_router(video.router)
 app.include_router(investigate.router)
+app.include_router(cases.router)
+app.include_router(evidence.router)
+app.include_router(reports.router)

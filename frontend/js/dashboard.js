@@ -503,6 +503,7 @@ if (analyzeBtn) {
       fileName.textContent = `${file.name} • analyzed successfully`;
       renderAnalysisResults(payload);
       saveRecentInvestigation(file, payload);
+      renderRecentAnalysesQuickLinks();
     } catch (error) {
       console.error('Backend analysis error:', error);
       if (queueValue) {
@@ -517,3 +518,422 @@ if (analyzeBtn) {
     }
   });
 }
+
+// ==================================================
+// PAGE NAVIGATION (Sidebar Tabs)
+// ==================================================
+
+const navItems = document.querySelectorAll('.nav-item[data-page]');
+const pageSections = document.querySelectorAll('.page-section');
+
+function switchPage(pageId) {
+  navItems.forEach((item) => {
+    const isTarget = item.dataset.page === pageId ||
+      (pageId === 'dashboard' && item.dataset.page === 'video-analysis');
+    item.classList.toggle('active', isTarget);
+  });
+
+  pageSections.forEach((section) => {
+    section.classList.add('hidden');
+  });
+
+  const targetSectionId = pageId === 'video-analysis' ? 'pageDashboard' : `page${pageId.charAt(0).toUpperCase() + pageId.slice(1)}`;
+  const targetSection = document.getElementById(targetSectionId);
+  if (targetSection) {
+    targetSection.classList.remove('hidden');
+  }
+
+  // Auto-trigger page init
+  if (pageId === 'cases') loadCases();
+  if (pageId === 'evidence') initEvidencePage();
+  if (pageId === 'reports') initReportsPage();
+}
+
+navItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    const page = item.dataset.page;
+    if (page) switchPage(page);
+  });
+});
+
+// ==================================================
+// QUICK LINKS (Recent Analysis IDs)
+// ==================================================
+
+function renderRecentAnalysesQuickLinks() {
+  const recent = getRecentInvestigations();
+  const evidenceContainer = document.getElementById('evidenceQuickLinksChips');
+  const reportContainer = document.getElementById('reportQuickLinksChips');
+
+  if (!recent.length) {
+    const html = '<span style="color:var(--muted)">No analysis sessions completed yet. Run a Video Analysis first.</span>';
+    if (evidenceContainer) evidenceContainer.innerHTML = html;
+    if (reportContainer) reportContainer.innerHTML = html;
+    return;
+  }
+
+  const chipsHtml = recent.map((item) => `
+    <button type="button" class="analysis-quick-link" data-analysis-id="${item.id}">
+      #${item.id.slice(0, 8)} (${escapeHtml(item.fileName)})
+    </button>
+  `).join(' ');
+
+  if (evidenceContainer) evidenceContainer.innerHTML = chipsHtml;
+  if (reportContainer) reportContainer.innerHTML = chipsHtml;
+}
+
+document.addEventListener('click', (e) => {
+  const chip = e.target.closest('.analysis-quick-link');
+  if (!chip) return;
+  const analysisId = chip.dataset.analysisId;
+  if (!analysisId) return;
+
+  const evInput = document.getElementById('evidenceAnalysisIdInput');
+  const repInput = document.getElementById('reportAnalysisIdInput');
+
+  if (evInput && !document.getElementById('pageEvidence').classList.contains('hidden')) {
+    evInput.value = analysisId;
+    loadEvidence(analysisId);
+  } else if (repInput && !document.getElementById('pageReports').classList.contains('hidden')) {
+    repInput.value = analysisId;
+    loadReport(analysisId);
+  }
+});
+
+// ==================================================
+// 1. CASES MANAGEMENT
+// ==================================================
+
+const showNewCaseModalBtn = document.getElementById('showNewCaseModalBtn');
+const createCasePanel = document.getElementById('createCasePanel');
+const cancelCaseBtn = document.getElementById('cancelCaseBtn');
+const createCaseForm = document.getElementById('createCaseForm');
+const casesList = document.getElementById('casesList');
+const casesCountPill = document.getElementById('casesCountPill');
+
+if (showNewCaseModalBtn && createCasePanel) {
+  showNewCaseModalBtn.addEventListener('click', () => {
+    createCasePanel.classList.remove('hidden');
+    createCasePanel.scrollIntoView({ behavior: 'smooth' });
+  });
+}
+
+if (cancelCaseBtn && createCasePanel) {
+  cancelCaseBtn.addEventListener('click', () => {
+    createCasePanel.classList.add('hidden');
+  });
+}
+
+async function loadCases() {
+  if (!casesList) return;
+  try {
+    const res = await fetch(`${API_URL}/cases`);
+    if (!res.ok) throw new Error('Failed to load cases.');
+    const cases = await res.json();
+    renderCases(cases);
+  } catch (err) {
+    casesList.innerHTML = `<p class="inline-error">Error loading cases: ${escapeHtml(err.message)}</p>`;
+  }
+}
+
+function renderCases(cases) {
+  if (!casesList) return;
+  if (casesCountPill) casesCountPill.textContent = `${cases.length} Case${cases.length === 1 ? '' : 's'}`;
+
+  if (!cases.length) {
+    casesList.innerHTML = '<p class="empty-state">No cases created yet. Click "+ New Case" above to start a case.</p>';
+    return;
+  }
+
+  casesList.innerHTML = cases.map((c) => {
+    const createdDate = formatDate(c.created_at);
+    const analysisCount = (c.analysis_ids || []).length;
+    const isCurrentLinked = currentAnalysisId && (c.analysis_ids || []).includes(currentAnalysisId);
+
+    return `
+      <div class="case-card">
+        <div class="case-card-main">
+          <div class="case-card-meta">
+            <h3>${escapeHtml(c.case_name)}</h3>
+            <span class="threat-pill ${c.status === 'open' ? 'safe' : 'medium'}">${escapeHtml(c.status.toUpperCase())}</span>
+          </div>
+          <p>${escapeHtml(c.description || 'No description provided.')}</p>
+          <div class="case-card-details">
+            <span><strong>Case ID:</strong> <code>${c.case_id}</code></span>
+            <span><strong>Investigator:</strong> ${escapeHtml(c.investigator || 'Unassigned')}</span>
+            <span><strong>Created:</strong> ${createdDate}</span>
+            <span><strong>Linked Analyses:</strong> ${analysisCount}</span>
+          </div>
+        </div>
+        <div class="case-card-actions">
+          ${currentAnalysisId ? `
+            <button type="button" class="secondary-btn link-analysis-btn" data-case-id="${c.case_id}" ${isCurrentLinked ? 'disabled' : ''}>
+              ${isCurrentLinked ? 'Linked' : 'Link Current Analysis'}
+            </button>
+          ` : ''}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+if (createCaseForm) {
+  createCaseForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const nameInput = document.getElementById('caseNameInput');
+    const investigatorInput = document.getElementById('caseInvestigatorInput');
+    const descInput = document.getElementById('caseDescriptionInput');
+
+    const payload = {
+      case_name: nameInput.value,
+      investigator: investigatorInput.value,
+      description: descInput.value,
+      status: 'open'
+    };
+
+    try {
+      const res = await fetch(`${API_URL}/cases`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('Failed to create case');
+
+      nameInput.value = '';
+      investigatorInput.value = '';
+      descInput.value = '';
+      if (createCasePanel) createCasePanel.classList.add('hidden');
+      loadCases();
+    } catch (err) {
+      alert(`Error creating case: ${err.message}`);
+    }
+  });
+}
+
+document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('.link-analysis-btn');
+  if (!btn || !currentAnalysisId) return;
+
+  const caseId = btn.dataset.caseId;
+  try {
+    const res = await fetch(`${API_URL}/cases/${caseId}/link-analysis`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ analysis_id: currentAnalysisId })
+    });
+    if (!res.ok) throw new Error('Failed to link analysis to case.');
+    loadCases();
+  } catch (err) {
+    alert(err.message);
+  }
+});
+
+// ==================================================
+// 2. EVIDENCE & 3. TIMELINE FUNCTIONALITY
+// ==================================================
+
+const loadEvidenceBtn = document.getElementById('loadEvidenceBtn');
+const evidenceAnalysisIdInput = document.getElementById('evidenceAnalysisIdInput');
+const btnViewEvidence = document.getElementById('btnViewEvidence');
+const btnViewTimeline = document.getElementById('btnViewTimeline');
+const evidenceListSection = document.getElementById('evidenceListSection');
+const timelineSection = document.getElementById('timelineSection');
+const evidenceTableBody = document.getElementById('evidenceTableBody');
+const timelineContainer = document.getElementById('timelineContainer');
+
+function initEvidencePage() {
+  renderRecentAnalysesQuickLinks();
+  if (currentAnalysisId && evidenceAnalysisIdInput && !evidenceAnalysisIdInput.value) {
+    evidenceAnalysisIdInput.value = currentAnalysisId;
+    loadEvidence(currentAnalysisId);
+  }
+}
+
+if (btnViewEvidence && btnViewTimeline) {
+  btnViewEvidence.addEventListener('click', () => {
+    btnViewEvidence.classList.add('active');
+    btnViewTimeline.classList.remove('active');
+    evidenceListSection.classList.remove('hidden');
+    timelineSection.classList.add('hidden');
+  });
+
+  btnViewTimeline.addEventListener('click', () => {
+    btnViewTimeline.classList.add('active');
+    btnViewEvidence.classList.remove('active');
+    timelineSection.classList.remove('hidden');
+    evidenceListSection.classList.add('hidden');
+  });
+}
+
+if (loadEvidenceBtn) {
+  loadEvidenceBtn.addEventListener('click', () => {
+    const id = evidenceAnalysisIdInput ? evidenceAnalysisIdInput.value.trim() : '';
+    if (id) loadEvidence(id);
+  });
+}
+
+async function loadEvidence(analysisId) {
+  if (!evidenceTableBody) return;
+  evidenceTableBody.innerHTML = '<tr><td colspan="6">Loading evidence...</td></tr>';
+
+  try {
+    const res = await fetch(`${API_URL}/evidence/${encodeURIComponent(analysisId)}`);
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || 'Evidence not found');
+
+    renderEvidenceTable(data.evidence || []);
+    renderEvidenceTimeline(data.evidence || []);
+  } catch (err) {
+    evidenceTableBody.innerHTML = `<tr><td colspan="6" class="inline-error">Error: ${escapeHtml(err.message)}</td></tr>`;
+    if (timelineContainer) timelineContainer.innerHTML = `<p class="inline-error">Error: ${escapeHtml(err.message)}</p>`;
+  }
+}
+
+function renderEvidenceTable(items) {
+  const countPill = document.getElementById('evidenceCountPill');
+  if (countPill) countPill.textContent = `${items.length} Item${items.length === 1 ? '' : 's'}`;
+
+  if (!items.length) {
+    evidenceTableBody.innerHTML = '<tr><td colspan="6">No evidence detections recorded for this analysis.</td></tr>';
+    return;
+  }
+
+  evidenceTableBody.innerHTML = items.map((ev) => {
+    const isThreat = ev.is_threat;
+    const typeLabel = isThreat ? ev.threat_category.replace('_', ' ') : 'DETECTION';
+    const tagClass = isThreat ? 'threat-tag' : '';
+
+    return `
+      <tr class="${isThreat ? 'threat-row' : ''}">
+        <td><span class="${tagClass}">${escapeHtml(typeLabel)}</span></td>
+        <td>F#${ev.frame ?? '-'} (${Number(ev.timestamp || 0).toFixed(2)}s)</td>
+        <td><strong>${escapeHtml(ev.object)}</strong></td>
+        <td>${formatConfidence(ev.confidence)}</td>
+        <td>${ev.track_id ?? '-'}</td>
+        <td>${escapeHtml(ev.description)}</td>
+      </tr>
+    `;
+  }).join('');
+}
+
+function renderEvidenceTimeline(items) {
+  const timelinePill = document.getElementById('timelineCountPill');
+  if (timelinePill) timelinePill.textContent = `${items.length} Events`;
+
+  if (!items.length) {
+    if (timelineContainer) timelineContainer.innerHTML = '<p class="empty-state">No timeline events found.</p>';
+    return;
+  }
+
+  // Sort items by timestamp ascending
+  const sorted = [...items].sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
+
+  timelineContainer.innerHTML = sorted.map((ev) => {
+    const isThreat = ev.is_threat;
+    const markerClass = isThreat ? 'threat' : 'safe';
+    const ts = Number(ev.timestamp || 0).toFixed(2);
+
+    return `
+      <div class="timeline-event">
+        <div class="timeline-marker ${markerClass}"></div>
+        <div class="timeline-event-body">
+          <strong>${escapeHtml(ev.object.toUpperCase())} ${isThreat ? '— THREAT DETECTED' : 'Detected'}</strong>
+          <span>${escapeHtml(ev.description)}</span>
+        </div>
+        <div class="timeline-time">${ts}s</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ==================================================
+// 4. REPORTS FUNCTIONALITY
+// ==================================================
+
+const loadReportBtn = document.getElementById('loadReportBtn');
+const reportAnalysisIdInput = document.getElementById('reportAnalysisIdInput');
+const reportDisplayPanel = document.getElementById('reportDisplayPanel');
+
+function initReportsPage() {
+  renderRecentAnalysesQuickLinks();
+  if (currentAnalysisId && reportAnalysisIdInput && !reportAnalysisIdInput.value) {
+    reportAnalysisIdInput.value = currentAnalysisId;
+    loadReport(currentAnalysisId);
+  }
+}
+
+if (loadReportBtn) {
+  loadReportBtn.addEventListener('click', () => {
+    const id = reportAnalysisIdInput ? reportAnalysisIdInput.value.trim() : '';
+    if (id) loadReport(id);
+  });
+}
+
+async function loadReport(analysisId) {
+  if (!reportDisplayPanel) return;
+
+  try {
+    const res = await fetch(`${API_URL}/reports/${encodeURIComponent(analysisId)}`);
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || 'Report data not found');
+
+    renderReportPanel(data);
+  } catch (err) {
+    alert(`Report error: ${err.message}`);
+  }
+}
+
+function renderReportPanel(data) {
+  reportDisplayPanel.classList.remove('hidden');
+
+  const threatData = data.threat_analysis || {};
+  const overallLevel = threatData.overall_threat_level || 'SAFE';
+
+  document.getElementById('reportStatId').textContent = data.analysis_id;
+  document.getElementById('reportStatDetections').textContent = data.total_detections;
+  document.getElementById('reportStatThreatScore').textContent = `${Math.round((threatData.max_threat_score || 0) * 100)}%`;
+  document.getElementById('reportStatIncidents').textContent = threatData.total_incidents || 0;
+
+  const pill = document.getElementById('reportThreatPill');
+  if (pill) {
+    pill.textContent = overallLevel;
+    pill.className = `status-pill ${overallLevel.toLowerCase() === 'safe' ? 'ok' : 'processing'}`;
+  }
+
+  // Findings
+  const findingsList = document.getElementById('reportFindingsList');
+  const findings = data.findings || [];
+  if (findingsList) {
+    findingsList.innerHTML = findings.length
+      ? findings.map((f) => `
+        <div class="finding-item">
+          <h4>${escapeHtml(f.title)}</h4>
+          <p>${escapeHtml(f.detail)}</p>
+        </div>
+      `).join('')
+      : '<p class="empty-state">No specific findings logged.</p>';
+  }
+
+  // Timeline in Report
+  const timelineList = document.getElementById('reportTimelineList');
+  const timeline = data.timeline || [];
+  if (timelineList) {
+    timelineList.innerHTML = timeline.length
+      ? timeline.map((item) => `
+        <div class="timeline-event">
+          <div class="timeline-marker ${item.is_threat ? 'threat' : 'safe'}"></div>
+          <div class="timeline-event-body">
+            <strong>${escapeHtml(item.event)}</strong>
+            <span>Confidence: ${formatConfidence(item.confidence)}${item.track_id !== null ? ` • Track #${item.track_id}` : ''}</span>
+          </div>
+          <div class="timeline-time">${Number(item.timestamp || 0).toFixed(2)}s</div>
+        </div>
+      `).join('')
+      : '<p class="empty-state">No timeline available.</p>';
+  }
+
+  reportDisplayPanel.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Render quick links on initial page load
+renderRecentAnalysesQuickLinks();

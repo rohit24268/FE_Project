@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cases — Forensight AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/cases.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-title">Forensight <span>AI</span></div>
+        <div class="brand-subtitle">Investigation Assistant</div>
+      </div>
+
+      <nav class="nav" aria-label="Sidebar navigation">
+        <a href="index.html" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>
+          </span>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="cases.html" class="nav-item active">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 4h10a2 2 0 0 1 2 2v12l-4-2-4 2-4-2-4 2V6a2 2 0 0 1 2-2zm2 4h6M9 12h6"/></svg>
+          </span>
+          <span>Cases</span>
+        </a>
+
+        <a href="evidence.html" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 6h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm2 0V4h6v2M9 12h6M9 15h4"/></svg>
+          </span>
+          <span>Evidence</span>
+        </a>
+
+        <a href="timeline.html" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+          </span>
+          <span>Timeline</span>
+        </a>
+
+        <a href="reports.html" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6 18V9m6 9V5m6 13v-7M4 20h16"/></svg>
+          </span>
+          <span>Reports</span>
+        </a>
+
+        <a href="ai-assistant.html" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 7a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16zM9 11a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm6 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
+          </span>
+          <span>AI Assistant</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="content-area" aria-label="Main content">
+      <div class="dashboard">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Case Management</p>
+            <h1>Investigation Cases</h1>
+          </div>
+          <button type="button" class="primary-btn" id="showNewCaseModalBtn">+ New Case</button>
+        </header>
+
+        <!-- Create Case Panel -->
+        <section class="panel hidden" id="createCasePanel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow small">Form</p>
+              <h2>Create New Investigation Case</h2>
+            </div>
+            <button type="button" class="secondary-btn" id="cancelCaseBtn">Cancel</button>
+          </div>
+          <form id="createCaseForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="caseNameInput">Case Name *</label>
+                <input type="text" id="caseNameInput" placeholder="e.g. Incident #2026-09A — Main Entrance Security" required />
+              </div>
+              <div class="form-group">
+                <label for="caseInvestigatorInput">Lead Investigator</label>
+                <input type="text" id="caseInvestigatorInput" placeholder="e.g. Agent J. Miller" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="caseDescriptionInput">Case Description</label>
+              <textarea id="caseDescriptionInput" rows="3" placeholder="Brief summary of the incident under investigation..."></textarea>
+            </div>
+            <div class="upload-actions">
+              <button type="submit" class="primary-btn" id="saveCaseBtn">Create Case</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Cases List Panel -->
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow small">Active &amp; Historical</p>
+              <h2>All Cases</h2>
+            </div>
+            <span class="status-pill ok" id="casesCountPill">0 Cases</span>
+          </div>
+          <div id="casesList">
+            <p class="empty-state">No cases created yet. Click "+ New Case" above to start a case.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/cases.js"></script>
+</body>
+</html>

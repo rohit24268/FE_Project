@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Assistant — Forensight AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/ai-assistant.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-title">Forensight <span>AI</span></div>
+        <div class="brand-subtitle">Investigation Assistant</div>
+      </div>
+
+      <nav class="nav" aria-label="Sidebar navigation">
+        <a href="../index.html" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>
+          </span>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="../cases.html" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 4h10a2 2 0 0 1 2 2v12l-4-2-4 2-4-2-4 2V6a2 2 0 0 1 2-2zm2 4h6M9 12h6"/></svg>
+          </span>
+          <span>Cases</span>
+        </a>
+
+        <a href="../evidence.html" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 6h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm2 0V4h6v2M9 12h6M9 15h4"/></svg>
+          </span>
+          <span>Evidence</span>
+        </a>
+
+        <a href="../timeline.html" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+          </span>
+          <span>Timeline</span>
+        </a>
+
+        <a href="../reports.html" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6 18V9m6 9V5m6 13v-7M4 20h16"/></svg>
+          </span>
+          <span>Reports</span>
+        </a>
+
+        <a href="../ai-assistant.html" class="nav-item active">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 7a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16zM9 11a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm6 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
+          </span>
+          <span>AI Assistant</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="content-area" aria-label="Main content">
+      <div class="dashboard">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Gemini 3.6 Flash</p>
+            <h1>AI Threat Forensic Assistant</h1>
+          </div>
+          <span class="status-pill ok" id="chatStatusPill">Ready</span>
+        </header>
+
+        <!-- Session Selection Panel -->
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow small">Context Selection</p>
+              <h2>Analysis Session ID</h2>
+            </div>
+            <span class="status-tag" id="activeSessionBadge">No Session</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <input type="text" class="analysis-id-input" id="aiAnalysisIdInput" placeholder="Enter Analysis ID (e.g. 550e8400-e29b-41d4-a716-446655440000)..." />
+            <button type="button" class="primary-btn" id="loadAnalysisAiBtn">Set Active Session</button>
+          </div>
+          <div style="margin-top: 12px; font-size: 12px; color: var(--muted);" id="aiQuickLinks">
+            <span>Recent Sessions: </span><span id="aiQuickLinksChips">None recorded yet</span>
+          </div>
+        </section>
+
+        <!-- AI Forensic Chat Panel -->
+        <section class="panel chat-panel" id="investigationChatPanel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow small">Forensic Analysis Q&amp;A</p>
+              <h2>Chat Conversation</h2>
+            </div>
+          </div>
+
+          <div class="chat-quick-prompts" id="chatQuickPrompts">
+            <button type="button" class="prompt-chip" data-prompt="Was any lethal weapon, gun, or knife detected in this footage?">Weapons Detected?</button>
+            <button type="button" class="prompt-chip" data-prompt="At what exact timestamps did threat incidents occur and who was armed?">Incident Timestamps?</button>
+            <button type="button" class="prompt-chip" data-prompt="Generate a formal security incident summary report for police or security dispatch.">Dispatch Incident Report</button>
+          </div>
+
+          <div class="chat-messages" id="chatMessages">
+            <div class="chat-bubble model">
+              <p>Hello Investigator. I am ForenSight's <strong>Threat &amp; Incident Response AI Analyst</strong>. Select an analysis session above, then ask me anything about detected weapons, suspect trajectories, timeline reconstruction, or dispatch reporting.</p>
+            </div>
+          </div>
+
+          <form class="chat-input-form" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Ask the AI investigator about threats, timestamps, or suspects..." autocomplete="off" />
+            <button type="submit" class="primary-btn" id="chatSendBtn">Ask</button>
+          </form>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="ai-assistant.js"></script>
+</body>
+</html>

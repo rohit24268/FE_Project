@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports — Forensight AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/reports.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-title">Forensight <span>AI</span></div>
+        <div class="brand-subtitle">Investigation Assistant</div>
+      </div>
+
+      <nav class="nav" aria-label="Sidebar navigation">
+        <a href="index.html" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>
+          </span>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="cases.html" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 4h10a2 2 0 0 1 2 2v12l-4-2-4 2-4-2-4 2V6a2 2 0 0 1 2-2zm2 4h6M9 12h6"/></svg>
+          </span>
+          <span>Cases</span>
+        </a>
+
+        <a href="evidence.html" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 6h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm2 0V4h6v2M9 12h6M9 15h4"/></svg>
+          </span>
+          <span>Evidence</span>
+        </a>
+
+        <a href="timeline.html" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+          </span>
+          <span>Timeline</span>
+        </a>
+
+        <a href="reports.html" class="nav-item active">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6 18V9m6 9V5m6 13v-7M4 20h16"/></svg>
+          </span>
+          <span>Reports</span>
+        </a>
+
+        <a href="ai-assistant.html" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 7a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16zM9 11a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm6 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
+          </span>
+          <span>AI Assistant</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="content-area" aria-label="Main content">
+      <div class="dashboard">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Forensic Documentation</p>
+            <h1>Analysis Forensic Report</h1>
+          </div>
+          <button type="button" class="secondary-btn" onclick="window.print()">Print / Export PDF</button>
+        </header>
+
+        <!-- Select Analysis for Report -->
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow small">Select Investigation</p>
+              <h2>Analysis Session ID</h2>
+            </div>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <input type="text" class="analysis-id-input" id="reportAnalysisIdInput" placeholder="Enter Analysis ID..." />
+            <button type="button" class="primary-btn" id="loadReportBtn">Generate Report</button>
+          </div>
+          <div style="margin-top: 12px; font-size: 12px; color: var(--muted);" id="reportQuickLinks">
+            <span>Recent Sessions: </span><span id="reportQuickLinksChips">None recorded yet</span>
+          </div>
+        </section>
+
+        <!-- Report Content -->
+        <section class="panel hidden" id="reportDisplayPanel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow small">Official Summary</p>
+              <h2 id="reportHeaderTitle">Forensic Incident Report</h2>
+            </div>
+            <span class="status-pill ok" id="reportThreatPill">SAFE</span>
+          </div>
+
+          <div class="result-summary" style="margin-bottom: 24px;">
+            <div class="result-stat">
+              <span>Analysis ID</span>
+              <strong id="reportStatId" style="font-size: 13px; font-family: monospace;">-</strong>
+            </div>
+            <div class="result-stat">
+              <span>Total Detections</span>
+              <strong id="reportStatDetections">0</strong>
+            </div>
+            <div class="result-stat">
+              <span>Threat Risk Score</span>
+              <strong id="reportStatThreatScore">0%</strong>
+            </div>
+            <div class="result-stat">
+              <span>Incidents Recorded</span>
+              <strong id="reportStatIncidents">0</strong>
+            </div>
+          </div>
+
+          <!-- Key Findings -->
+          <div style="margin-bottom: 24px;">
+            <h3 style="margin-bottom: 12px; font-size: 15px; color: var(--text);">Investigative Findings</h3>
+            <div id="reportFindingsList">
+              <p class="empty-state">No findings compiled.</p>
+            </div>
+          </div>
+
+          <!-- Chronological Summary Timeline -->
+          <div>
+            <h3 style="margin-bottom: 12px; font-size: 15px; color: var(--text);">Timeline of Key Appearance Events</h3>
+            <div id="reportTimelineList">
+              <p class="empty-state">No timeline events compiled.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/reports.js"></script>
+</body>
+</html>

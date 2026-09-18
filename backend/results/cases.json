@@ -1,0 +1,13 @@
+[
+  {
+    "case_id": "1d21a422-5b31-4512-8929-1bddd6e59469",
+    "case_name": "614436ea-25e524c9dd33-48e7-9bad-ba40",
+    "description": "Test car",
+    "investigator": "Agent Ritesh",
+    "status": "open",
+    "created_at": "2026-09-18T11:10:55.022342+00:00",
+    "analysis_ids": [
+      "614436ea-dd33-48e7-9bad-ba4025e524c9"
+    ]
+  }
+]
