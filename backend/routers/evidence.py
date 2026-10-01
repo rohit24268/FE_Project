@@ -2,6 +2,7 @@ import json
 
 from fastapi import APIRouter, HTTPException
 from core.config import RESULT_DIR
+from core.database import get_db
 
 router = APIRouter(tags=["Evidence"])
 
@@ -24,54 +25,102 @@ def _build_description(detection: dict) -> str:
     return desc
 
 
-@router.get("/evidence/{analysis_id}")
-def get_evidence(analysis_id: str):
-    """
-    Return evidence items derived from existing YOLO detection results.
-    Each detection becomes an evidence item with type, description, and threat metadata.
-    """
-    detections_path = RESULT_DIR / f"{analysis_id}_detections.json"
+def _detection_to_evidence(analysis_id: str, d: dict) -> dict:
+    """Convert a detection record into an evidence item."""
+    is_threat = d.get("is_threat", False)
+    return {
+        "analysis_id": analysis_id,
+        "frame": d.get("frame"),
+        "timestamp": d.get("timestamp"),
+        "object": d.get("object"),
+        "confidence": d.get("confidence"),
+        "track_id": d.get("track_id"),
+        "is_threat": is_threat,
+        "threat_category": d.get("threat_category", "NONE"),
+        "attributes": d.get("attributes", ""),
+        "bounding_box": d.get("bounding_box"),
+        "evidence_type": "THREAT" if is_threat else "DETECTION",
+        "description": _build_description(d),
+    }
+
+
+def _load_threat_data(analysis_id: str) -> dict | None:
+    """Load threat analysis from MongoDB or JSON fallback."""
+    db = get_db()
+
+    if db is not None:
+        try:
+            result = db["investigation_reports"].find_one(
+                {"analysis_id": analysis_id},
+                {"_id": 0, "threat_summary": 1},
+            )
+            if result and result.get("threat_summary"):
+                return result["threat_summary"]
+        except Exception as e:
+            print(f"[MongoDB] Error loading threat data: {e}")
+
+    # JSON fallback
     threats_path = RESULT_DIR / f"{analysis_id}_threats.json"
-
-    if not detections_path.exists():
-        raise HTTPException(
-            status_code=404,
-            detail=(
-                "No detection data found for this analysis_id. "
-                "Run /analyze-video first."
-            ),
-        )
-
-    with open(detections_path, "r") as f:
-        detections = json.load(f)
-
-    threat_data = None
     if threats_path.exists():
         try:
             with open(threats_path, "r") as f:
-                threat_data = json.load(f)
+                return json.load(f)
         except Exception:
-            threat_data = None
+            pass
 
+    return None
+
+
+@router.get("/evidence/{analysis_id}")
+def get_evidence(analysis_id: str):
+    """
+    Return evidence items derived from detection results.
+    Reads from MongoDB first, falls back to JSON files.
+    """
     evidence_items = []
-    for d in detections:
-        is_threat = d.get("is_threat", False)
-        evidence_items.append(
-            {
-                "analysis_id": analysis_id,
-                "frame": d.get("frame"),
-                "timestamp": d.get("timestamp"),
-                "object": d.get("object"),
-                "confidence": d.get("confidence"),
-                "track_id": d.get("track_id"),
-                "is_threat": is_threat,
-                "threat_category": d.get("threat_category", "NONE"),
-                "attributes": d.get("attributes", ""),
-                "bounding_box": d.get("bounding_box"),
-                "evidence_type": "THREAT" if is_threat else "DETECTION",
-                "description": _build_description(d),
-            }
-        )
+
+    # Try MongoDB first
+    db = get_db()
+    if db is not None:
+        try:
+            detections = list(
+                db["evidence"]
+                .find(
+                    {"analysis_id": analysis_id},
+                    {"_id": 0},
+                )
+                .sort("frame", 1)
+            )
+            if detections:
+                evidence_items = [
+                    _detection_to_evidence(analysis_id, d)
+                    for d in detections
+                ]
+        except Exception as e:
+            print(f"[MongoDB] Error loading evidence: {e}")
+
+    # JSON fallback if MongoDB had no data
+    if not evidence_items:
+        detections_path = RESULT_DIR / f"{analysis_id}_detections.json"
+
+        if not detections_path.exists():
+            raise HTTPException(
+                status_code=404,
+                detail=(
+                    "No detection data found for this analysis_id. "
+                    "Run /analyze-video first."
+                ),
+            )
+
+        with open(detections_path, "r") as f:
+            detections = json.load(f)
+
+        evidence_items = [
+            _detection_to_evidence(analysis_id, d)
+            for d in detections
+        ]
+
+    threat_data = _load_threat_data(analysis_id)
 
     return {
         "analysis_id": analysis_id,

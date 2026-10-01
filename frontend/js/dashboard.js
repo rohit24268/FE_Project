@@ -935,5 +935,67 @@ function renderReportPanel(data) {
   reportDisplayPanel.scrollIntoView({ behavior: 'smooth' });
 }
 
+// ==================================================
+// 5. PERSON SEARCH FUNCTIONALITY
+// ==================================================
+
+const personSearchForm = document.getElementById('personSearchForm');
+const searchAnalysisId = document.getElementById('searchAnalysisId');
+const searchCaseId = document.getElementById('searchCaseId');
+const searchTrackId = document.getElementById('searchTrackId');
+const searchAttributes = document.getElementById('searchAttributes');
+const searchPersonsBtn = document.getElementById('searchPersonsBtn');
+const personsSearchResults = document.getElementById('personsSearchResults');
+const searchPersonsError = document.getElementById('searchPersonsError');
+
+if (personSearchForm) {
+  personSearchForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    searchPersonsError.classList.add('hidden');
+    personsSearchResults.innerHTML = '<tr><td colspan="6">Searching...</td></tr>';
+    searchPersonsBtn.disabled = true;
+    
+    const params = new URLSearchParams();
+    if (searchAnalysisId.value.trim()) params.append('analysis_id', searchAnalysisId.value.trim());
+    if (searchCaseId.value.trim()) params.append('case_id', searchCaseId.value.trim());
+    if (searchTrackId.value.trim()) params.append('track_id', searchTrackId.value.trim());
+    if (searchAttributes.value.trim()) params.append('attributes', searchAttributes.value.trim());
+    
+    try {
+      const res = await fetch(`${API_URL}/search-persons?${params.toString()}`);
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        let msg = data.detail;
+        if (Array.isArray(msg)) msg = msg.map(e => e.msg).join(', ');
+        throw new Error(msg || 'Search failed');
+      }
+      
+      const data = await res.json();
+      const results = data.results || [];
+      if (results.length === 0) {
+        personsSearchResults.innerHTML = '<tr><td colspan="6" style="text-align: center;">No matching persons found.</td></tr>';
+        return;
+      }
+      
+      personsSearchResults.innerHTML = results.map(p => `
+        <tr>
+          <td><code style="font-size: 0.85em;">${escapeHtml(p.analysis_id || '-')}</code></td>
+          <td><strong>${p.track_id}</strong></td>
+          <td>${Number(p.first_seen || 0).toFixed(2)}s</td>
+          <td>${Number(p.last_seen || 0).toFixed(2)}s</td>
+          <td>${p.detection_count}</td>
+          <td>${escapeHtml(p.attributes || '-')}</td>
+        </tr>
+      `).join('');
+    } catch (err) {
+      searchPersonsError.textContent = `Error: ${err.message}`;
+      searchPersonsError.classList.remove('hidden');
+      personsSearchResults.innerHTML = '<tr><td colspan="6">Search failed.</td></tr>';
+    } finally {
+      searchPersonsBtn.disabled = false;
+    }
+  });
+}
+
 // Render quick links on initial page load
 renderRecentAnalysesQuickLinks();

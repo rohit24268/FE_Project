@@ -179,6 +179,53 @@
           <p class="result-note" id="resultNote"></p>
         </section>
 
+        <section class="panel persons-panel" id="personSearchPanel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow small">Forensic Search</p>
+              <h2>Person Search</h2>
+            </div>
+          </div>
+          
+          <div style="padding: 1rem 1.5rem;">
+            <div style="margin-bottom: 1rem; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; border-left: 4px solid var(--accent-primary);">
+              <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary);">
+                <strong>CRITICAL NOTE ON TRACK ID:</strong> <code>track_id</code> is a within-video tracking identifier, not identity. 
+                It is scoped to a single analysis/video session. The same real person could get different <code>track_id</code>s across different videos. 
+                This is <strong>not</strong> facial recognition and does not establish real-world identity.
+              </p>
+            </div>
+            
+            <form id="personSearchForm" style="display: flex; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap;">
+              <input type="text" id="searchAnalysisId" placeholder="Analysis ID" class="form-input" style="flex: 1; min-width: 200px;" />
+              <input type="text" id="searchCaseId" placeholder="Case ID (Optional)" class="form-input" style="flex: 1; min-width: 150px;" />
+              <input type="number" id="searchTrackId" placeholder="Track ID (Optional)" class="form-input" style="flex: 0.5; min-width: 100px;" />
+              <input type="text" id="searchAttributes" placeholder="Attributes (e.g. red shirt)" class="form-input" style="flex: 1; min-width: 200px;" />
+              <button type="submit" class="primary-btn" id="searchPersonsBtn">Search</button>
+            </form>
+            
+            <div id="searchPersonsError" class="inline-error hidden" style="margin-bottom: 1rem;"></div>
+            
+            <div class="table-wrap result-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Analysis ID</th>
+                    <th>Track ID</th>
+                    <th>First Seen</th>
+                    <th>Last Seen</th>
+                    <th>Detection Count</th>
+                    <th>Attributes</th>
+                  </tr>
+                </thead>
+                <tbody id="personsSearchResults">
+                  <tr><td colspan="6">Enter criteria to search persons.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         <section class="panel recent-panel" id="recentInvestigationsPanel">
           <div class="panel-header">
             <div>

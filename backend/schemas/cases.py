@@ -2,7 +2,7 @@ from pydantic import BaseModel
 
 
 class CreateCaseRequest(BaseModel):
-    case_name: str
+    title: str
     description: str = ""
     investigator: str = ""
     status: str = "open"

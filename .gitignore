@@ -35,5 +35,7 @@ backend/frames/
 .DS_Store
 Thumbs.db
 
+
 # Logs
 *.log
+backend/results/
