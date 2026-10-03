@@ -2,6 +2,7 @@ import json
 
 from fastapi import APIRouter, HTTPException
 from core.config import RESULT_DIR
+from core.database import get_db
 
 router = APIRouter(tags=["Reports"])
 
@@ -57,31 +58,83 @@ def _build_findings(
     return findings
 
 
+def _load_detections(analysis_id: str) -> list | None:
+    """Load detections from MongoDB or JSON fallback. Returns None if not found."""
+    db = get_db()
+
+    if db is not None:
+        try:
+            detections = list(
+                db["detection_results"]
+                .find(
+                    {"analysis_id": analysis_id},
+                    {"_id": 0},
+                )
+                .sort("frame_number", 1)
+            )
+            # Map back fields for backward compatibility with JSON fallback if needed
+            for d in detections:
+                if "frame_number" in d:
+                    d["frame"] = d["frame_number"]
+                if "object_class" in d:
+                    d["object"] = d["object_class"]
+            if detections:
+                return detections
+        except Exception as e:
+            print(f"[MongoDB] Error loading detections for report: {e}")
+
+    # JSON fallback
+    detections_path = RESULT_DIR / f"{analysis_id}_detections.json"
+    if not detections_path.exists():
+        return None
+
+    with open(detections_path, "r") as f:
+        return json.load(f)
+
+
+def _load_threat_data(analysis_id: str) -> dict | None:
+    """Load threat analysis from MongoDB or JSON fallback."""
+    db = get_db()
+
+    if db is not None:
+        try:
+            result = db["investigation_reports"].find_one(
+                {"analysis_id": analysis_id},
+                {"_id": 0, "threat_summary": 1},
+            )
+            if result and result.get("threat_summary"):
+                return result["threat_summary"]
+        except Exception as e:
+            print(f"[MongoDB] Error loading threat data for report: {e}")
+
+    # JSON fallback
+    threats_path = RESULT_DIR / f"{analysis_id}_threats.json"
+    if threats_path.exists():
+        try:
+            with open(threats_path, "r") as f:
+                return json.load(f)
+        except Exception:
+            pass
+
+    return None
+
+
 @router.get("/reports/{analysis_id}")
 def get_report(analysis_id: str):
     """
     Generate a structured forensic report from existing detection and threat data.
     Includes case summary, threat assessment, chronological timeline, and key findings.
+    Reads from MongoDB first, falls back to JSON files.
     """
-    detections_path = RESULT_DIR / f"{analysis_id}_detections.json"
-    threats_path = RESULT_DIR / f"{analysis_id}_threats.json"
+    detections = _load_detections(analysis_id)
 
-    if not detections_path.exists():
+    if detections is None:
         raise HTTPException(
             status_code=404,
             detail="No analysis data found. Run /analyze-video first.",
         )
 
-    with open(detections_path, "r") as f:
-        detections = json.load(f)
-
-    threat_data = None
-    if threats_path.exists():
-        try:
-            with open(threats_path, "r") as f:
-                threat_data = json.load(f)
-        except Exception:
-            threat_data = None
+    threat_data = _load_threat_data(analysis_id)
 
     # Build object counts from detections
     object_counts: dict = {}

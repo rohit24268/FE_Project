@@ -5,6 +5,7 @@ opencv-python
 ultralytics
 google-genai
 python-dotenv
+pymongo[srv]
 
 #How to run
 # Frotend
