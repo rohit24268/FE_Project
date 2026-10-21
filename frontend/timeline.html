@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=20261021-1526" />
   <link rel="stylesheet" href="css/timeline.css" />
 </head>
 <body>
@@ -38,13 +38,6 @@
             <svg viewBox="0 0 24 24"><path d="M7 6h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm2 0V4h6v2M9 12h6M9 15h4"/></svg>
           </span>
           <span>Evidence</span>
-        </a>
-
-        <a href="timeline.html" class="nav-item active">
-          <span class="nav-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
-          </span>
-          <span>Timeline</span>
         </a>
 
         <a href="reports.html" class="nav-item">
@@ -78,17 +71,33 @@
           <div class="panel-header">
             <div>
               <p class="eyebrow small">Select Investigation</p>
-              <h2>Analysis Session ID</h2>
+              <h2>Select Case and Video</h2>
             </div>
           </div>
           <div style="display: flex; gap: 10px; align-items: center;">
-            <input type="text" class="analysis-id-input" id="timelineAnalysisIdInput" placeholder="Enter Analysis ID (e.g. 550e8400-e29b-41d4-a716-446655440000)..." />
+            <div class="case-session-picker">
+              <select id="caseNameSelect" class="case-session-select" aria-label="Select a case"></select>
+              <select id="caseSessionSelect" class="case-session-select" aria-label="Select a video"></select>
+            </div>
+            <input type="hidden" id="timelineAnalysisIdInput" />
             <button type="button" class="primary-btn" id="loadTimelineBtn">Load Timeline</button>
           </div>
           <div style="margin-top: 12px; font-size: 12px; color: var(--muted);" id="timelineQuickLinks">
             <span>Recent Sessions: </span><span id="timelineQuickLinksChips">None recorded yet</span>
           </div>
         </section>
+
+        <!-- Threat Assessment Banner -->
+        <div class="threat-banner threat-safe hidden" id="timelineThreatBanner">
+          <div class="threat-badge-group">
+            <span class="threat-level-pill" id="timelineThreatLevelPill">SAFE</span>
+            <span class="threat-score-label">Peak Threat Risk: <strong id="timelineThreatScoreValue">0%</strong></span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <div class="threat-incidents-count" id="timelineThreatIncidentsCount">0 Incidents Detected</div>
+            <button type="button" class="secondary-btn threat-filter-btn" id="timelineThreatFilterBtn">Show Threats Only</button>
+          </div>
+        </div>
 
         <!-- Event Timeline Section -->
         <section class="panel">
@@ -99,13 +108,14 @@
             </div>
           </div>
           <div id="timelineContainer">
-            <p class="empty-state">Select an Analysis ID above to render the event timeline.</p>
+            <p class="empty-state">Select a case and video above to render the event timeline.</p>
           </div>
         </section>
       </div>
     </main>
   </div>
 
-  <script src="js/timeline.js"></script>
+  <script src="js/case-session-picker.js?v=20261021-1600"></script>
+  <script src="js/timeline.js?v=20261021-1600"></script>
 </body>
 </html>

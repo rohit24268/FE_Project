@@ -86,7 +86,37 @@ button, input {
   letter-spacing: -0.04em;
   color: var(--text);
   font-weight: 500;
+  text-decoration: none;
   transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item:focus,
+.nav-item:active,
+.nav-item:visited {
+  text-decoration: none;
+}
+
+.nav-item[href="timeline.html"] {
+  display: none;
+}
+
+.case-session-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.case-session-select {
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
 }
 
 .nav-item.active {
@@ -1326,13 +1356,6 @@ td {
   display: flex;
   flex-shrink: 0;
   gap: 8px;
-}
-
-/* Evidence / Timeline toggles */
-.evidence-tab-btn.active {
-  background: var(--purple-soft);
-  color: var(--purple);
-  border-color: rgba(91, 79, 224, 0.2);
 }
 
 /* Timeline Events */

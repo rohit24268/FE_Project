@@ -11,15 +11,12 @@ def _build_description(detection: dict) -> str:
     obj = detection.get("object", "Unknown")
     conf = float(detection.get("confidence", 0))
     ts = float(detection.get("timestamp", 0))
-    track_id = detection.get("track_id")
     threat_cat = detection.get("threat_category", "NONE")
 
     desc = (
         f"{obj.capitalize()} detected at {ts:.2f}s "
         f"with {conf * 100:.1f}% confidence"
     )
-    if track_id is not None:
-        desc += f" (Track #{track_id})"
     if threat_cat and threat_cat != "NONE":
         desc += f" — {threat_cat.replace('_', ' ').title()}"
     return desc
@@ -107,8 +104,8 @@ def get_evidence(analysis_id: str):
             raise HTTPException(
                 status_code=404,
                 detail=(
-                    "No detection data found for this analysis_id. "
-                    "Run /analyze-video first."
+                    "No saved evidence was found for this video. "
+                    "Analyze the video first."
                 ),
             )
 
@@ -121,9 +118,41 @@ def get_evidence(analysis_id: str):
         ]
 
     threat_data = _load_threat_data(analysis_id)
+    case_name = None
+    case_id = None
+    annotated_video_url = None
+    if db is not None:
+        analysis = db["analysis_results"].find_one(
+            {"analysis_id": analysis_id},
+            {
+                "_id": 0,
+                "case_id": 1,
+                "annotated_video_file_id": 1,
+            },
+        )
+        if analysis:
+            case_id = analysis.get("case_id")
+            if case_id and analysis.get("annotated_video_file_id"):
+                annotated_video_url = (
+                    f"/case-videos/{case_id}/"
+                    f"{analysis['annotated_video_file_id']}"
+                )
+        if case_id:
+            case = db["cases"].find_one(
+                {"case_id": case_id},
+                {"_id": 0, "title": 1, "case_name": 1, "case_number": 1},
+            )
+            if case:
+                case_name = (
+                    case.get("title")
+                    or case.get("case_name")
+                    or f"Case {case.get('case_number')}"
+                )
 
     return {
         "analysis_id": analysis_id,
+        "case_name": case_name,
+        "annotated_video_url": annotated_video_url,
         "total_evidence": len(evidence_items),
         "threat_analysis": threat_data,
         "evidence": evidence_items,

@@ -6,10 +6,11 @@ ultralytics
 google-genai
 python-dotenv
 pymongo[srv]
+imageio-ffmpeg
 
 #How to run
 # Frotend
-#cd frontend
+# cd frontend
 #python -m http.server 5500
 # open: http://localhost:5500
 

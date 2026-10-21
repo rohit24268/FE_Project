@@ -77,8 +77,8 @@ async def investigate(payload: InvestigateRequest):
         raise HTTPException(
             status_code=404,
             detail=(
-                "No detection data found for this analysis_id. "
-                "Run /analyze-video first."
+                "No saved evidence was found for this video. "
+                "Analyze the video first."
             )
         )
 

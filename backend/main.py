@@ -7,10 +7,26 @@ from core.database import is_connected, get_db
 from datetime import datetime, timezone
 from routers import video, investigate, cases, evidence, reports, persons
 
+from contextlib import asynccontextmanager
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Verify MongoDB connectivity on application startup."""
+    db = get_db()
+    if db is not None:
+        print("[ForenSight] MongoDB is available — using database as primary store")
+    else:
+        print(
+            "[ForenSight] MongoDB is NOT available — video analysis cannot be saved; "
+            "other routes may use JSON fallback mode"
+        )
+    yield
+
 app = FastAPI(
     title="ForenSight AI",
     description="AI-powered CCTV forensic analysis system",
-    version="1.0.0"
+    version="1.0.0",
+    lifespan=lifespan
 )
 
 # --------------------------------------------------
@@ -32,19 +48,6 @@ app.mount(
     StaticFiles(directory=str(RESULT_DIR)),
     name="results"
 )
-
-
-# --------------------------------------------------
-# STARTUP EVENT — verify MongoDB on boot
-# --------------------------------------------------
-@app.on_event("startup")
-def on_startup():
-    """Verify MongoDB connectivity on application startup."""
-    db = get_db()
-    if db is not None:
-        print("[ForenSight] MongoDB is available — using database as primary store")
-    else:
-        print("[ForenSight] MongoDB is NOT available — using JSON fallback mode")
 
 
 # --------------------------------------------------

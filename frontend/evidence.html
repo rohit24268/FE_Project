@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/evidence.css" />
+  <link rel="stylesheet" href="css/style.css?v=20261021-1526" />
+  <link rel="stylesheet" href="css/evidence.css?v=20261021-1556" />
 </head>
 <body>
   <div class="app-shell">
@@ -40,13 +40,6 @@
           <span>Evidence</span>
         </a>
 
-        <a href="timeline.html" class="nav-item">
-          <span class="nav-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
-          </span>
-          <span>Timeline</span>
-        </a>
-
         <a href="reports.html" class="nav-item">
           <span class="nav-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M6 18V9m6 9V5m6 13v-7M4 20h16"/></svg>
@@ -70,10 +63,6 @@
             <p class="eyebrow">Forensic Data</p>
             <h1>YOLO Evidence &amp; Timeline</h1>
           </div>
-          <div class="result-links">
-            <button type="button" class="secondary-btn evidence-tab-btn active" id="btnViewEvidence">Evidence List</button>
-            <button type="button" class="secondary-btn evidence-tab-btn" id="btnViewTimeline">Timeline View</button>
-          </div>
         </header>
 
         <!-- Quick Select Analysis Bar -->
@@ -81,26 +70,40 @@
           <div class="panel-header">
             <div>
               <p class="eyebrow small">Select Investigation</p>
-              <h2>Analysis Session ID</h2>
+              <h2>Select Case</h2>
             </div>
           </div>
-          <div style="display: flex; gap: 10px; align-items: center;">
-            <input type="text" class="analysis-id-input" id="evidenceAnalysisIdInput" placeholder="Enter Analysis ID (e.g. 550e8400-e29b-41d4-a716-446655440000)..." />
+          <div class="case-session-picker">
+            <select id="caseNameSelect" class="case-session-select" aria-label="Select a case"></select>
             <button type="button" class="primary-btn" id="loadEvidenceBtn">Load Evidence</button>
           </div>
+          <input type="hidden" id="evidenceAnalysisIdInput" />
+          <p class="analysis-case-name hidden" id="analysisCaseName" aria-live="polite"></p>
           <div style="margin-top: 12px; font-size: 12px; color: var(--muted);" id="evidenceQuickLinks">
-            <span>Recent Sessions: </span><span id="evidenceQuickLinksChips">None recorded yet</span>
+            <span>Recent Cases: </span><span id="evidenceQuickLinksChips">None recorded yet</span>
           </div>
         </section>
 
-        <!-- Evidence List View -->
-        <section class="panel" id="evidenceListSection">
+        <!-- Threat Assessment Banner -->
+        <div class="threat-banner threat-safe hidden" id="evidenceThreatBanner">
+          <div class="threat-badge-group">
+            <span class="threat-level-pill" id="evidenceThreatLevelPill">SAFE</span>
+            <span class="threat-score-label">Peak Threat Risk: <strong id="evidenceThreatScoreValue">0%</strong></span>
+          </div>
+          <div class="threat-incidents-count" id="evidenceThreatIncidentsCount">0 Incidents Detected</div>
+        </div>
+
+        <section class="panel evidence-results" id="evidenceListSection">
           <div class="panel-header">
             <div>
-              <p class="eyebrow small">Detections &amp; Threat Items</p>
-              <h2 id="evidenceTitle">Evidence Items</h2>
+              <p class="eyebrow small">Chronological Detections &amp; Threat Items</p>
+              <h2 id="evidenceTitle">Evidence &amp; Timeline</h2>
             </div>
-            <span class="status-pill ok" id="evidenceCountPill">0 Items</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <a class="primary-btn hidden" id="viewAnnotatedVideoBtn" target="_blank" rel="noreferrer">View Annotated Video</a>
+              <button type="button" class="secondary-btn threat-filter-btn" id="threatFilterBtn">Show Threats Only</button>
+              <span class="status-pill ok" id="evidenceCountPill">0 Items</span>
+            </div>
           </div>
           <div class="table-wrap result-table-wrap">
             <table>
@@ -110,34 +113,21 @@
                   <th>Frame / Time</th>
                   <th>Detected Object</th>
                   <th>Confidence</th>
-                  <th>Track ID</th>
+                  <th>Threat Category</th>
                   <th>Forensic Description</th>
                 </tr>
               </thead>
               <tbody id="evidenceTableBody">
-                <tr><td colspan="6">Enter or select an Analysis ID above to load evidence.</td></tr>
+                <tr><td colspan="6">Select a case above to load evidence.</td></tr>
               </tbody>
             </table>
-          </div>
-        </section>
-
-        <!-- Timeline View Section -->
-        <section class="panel hidden" id="timelineSection">
-          <div class="panel-header">
-            <div>
-              <p class="eyebrow small">Chronological Sequence</p>
-              <h2>Event Timeline</h2>
-            </div>
-            <span class="status-pill ok" id="timelineCountPill">0 Events</span>
-          </div>
-          <div id="timelineContainer">
-            <p class="empty-state">Select an Analysis ID above to render the event timeline.</p>
           </div>
         </section>
       </div>
     </main>
   </div>
 
-  <script src="js/evidence.js"></script>
+  <script src="js/case-session-picker.js?v=20261021-1621"></script>
+  <script src="js/evidence.js?v=20261021-1621"></script>
 </body>
 </html>

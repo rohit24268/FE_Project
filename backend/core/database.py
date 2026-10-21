@@ -138,6 +138,12 @@ def _ensure_indexes():
             background=True,
         )
 
+        # Complete analysis results
+        _db["analysis_results"].create_index(
+            [("analysis_id", ASCENDING)],
+            background=True,
+        )
+
         print("[MongoDB] Indexes verified")
 
     except Exception as e:

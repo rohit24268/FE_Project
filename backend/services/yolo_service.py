@@ -1,7 +1,6 @@
 from ultralytics import YOLO
 from pathlib import Path
 import cv2
-import json
 import uuid
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from services.ai_investigator import analyze_crop_attributes
@@ -20,11 +19,67 @@ MODEL_PATH = Path(__file__).resolve().parent.parent / "yolo11n.pt"
 model = YOLO(str(MODEL_PATH))
 
 
+def transcode_to_h264(input_video_path: Path) -> bool:
+    """
+    Transcode an OpenCV mp4v video into browser-friendly H.264 (yuv420p)
+    using imageio_ffmpeg or system ffmpeg with +faststart for instant streaming.
+    Guarantees seamless HTML5 <video> playback across Chrome, Edge, Safari, Firefox.
+    """
+    import subprocess
+    import shutil
+    
+    ffmpeg_exe = None
+    try:
+        import imageio_ffmpeg
+        ffmpeg_exe = imageio_ffmpeg.get_ffmpeg_exe()
+    except Exception:
+        ffmpeg_exe = shutil.which("ffmpeg")
+
+    if not ffmpeg_exe:
+        return False
+
+    temp_output = input_video_path.with_name(f"{input_video_path.stem}_h264.mp4")
+    try:
+        cmd = [
+            ffmpeg_exe,
+            "-y",
+            "-i", str(input_video_path),
+            "-c:v", "libx264",
+            "-preset", "fast",
+            "-pix_fmt", "yuv420p",
+            "-movflags", "+faststart",
+            "-an",
+            str(temp_output),
+        ]
+        res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if res.returncode == 0 and temp_output.exists() and temp_output.stat().st_size > 0:
+            temp_output.replace(input_video_path)
+            print(f"[ForenSight AI] Video transcoded to web-compatible H.264: {input_video_path.name}")
+            return True
+        else:
+            err = res.stderr.decode("utf-8", errors="ignore")[:200]
+            print(f"[ForenSight AI] Transcoding warning: {err}")
+    except Exception as e:
+        print(f"[ForenSight AI] Transcoding error: {e}")
+    finally:
+        if temp_output.exists():
+            try:
+                temp_output.unlink()
+            except Exception:
+                pass
+    return False
+
+
 # --------------------------------------------------
 # ANALYZE VIDEO
 # --------------------------------------------------
 
-def analyze_video(video_path: str, result_dir: str):
+def analyze_video(
+    video_path: str,
+    result_dir: str,
+    analysis_id: str | None = None,
+    progress_callback = None
+):
 
     result_path = Path(result_dir)
     result_path.mkdir(
@@ -32,23 +87,13 @@ def analyze_video(video_path: str, result_dir: str):
         exist_ok=True
     )
 
-    analysis_id = str(uuid.uuid4())
+    if not analysis_id:
+        analysis_id = str(uuid.uuid4())
 
     output_video = (
         result_path /
         f"{analysis_id}_annotated.mp4"
     )
-
-    output_json = (
-        result_path /
-        f"{analysis_id}_detections.json"
-    )
-
-    output_threats_json = (
-        result_path /
-        f"{analysis_id}_threats.json"
-    )
-
 
     # --------------------------------------------------
     # OPEN VIDEO
@@ -131,14 +176,21 @@ def analyze_video(video_path: str, result_dir: str):
     detections = []
     track_crops = {}
 
+    total_raw_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    if total_raw_frames <= 0:
+        total_raw_frames = 100
+
     frame_number = 0
     processed_frames = 0
 
+    if progress_callback:
+        progress_callback(5, "Starting YOLO detection & tracking...")
 
     print("--------------------------------")
     print("Starting YOLO analysis")
     print(f"Video FPS: {original_fps}")
     print(f"Resolution: {width}x{height}")
+    print(f"Total Frames: {total_raw_frames}")
     print("--------------------------------")
 
 
@@ -153,6 +205,9 @@ def analyze_video(video_path: str, result_dir: str):
         if not success:
             break
 
+        if progress_callback and frame_number % 15 == 0 and total_raw_frames > 0:
+            pct = min(75, max(5, int((frame_number / total_raw_frames) * 75)))
+            progress_callback(pct, f"Processing video frames ({frame_number}/{total_raw_frames})...")
 
         # --------------------------------------------------
         # PROCESS ONLY EVERY 3RD FRAME
@@ -366,6 +421,8 @@ def analyze_video(video_path: str, result_dir: str):
     cap.release()
     writer.release()
 
+    if progress_callback:
+        progress_callback(78, "Running AI visual attribute analysis on tracked targets...")
 
     # --------------------------------------------------
     # METHOD A: PARALLEL MULTIMODAL CROP ANALYSIS
@@ -373,9 +430,10 @@ def analyze_video(video_path: str, result_dir: str):
 
     track_attributes = {}
     if track_crops:
-        sample_crops = dict(list(track_crops.items())[:15])
+        # Sample up to 8 distinct tracks to stay comfortably within Gemini free-tier limits
+        sample_crops = dict(list(track_crops.items())[:8])
         print("--------------------------------")
-        print(f"Running Method A Parallel Multimodal Analysis on {len(sample_crops)} unique track(s)...")
+        print(f"Running Multimodal Crop Analysis on {len(sample_crops)} unique track(s)...")
 
         def _process_track_crop(item):
             tid, crop_bytes = item
@@ -387,7 +445,7 @@ def analyze_video(video_path: str, result_dir: str):
                 print(f"Failed to analyze track #{tid}: {e}")
             return tid, None
 
-        with ThreadPoolExecutor(max_workers=5) as executor:
+        with ThreadPoolExecutor(max_workers=2) as executor:
             futures = [executor.submit(_process_track_crop, item) for item in sample_crops.items()]
             for future in as_completed(futures):
                 tid, attr = future.result()
@@ -397,40 +455,36 @@ def analyze_video(video_path: str, result_dir: str):
 
         print("--------------------------------")
 
-    # Enrich detections with visual attributes
+    # Enrich detections with visual attributes & detect weapons identified by Multimodal AI
+    WEAPON_KEYWORDS = ["gun", "pistol", "rifle", "firearm", "knife", "dagger", "sword", "weapon", "blade", "crowbar", "axe"]
     for detection in detections:
         tid = detection.get("track_id")
         if tid in track_attributes:
-            detection["attributes"] = track_attributes[tid]
+            attr = track_attributes[tid]
+            detection["attributes"] = attr
+            attr_lower = attr.lower()
+            if any(w in attr_lower for w in WEAPON_KEYWORDS):
+                detection["is_threat"] = True
+                if any(w in attr_lower for w in ["gun", "pistol", "rifle", "firearm", "weapon"]):
+                    detection["threat_category"] = "LETHAL_WEAPON"
+                elif any(w in attr_lower for w in ["knife", "dagger", "sword", "blade"]):
+                    detection["threat_category"] = "LETHAL_WEAPON"
+                else:
+                    detection["threat_category"] = "BLUNT_WEAPON"
 
-
-    # --------------------------------------------------
-    # SAVE DETECTIONS & THREAT ANALYSIS JSON
-    # --------------------------------------------------
-
-    with open(
-        output_json,
-        "w"
-    ) as file:
-
-        json.dump(
-            detections,
-            file,
-            indent=4
-        )
+    if progress_callback:
+        progress_callback(88, "Computing forensic threat fusion & timeline...")
 
     threat_analysis = analyze_video_threats(detections)
 
-    with open(
-        output_threats_json,
-        "w"
-    ) as file:
+    if progress_callback:
+        progress_callback(93, "Transcoding annotated video for web playback...")
 
-        json.dump(
-            threat_analysis,
-            file,
-            indent=4
-        )
+    # Transcode video to standard web-compatible H.264 (yuv420p)
+    transcode_to_h264(output_video)
+
+    if progress_callback:
+        progress_callback(100, "Analysis complete")
 
 
     # --------------------------------------------------
@@ -493,12 +547,6 @@ def analyze_video(video_path: str, result_dir: str):
 
         "video":
             str(output_video),
-
-        "detections_file":
-            str(output_json),
-
-        "threats_file":
-            str(output_threats_json),
 
         "total_detections":
             len(detections),

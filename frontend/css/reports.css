@@ -2,6 +2,34 @@
    REPORTS PAGE STYLES
    ================================================== */
 
+#reportDisplayPanel h3 {
+  font-size: 19px !important;
+}
+
+#reportDisplayPanel .result-stat > span {
+  font-size: 14px;
+}
+
+#reportDisplayPanel .result-stat > strong {
+  font-size: 19px;
+}
+
+#reportDisplayPanel .section-title-row .subtext,
+#reportDisplayPanel .incident-info,
+#reportDisplayPanel .timeline-event-body span {
+  font-size: 15px;
+}
+
+#reportDisplayPanel .incident-badge,
+#reportDisplayPanel .incident-time,
+#reportDisplayPanel .timeline-time {
+  font-size: 14px;
+}
+
+#reportDisplayPanel .timeline-event-body strong {
+  font-size: 17px;
+}
+
 .finding-item {
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
@@ -13,14 +41,14 @@
 
 .finding-item h4 {
   margin: 0 0 4px;
-  font-size: 14px;
+  font-size: 17px;
   letter-spacing: -0.02em;
   color: var(--text);
 }
 
 .finding-item p {
   margin: 0;
-  font-size: 13px;
+  font-size: 15px;
   color: var(--muted);
 }
 
@@ -62,8 +90,16 @@
   box-shadow: 0 0 0 3px rgba(91, 79, 224, 0.12);
 }
 
+.report-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 @media print {
-  .sidebar, .topbar button, .panel-header button, input, .analysis-quick-link {
+  .sidebar, .topbar button, .panel-header button, input, .analysis-quick-link,
+  .report-header-actions .report-print-button, .case-session-picker,
+  #reportQuickLinks, #loadReportBtn {
     display: none !important;
   }
   .app-shell {
