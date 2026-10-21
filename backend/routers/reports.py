@@ -131,7 +131,7 @@ def get_report(analysis_id: str):
     if detections is None:
         raise HTTPException(
             status_code=404,
-            detail="No analysis data found. Run /analyze-video first.",
+            detail="No saved report data was found for this video. Analyze the video first.",
         )
 
     threat_data = _load_threat_data(analysis_id)
@@ -167,8 +167,28 @@ def get_report(analysis_id: str):
 
     timeline.sort(key=lambda x: x["timestamp"] or 0)
 
+    case_name = None
+    db = get_db()
+    if db is not None:
+        analysis = db["analysis_results"].find_one(
+            {"analysis_id": analysis_id},
+            {"_id": 0, "case_id": 1},
+        )
+        if analysis and analysis.get("case_id"):
+            case = db["cases"].find_one(
+                {"case_id": analysis["case_id"]},
+                {"_id": 0, "title": 1, "case_name": 1, "case_number": 1},
+            )
+            if case:
+                case_name = (
+                    case.get("title")
+                    or case.get("case_name")
+                    or f"Case {case.get('case_number')}"
+                )
+
     return {
         "analysis_id": analysis_id,
+        "case_name": case_name,
         "total_detections": len(detections),
         "object_counts": object_counts,
         "threat_analysis": threat_data,

@@ -41,7 +41,7 @@ MAX_SAMPLE_EVENTS = 400
 def analyze_crop_attributes(image_bytes: bytes) -> str:
     """
     Analyzes a cropped object image using Gemini 3.6 Flash multimodal capabilities
-    and returns a concise description of visual attributes (clothing color, type, vehicle color, etc.).
+    and returns a concise description of visual attributes (clothing color, carried items/weapons, vehicle type, etc.).
     """
     if not image_bytes:
         return ""
@@ -53,9 +53,9 @@ def analyze_crop_attributes(image_bytes: bytes) -> str:
             mime_type="image/jpeg"
         )
         prompt = (
-            "In 1 short sentence (under 12 words), describe the visual attributes of "
-            "this detected object/person from CCTV (e.g. clothing color and apparel if person, "
-            "vehicle color and type if vehicle)."
+            "In 1 short sentence (under 15 words), describe the visual attributes of "
+            "this detected object/person from CCTV (apparel/clothing color, held objects, "
+            "weapons or items carried if any, or vehicle type/color)."
         )
         response = client.models.generate_content(
             model=MODEL,
@@ -66,8 +66,14 @@ def analyze_crop_attributes(image_bytes: bytes) -> str:
             )
         )
         return (response.text or "").strip()
+    except genai_errors.ClientError as e:
+        if getattr(e, "code", None) == 429:
+            print("[ForenSight AI] Gemini rate limit reached during crop attribute analysis; skipping remaining crop queries.")
+        else:
+            print(f"[ForenSight AI] Gemini client error during crop analysis: {e}")
+        return ""
     except Exception as e:
-        print(f"Crop analysis error: {e}")
+        print(f"[ForenSight AI] Crop analysis error: {e}")
         return ""
 
 

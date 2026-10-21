@@ -2,10 +2,12 @@
    EVIDENCE & TIMELINE PAGE STYLES
    ================================================== */
 
-.evidence-tab-btn.active {
-  background: var(--purple-soft);
-  color: var(--purple);
-  border-color: rgba(91, 79, 224, 0.2);
+.evidence-results th {
+  font-size: 13px;
+}
+
+.evidence-results td {
+  font-size: 16px;
 }
 
 .timeline-event {
@@ -92,6 +94,13 @@
   font-size: 14px;
   outline: none;
   transition: border-color 0.2s;
+}
+
+.analysis-case-name {
+  margin: 10px 0 0;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .analysis-id-input:focus {

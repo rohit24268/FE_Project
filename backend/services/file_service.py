@@ -6,9 +6,12 @@ from fastapi import UploadFile, HTTPException
 from core.config import UPLOAD_DIR
 
 
-async def save_uploaded_file(file: UploadFile) -> tuple[str, Path]:
+async def save_uploaded_file(
+    file: UploadFile,
+    upload_dir: Path = UPLOAD_DIR,
+) -> tuple[str, Path]:
     """
-    Validates and saves an uploaded video file to the UPLOAD_DIR.
+    Validates and saves an uploaded video file to the selected directory.
     Returns (filename, video_path).
     """
     if not file.filename:
@@ -28,7 +31,8 @@ async def save_uploaded_file(file: UploadFile) -> tuple[str, Path]:
 
     video_id = str(uuid.uuid4())
     filename = f"{video_id}{file_extension}"
-    video_path = UPLOAD_DIR / filename
+    upload_dir.mkdir(parents=True, exist_ok=True)
+    video_path = upload_dir / filename
 
     try:
         with open(video_path, "wb") as buffer:

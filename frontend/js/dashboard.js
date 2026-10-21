@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8000';
+const API_URL = window.API_URL || 'http://localhost:8000';
 
 const videoInput = document.getElementById('videoInput');
 const fileName = document.getElementById('fileName');
@@ -17,6 +17,7 @@ const videoPreview = document.getElementById('videoPreview');
 const annotatedVideo = document.getElementById('annotatedVideo');
 const downloadVideoLink = document.getElementById('downloadVideoLink');
 const recentInvestigationsList = document.getElementById('recentInvestigationsList');
+const recentCasesList = document.getElementById('recentCasesList');
 
 // Threat UI Elements
 const threatBanner = document.getElementById('threatBanner');
@@ -41,6 +42,43 @@ let annotatedVideoURL = '';
 let currentAnalysisId = null;
 let chatHistory = [];
 
+async function loadRecentCases() {
+  if (!recentCasesList) return;
+  try {
+    const response = await fetch(`${API_URL}/cases`);
+    if (!response.ok) throw new Error('Failed to load cases.');
+    const cases = await response.json();
+    const recentCases = cases
+      .sort((a, b) => Number(b.case_number || 0) - Number(a.case_number || 0))
+      .slice(0, 5);
+
+    if (!recentCases.length) {
+      recentCasesList.innerHTML = '<p class="empty-state">No cases found.</p>';
+      return;
+    }
+
+    recentCasesList.innerHTML = recentCases.map((item) => {
+      const caseName = item.storage_collection || `case${item.case_number}`;
+      return `
+        <article class="recent-item">
+          <div class="recent-item-main">
+            <div class="recent-item-title-row">
+              <strong>${escapeHtml(caseName)}</strong>
+              <span class="threat-pill ${(item.status || 'open').toLowerCase() === 'open' ? 'safe' : 'medium'}">${escapeHtml((item.status || 'open').toUpperCase())}</span>
+            </div>
+            <span>${escapeHtml(item.title || item.case_name || caseName)}</span>
+          </div>
+          <div class="recent-item-actions">
+            <a class="secondary-btn" href="cases.html">View Case</a>
+          </div>
+        </article>
+      `;
+    }).join('');
+  } catch (error) {
+    recentCasesList.innerHTML = `<p class="inline-error">Error loading cases: ${escapeHtml(error.message)}</p>`;
+  }
+}
+
 // --------------------------------------------------
 // RECENT INVESTIGATIONS HISTORY
 // --------------------------------------------------
@@ -58,6 +96,7 @@ function saveRecentInvestigation(file, payload) {
   const threatAnalysis = payload.threat_analysis || {};
   const investigation = {
     id: payload.analysis_id,
+    caseName: payload.case_name,
     fileName: file.name,
     createdAt: new Date().toISOString(),
     totalDetections: payload.total_detections ?? (payload.detections || []).length,
@@ -93,7 +132,7 @@ function renderRecentInvestigations() {
       <article class="recent-item">
         <div class="recent-item-main">
           <div class="recent-item-title-row">
-            <strong>${escapeHtml(item.fileName)}</strong>
+            <strong>${escapeHtml(item.caseName || 'Case')}</strong>
             <span class="threat-pill ${levelClass}">${escapeHtml(item.threatLevel || 'SAFE')}</span>
           </div>
           <span>${formatDate(item.createdAt)} • ${item.totalDetections} detections</span>
@@ -246,11 +285,10 @@ function renderAnalysisResults(payload) {
             ${isThreat ? `<span class="threat-tag">${escapeHtml(detection.threat_category || 'THREAT')}</span>` : ''}
           </td>
           <td>${formatConfidence(detection.confidence)}</td>
-          <td>${detection.track_id ?? '-'}</td>
         </tr>
       `;
     }).join('')
-    : '<tr><td colspan="5">No detections available.</td></tr>';
+    : '<tr><td colspan="4">No detections available.</td></tr>';
 
   resultNote.textContent = detections.length > 100
     ? `Showing the first 100 of ${detections.length} detection events.`
@@ -264,11 +302,12 @@ function renderAnalysisResults(payload) {
   }
   if (payload.annotated_video) {
     const resultVideoURL = new URL(payload.annotated_video, API_URL).href;
-    const filename = payload.annotated_video.split('/').pop();
     annotatedVideoURL = resultVideoURL;
     annotatedVideo.src = annotatedVideoURL;
     if (downloadVideoLink) {
-      downloadVideoLink.href = `${API_URL}/download-video/${encodeURIComponent(filename)}`;
+      downloadVideoLink.href = payload.download_video
+        ? new URL(payload.download_video, API_URL).href
+        : resultVideoURL;
     }
   }
 
@@ -277,7 +316,7 @@ function renderAnalysisResults(payload) {
     const threatLevel = payload.threat_analysis ? payload.threat_analysis.overall_threat_level : 'SAFE';
     chatMessages.innerHTML = `
       <div class="chat-bubble model">
-        <p>Investigation session initialized for Analysis <code>#${currentAnalysisId.slice(0, 8)}</code>.</p>
+        <p>Investigation session initialized for ${escapeHtml(payload.case_name || 'selected case')}.</p>
         <p>Overall Footage Assessment: <strong>${threatLevel}</strong>. You can ask me to reconstruct the timeline, identify armed individuals, or prepare a dispatch report.</p>
       </div>
     `;
@@ -473,8 +512,41 @@ if (analyzeBtn) {
       queueValue.textContent = 'Analyzing';
     }
 
+    // Generate client analysis ID for live tracking
+    const clientAnalysisId = 'anlz_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+
+    const progressContainer = document.getElementById('analysisProgressContainer');
+    const progressText = document.getElementById('analysisProgressText');
+    const progressPercent = document.getElementById('analysisProgressPercent');
+    const progressBar = document.getElementById('analysisProgressBar');
+
+    if (progressContainer) {
+      progressContainer.classList.remove('hidden');
+      if (progressBar) progressBar.style.width = '5%';
+      if (progressPercent) progressPercent.textContent = '5%';
+      if (progressText) progressText.textContent = 'Uploading video footage...';
+    }
+
     const formData = new FormData();
     formData.append('file', file);
+    formData.append('analysis_id', clientAnalysisId);
+
+    // Poll server for live progress updates
+    const pollInterval = setInterval(async () => {
+      try {
+        const pRes = await fetch(`${API_URL}/analysis-progress/${clientAnalysisId}`);
+        if (pRes.ok) {
+          const pData = await pRes.json();
+          if (pData && pData.progress !== undefined) {
+            if (progressBar) progressBar.style.width = `${pData.progress}%`;
+            if (progressPercent) progressPercent.textContent = `${pData.progress}%`;
+            if (progressText && pData.message) progressText.textContent = pData.message;
+          }
+        }
+      } catch (err) {
+        // Polling network blip, continue
+      }
+    }, 750);
 
     try {
       const response = await fetch(`${API_URL}/analyze-video`, {
@@ -499,11 +571,41 @@ if (analyzeBtn) {
         queueValue.textContent = 'Complete';
       }
 
+      if (progressBar) progressBar.style.width = '100%';
+      if (progressPercent) progressPercent.textContent = '100%';
+      if (progressText) progressText.textContent = 'Analysis complete!';
+
       setStatus('Ready', 'ok');
-      fileName.textContent = `${file.name} • analyzed successfully`;
+      fileName.textContent = `${file.name} • saved to ${payload.case_collection || 'MongoDB'}`;
       renderAnalysisResults(payload);
       saveRecentInvestigation(file, payload);
+      loadRecentCases();
       renderRecentAnalysesQuickLinks();
+
+      if (payload.analysis_id) {
+        sessionStorage.setItem('forensight-evidence-analysis', payload.analysis_id);
+        window.location.assign('evidence.html');
+        return;
+      }
+
+      // Keep cross-page navigation independent of internal analysis IDs.
+      const navEv = document.getElementById('navEvidenceLink');
+      const navTl = document.getElementById('navTimelineLink');
+      const navRp = document.getElementById('navReportLink');
+      const navAi = document.getElementById('navAiLink');
+
+      if (navEv) navEv.href = 'evidence.html';
+      if (navTl) navTl.href = 'timeline.html';
+      if (navRp) navRp.href = 'reports.html';
+      if (navAi) navAi.href = 'ai-assistant.html';
+
+      document.querySelectorAll('.sidebar .nav-item').forEach(link => {
+        const h = link.getAttribute('href');
+        if (h && !h.startsWith('#') && h !== 'index.html') {
+          const basePage = h.split('?')[0];
+          link.href = basePage;
+        }
+      });
     } catch (error) {
       console.error('Backend analysis error:', error);
       if (queueValue) {
@@ -512,9 +614,14 @@ if (analyzeBtn) {
       setStatus('Error', 'ok');
       fileName.textContent = error.message || 'Analysis failed';
       fileName.classList.add('warning');
+      if (progressText) progressText.textContent = `Error: ${error.message}`;
     } finally {
+      clearInterval(pollInterval);
       analyzeBtn.disabled = false;
       analyzeBtn.textContent = 'Analyze Footage';
+      if (progressContainer) {
+        setTimeout(() => progressContainer.classList.add('hidden'), 3000);
+      }
     }
   });
 }
@@ -557,16 +664,18 @@ navItems.forEach((item) => {
 });
 
 // ==================================================
-// QUICK LINKS (Recent Analysis IDs)
+// QUICK LINKS (Recent Cases)
 // ==================================================
 
 function renderRecentAnalysesQuickLinks() {
-  const recent = getRecentInvestigations();
+  const recent = getRecentInvestigations().filter(
+    (item) => item.caseName && item.caseName !== 'Case unavailable'
+  );
   const evidenceContainer = document.getElementById('evidenceQuickLinksChips');
   const reportContainer = document.getElementById('reportQuickLinksChips');
 
   if (!recent.length) {
-    const html = '<span style="color:var(--muted)">No analysis sessions completed yet. Run a Video Analysis first.</span>';
+    const html = '<span style="color:var(--muted)">No recent cases found.</span>';
     if (evidenceContainer) evidenceContainer.innerHTML = html;
     if (reportContainer) reportContainer.innerHTML = html;
     return;
@@ -574,7 +683,7 @@ function renderRecentAnalysesQuickLinks() {
 
   const chipsHtml = recent.map((item) => `
     <button type="button" class="analysis-quick-link" data-analysis-id="${item.id}">
-      #${item.id.slice(0, 8)} (${escapeHtml(item.fileName)})
+      ${escapeHtml(item.caseName)}
     </button>
   `).join(' ');
 
@@ -647,30 +756,22 @@ function renderCases(cases) {
 
   casesList.innerHTML = cases.map((c) => {
     const createdDate = formatDate(c.created_at);
-    const analysisCount = (c.analysis_ids || []).length;
-    const isCurrentLinked = currentAnalysisId && (c.analysis_ids || []).includes(currentAnalysisId);
+    const analysisCount = c.analysis_count ?? (c.analysis_ids || []).length;
+    const caseTitle = c.title || c.case_name || 'Untitled Case';
 
     return `
       <div class="case-card">
         <div class="case-card-main">
           <div class="case-card-meta">
-            <h3>${escapeHtml(c.case_name)}</h3>
-            <span class="threat-pill ${c.status === 'open' ? 'safe' : 'medium'}">${escapeHtml(c.status.toUpperCase())}</span>
+            <h3>${escapeHtml(caseTitle)}</h3>
+            <span class="threat-pill ${c.status === 'open' ? 'safe' : 'medium'}">${escapeHtml((c.status || 'OPEN').toUpperCase())}</span>
           </div>
           <p>${escapeHtml(c.description || 'No description provided.')}</p>
           <div class="case-card-details">
-            <span><strong>Case ID:</strong> <code>${c.case_id}</code></span>
             <span><strong>Investigator:</strong> ${escapeHtml(c.investigator || 'Unassigned')}</span>
             <span><strong>Created:</strong> ${createdDate}</span>
-            <span><strong>Linked Analyses:</strong> ${analysisCount}</span>
+            <span><strong>Analyses:</strong> ${analysisCount}</span>
           </div>
-        </div>
-        <div class="case-card-actions">
-          ${currentAnalysisId ? `
-            <button type="button" class="secondary-btn link-analysis-btn" data-case-id="${c.case_id}" ${isCurrentLinked ? 'disabled' : ''}>
-              ${isCurrentLinked ? 'Linked' : 'Link Current Analysis'}
-            </button>
-          ` : ''}
         </div>
       </div>
     `;
@@ -685,9 +786,10 @@ if (createCaseForm) {
     const descInput = document.getElementById('caseDescriptionInput');
 
     const payload = {
-      case_name: nameInput.value,
-      investigator: investigatorInput.value,
-      description: descInput.value,
+      title: nameInput.value.trim(),
+      case_name: nameInput.value.trim(),
+      investigator: investigatorInput.value.trim(),
+      description: descInput.value.trim(),
       status: 'open'
     };
 
@@ -697,7 +799,12 @@ if (createCaseForm) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
-      if (!res.ok) throw new Error('Failed to create case');
+      if (!res.ok) {
+        const errJson = await res.json().catch(() => ({}));
+        let msg = errJson.detail;
+        if (Array.isArray(msg)) msg = msg.map(m => m.msg).join(', ');
+        throw new Error(msg || 'Failed to create case');
+      }
 
       nameInput.value = '';
       investigatorInput.value = '';
@@ -709,24 +816,6 @@ if (createCaseForm) {
     }
   });
 }
-
-document.addEventListener('click', async (e) => {
-  const btn = e.target.closest('.link-analysis-btn');
-  if (!btn || !currentAnalysisId) return;
-
-  const caseId = btn.dataset.caseId;
-  try {
-    const res = await fetch(`${API_URL}/cases/${caseId}/link-analysis`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ analysis_id: currentAnalysisId })
-    });
-    if (!res.ok) throw new Error('Failed to link analysis to case.');
-    loadCases();
-  } catch (err) {
-    alert(err.message);
-  }
-});
 
 // ==================================================
 // 2. EVIDENCE & 3. TIMELINE FUNCTIONALITY
@@ -809,7 +898,6 @@ function renderEvidenceTable(items) {
         <td>F#${ev.frame ?? '-'} (${Number(ev.timestamp || 0).toFixed(2)}s)</td>
         <td><strong>${escapeHtml(ev.object)}</strong></td>
         <td>${formatConfidence(ev.confidence)}</td>
-        <td>${ev.track_id ?? '-'}</td>
         <td>${escapeHtml(ev.description)}</td>
       </tr>
     `;
@@ -889,7 +977,7 @@ function renderReportPanel(data) {
   const threatData = data.threat_analysis || {};
   const overallLevel = threatData.overall_threat_level || 'SAFE';
 
-  document.getElementById('reportStatId').textContent = data.analysis_id;
+  document.getElementById('reportStatId').textContent = data.case_name || 'Case name unavailable';
   document.getElementById('reportStatDetections').textContent = data.total_detections;
   document.getElementById('reportStatThreatScore').textContent = `${Math.round((threatData.max_threat_score || 0) * 100)}%`;
   document.getElementById('reportStatIncidents').textContent = threatData.total_incidents || 0;
@@ -924,7 +1012,7 @@ function renderReportPanel(data) {
           <div class="timeline-marker ${item.is_threat ? 'threat' : 'safe'}"></div>
           <div class="timeline-event-body">
             <strong>${escapeHtml(item.event)}</strong>
-            <span>Confidence: ${formatConfidence(item.confidence)}${item.track_id !== null ? ` • Track #${item.track_id}` : ''}</span>
+            <span>Confidence: ${formatConfidence(item.confidence)}</span>
           </div>
           <div class="timeline-time">${Number(item.timestamp || 0).toFixed(2)}s</div>
         </div>
@@ -935,67 +1023,6 @@ function renderReportPanel(data) {
   reportDisplayPanel.scrollIntoView({ behavior: 'smooth' });
 }
 
-// ==================================================
-// 5. PERSON SEARCH FUNCTIONALITY
-// ==================================================
-
-const personSearchForm = document.getElementById('personSearchForm');
-const searchAnalysisId = document.getElementById('searchAnalysisId');
-const searchCaseId = document.getElementById('searchCaseId');
-const searchTrackId = document.getElementById('searchTrackId');
-const searchAttributes = document.getElementById('searchAttributes');
-const searchPersonsBtn = document.getElementById('searchPersonsBtn');
-const personsSearchResults = document.getElementById('personsSearchResults');
-const searchPersonsError = document.getElementById('searchPersonsError');
-
-if (personSearchForm) {
-  personSearchForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    searchPersonsError.classList.add('hidden');
-    personsSearchResults.innerHTML = '<tr><td colspan="6">Searching...</td></tr>';
-    searchPersonsBtn.disabled = true;
-    
-    const params = new URLSearchParams();
-    if (searchAnalysisId.value.trim()) params.append('analysis_id', searchAnalysisId.value.trim());
-    if (searchCaseId.value.trim()) params.append('case_id', searchCaseId.value.trim());
-    if (searchTrackId.value.trim()) params.append('track_id', searchTrackId.value.trim());
-    if (searchAttributes.value.trim()) params.append('attributes', searchAttributes.value.trim());
-    
-    try {
-      const res = await fetch(`${API_URL}/search-persons?${params.toString()}`);
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        let msg = data.detail;
-        if (Array.isArray(msg)) msg = msg.map(e => e.msg).join(', ');
-        throw new Error(msg || 'Search failed');
-      }
-      
-      const data = await res.json();
-      const results = data.results || [];
-      if (results.length === 0) {
-        personsSearchResults.innerHTML = '<tr><td colspan="6" style="text-align: center;">No matching persons found.</td></tr>';
-        return;
-      }
-      
-      personsSearchResults.innerHTML = results.map(p => `
-        <tr>
-          <td><code style="font-size: 0.85em;">${escapeHtml(p.analysis_id || '-')}</code></td>
-          <td><strong>${p.track_id}</strong></td>
-          <td>${Number(p.first_seen || 0).toFixed(2)}s</td>
-          <td>${Number(p.last_seen || 0).toFixed(2)}s</td>
-          <td>${p.detection_count}</td>
-          <td>${escapeHtml(p.attributes || '-')}</td>
-        </tr>
-      `).join('');
-    } catch (err) {
-      searchPersonsError.textContent = `Error: ${err.message}`;
-      searchPersonsError.classList.remove('hidden');
-      personsSearchResults.innerHTML = '<tr><td colspan="6">Search failed.</td></tr>';
-    } finally {
-      searchPersonsBtn.disabled = false;
-    }
-  });
-}
-
 // Render quick links on initial page load
 renderRecentAnalysesQuickLinks();
+loadRecentCases();

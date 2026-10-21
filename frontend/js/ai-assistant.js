@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8000';
+const API_URL = window.API_URL || 'http://localhost:8000';
 const RECENT_INVESTIGATIONS_KEY = 'forensight-recent-investigations';
 
 const chatMessages = document.getElementById('chatMessages');
@@ -34,48 +34,67 @@ function getRecentInvestigations() {
 
 function renderQuickLinks() {
   if (!aiQuickLinksChips) return;
-  const recent = getRecentInvestigations();
+  const recent = [...new Map(getRecentInvestigations().filter(
+    (item) => item.caseName && item.caseName !== 'Case unavailable'
+  ).map((item) => [item.caseName, item])).values()];
 
   if (!recent.length) {
-    aiQuickLinksChips.innerHTML = '<span style="color:var(--muted)">No analysis sessions completed yet. Run a Video Analysis on Dashboard first.</span>';
+    aiQuickLinksChips.innerHTML = '<span style="color:var(--muted)">No recent cases found.</span>';
     return;
   }
 
   aiQuickLinksChips.innerHTML = recent.map((item) => `
-    <button type="button" class="analysis-quick-link" data-analysis-id="${item.id}">
-      #${item.id.slice(0, 8)} (${escapeHtml(item.fileName)})
+    <button type="button" class="analysis-quick-link" data-case-name="${escapeHtml(item.caseName)}">
+      ${escapeHtml(item.caseName)}
     </button>
   `).join(' ');
 }
 
-function setAnalysisSession(id) {
-  currentAnalysisId = id;
+function setAnalysisSession(id, caseName = 'Selected case') {
+  currentAnalysisId = id || null;
   chatHistory = [];
-  if (aiAnalysisIdInput) aiAnalysisIdInput.value = id;
-  if (activeSessionBadge) activeSessionBadge.textContent = `#${id.slice(0, 8)}`;
+  if (aiAnalysisIdInput) aiAnalysisIdInput.value = id || '';
+  if (activeSessionBadge) activeSessionBadge.textContent = caseName;
 
   if (chatMessages) {
     chatMessages.innerHTML = `
       <div class="chat-bubble model">
-        <p>AI Forensic Investigation session active for Analysis <code>#${id.slice(0, 8)}</code>.</p>
-        <p>Ask me anything about detected weapons, timeline reconstruction, armed suspect trajectories, or generating dispatch reports.</p>
+        <p>${id
+          ? `AI Forensic Assistant is using the latest analysis for ${escapeHtml(caseName)}.`
+          : `No analysis is available for ${escapeHtml(caseName)} yet.`
+        }</p>
+        <p>Ask me about detected weapons, timeline reconstruction, suspect trajectories, or dispatch reporting.</p>
       </div>
     `;
   }
 }
 
+document.addEventListener('caseSessionSelected', (event) => {
+  const { analysisId, caseName } = event.detail || {};
+  if (caseName) setAnalysisSession(analysisId, caseName);
+});
+
+document.addEventListener('caseNamesResolved', renderQuickLinks);
+
 document.addEventListener('click', (e) => {
   const chip = e.target.closest('.analysis-quick-link');
-  if (chip && chip.dataset.analysisId) {
-    setAnalysisSession(chip.dataset.analysisId);
-  }
+  if (!chip || !chip.dataset.caseName) return;
+  const caseSelect = document.getElementById('caseNameSelect');
+  const option = [...(caseSelect?.options || [])].find(
+    (item) => item.textContent === chip.dataset.caseName
+  );
+  if (!caseSelect || !option) return;
+  caseSelect.value = option.value;
+  caseSelect.dispatchEvent(new Event('change'));
 });
 
 const loadAnalysisAiBtn = document.getElementById('loadAnalysisAiBtn');
 if (loadAnalysisAiBtn) {
   loadAnalysisAiBtn.addEventListener('click', () => {
     const val = aiAnalysisIdInput ? aiAnalysisIdInput.value.trim() : '';
-    if (val) setAnalysisSession(val);
+    const selectedCase = document.getElementById('caseNameSelect');
+    const caseName = selectedCase?.selectedOptions[0]?.textContent || 'Selected case';
+    if (selectedCase?.value) setAnalysisSession(val, caseName);
   });
 }
 
@@ -98,7 +117,7 @@ async function handleChatSubmit(question) {
   if (!trimmed) return;
 
   if (!currentAnalysisId) {
-    appendChatMessage('model', 'Please select or enter an Analysis Session ID above before asking questions.');
+      appendChatMessage('model', 'Select a case with a completed analysis before asking questions.');
     return;
   }
 
@@ -172,7 +191,3 @@ if (chatQuickPrompts) {
 
 // Initial load
 renderQuickLinks();
-const recent = getRecentInvestigations();
-if (recent.length) {
-  setAnalysisSession(recent[0].id);
-}

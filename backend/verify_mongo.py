@@ -11,17 +11,50 @@ from core.database import get_db
 from routers.video import _persist_to_mongodb
 
 def run_verification():
-    analysis_id = "99c2421d-0b87-43ba-a90e-4ca326c81cda"
+    db = get_db()
+    if db is None:
+        print("[Verify] MongoDB is not connected. Set MONGODB_URI in backend/.env to run this test.")
+        return
+
+    analysis_id = "test-analysis-verify"
     
-    # Load detections
+    # Load detections or use realistic sample
     det_path = backend_dir / "results" / f"{analysis_id}_detections.json"
-    with open(det_path, "r") as f:
-        detections = json.load(f)
-        
-    # Load threats
-    threat_path = backend_dir / "results" / f"{analysis_id}_threats.json"
-    with open(threat_path, "r") as f:
-        threat_analysis = json.load(f)
+    if det_path.exists():
+        with open(det_path, "r") as f:
+            detections = json.load(f)
+    else:
+        detections = [
+            {
+                "frame": 10,
+                "timestamp": 1.0,
+                "object": "person",
+                "confidence": 0.92,
+                "track_id": 1,
+                "attributes": "person wearing dark jacket",
+                "is_threat": False,
+                "threat_category": "NONE",
+                "bounding_box": {"x1": 50, "y1": 50, "x2": 150, "y2": 250}
+            },
+            {
+                "frame": 15,
+                "timestamp": 1.5,
+                "object": "knife",
+                "confidence": 0.88,
+                "track_id": None,
+                "attributes": "silver blade knife",
+                "is_threat": True,
+                "threat_category": "LETHAL_WEAPON",
+                "bounding_box": {"x1": 80, "y1": 120, "x2": 110, "y2": 160}
+            }
+        ]
+
+    threat_analysis = {
+        "overall_threat_level": "HIGH",
+        "max_threat_score": 0.85,
+        "total_incidents": 1,
+        "incidents": []
+    }
         
     object_counts = {}
     for d in detections:
@@ -39,9 +72,6 @@ def run_verification():
     
     # Persist
     _persist_to_mongodb(analysis_id, filename, result)
-    
-    # Verify counts
-    db = get_db()
     
     collections = [
         "cases", 

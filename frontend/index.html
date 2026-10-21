@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=20261021-1526" />
 </head>
 <body>
   <div class="app-shell">
@@ -37,13 +37,6 @@
             <svg viewBox="0 0 24 24"><path d="M7 6h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm2 0V4h6v2M9 12h6M9 15h4"/></svg>
           </span>
           <span>Evidence</span>
-        </a>
-
-        <a href="timeline.html" class="nav-item">
-          <span class="nav-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
-          </span>
-          <span>Timeline</span>
         </a>
 
         <a href="reports.html" class="nav-item">
@@ -95,8 +88,32 @@
             <div class="upload-actions">
               <button type="button" class="primary-btn wide" id="analyzeBtn">Analyze Footage</button>
             </div>
+
+            <!-- Live Progress Bar -->
+            <div class="progress-container hidden" id="analysisProgressContainer" style="margin-top: 15px; padding: 12px 16px; background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px; color: #94a3b8;">
+                <span id="analysisProgressText">Initializing analysis...</span>
+                <strong id="analysisProgressPercent" style="color: #38bdf8;">0%</strong>
+              </div>
+              <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                <div id="analysisProgressBar" style="width: 0%; height: 100%; background: linear-gradient(90deg, #3b82f6, #10b981); transition: width 0.3s ease;"></div>
+              </div>
+            </div>
           </div>
 
+        </section>
+
+        <section class="panel recent-cases-panel" id="recentCasesPanel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow small">Cases</p>
+              <h2>Recent Cases</h2>
+            </div>
+            <a class="secondary-btn" href="cases.html">View All Cases</a>
+          </div>
+          <div class="recent-list" id="recentCasesList">
+            <p class="empty-state">Loading cases...</p>
+          </div>
         </section>
 
         <section class="panel results-panel hidden" id="analysisResults" aria-live="polite">
@@ -105,9 +122,13 @@
               <p class="eyebrow small">Analysis Output</p>
               <h2>Detection Results</h2>
             </div>
-            <div class="result-links">
+            <div class="result-links" style="display: flex; gap: 8px; flex-wrap: wrap;">
               <a class="secondary-btn" id="detectionsLink" href="#" target="_blank" rel="noreferrer">Open JSON</a>
               <button type="button" class="primary-btn" id="annotatedVideoLink">View Annotated Video</button>
+              <a class="secondary-btn" id="navEvidenceLink" href="evidence.html">Evidence Log</a>
+              <a class="secondary-btn" id="navTimelineLink" href="timeline.html">Timeline</a>
+              <a class="secondary-btn" id="navReportLink" href="reports.html">Report</a>
+              <a class="secondary-btn" id="navAiLink" href="ai-assistant.html">AI Assistant</a>
             </div>
           </div>
 
@@ -168,7 +189,6 @@
                   <th>Time</th>
                   <th>Object</th>
                   <th>Confidence</th>
-                  <th>Track ID</th>
                 </tr>
               </thead>
               <tbody id="detectionsTable">
@@ -179,71 +199,10 @@
           <p class="result-note" id="resultNote"></p>
         </section>
 
-        <section class="panel persons-panel" id="personSearchPanel">
-          <div class="panel-header">
-            <div>
-              <p class="eyebrow small">Forensic Search</p>
-              <h2>Person Search</h2>
-            </div>
-          </div>
-          
-          <div style="padding: 1rem 1.5rem;">
-            <div style="margin-bottom: 1rem; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; border-left: 4px solid var(--accent-primary);">
-              <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary);">
-                <strong>CRITICAL NOTE ON TRACK ID:</strong> <code>track_id</code> is a within-video tracking identifier, not identity. 
-                It is scoped to a single analysis/video session. The same real person could get different <code>track_id</code>s across different videos. 
-                This is <strong>not</strong> facial recognition and does not establish real-world identity.
-              </p>
-            </div>
-            
-            <form id="personSearchForm" style="display: flex; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap;">
-              <input type="text" id="searchAnalysisId" placeholder="Analysis ID" class="form-input" style="flex: 1; min-width: 200px;" />
-              <input type="text" id="searchCaseId" placeholder="Case ID (Optional)" class="form-input" style="flex: 1; min-width: 150px;" />
-              <input type="number" id="searchTrackId" placeholder="Track ID (Optional)" class="form-input" style="flex: 0.5; min-width: 100px;" />
-              <input type="text" id="searchAttributes" placeholder="Attributes (e.g. red shirt)" class="form-input" style="flex: 1; min-width: 200px;" />
-              <button type="submit" class="primary-btn" id="searchPersonsBtn">Search</button>
-            </form>
-            
-            <div id="searchPersonsError" class="inline-error hidden" style="margin-bottom: 1rem;"></div>
-            
-            <div class="table-wrap result-table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Analysis ID</th>
-                    <th>Track ID</th>
-                    <th>First Seen</th>
-                    <th>Last Seen</th>
-                    <th>Detection Count</th>
-                    <th>Attributes</th>
-                  </tr>
-                </thead>
-                <tbody id="personsSearchResults">
-                  <tr><td colspan="6">Enter criteria to search persons.</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel recent-panel" id="recentInvestigationsPanel">
-          <div class="panel-header">
-            <div>
-              <p class="eyebrow small">History</p>
-              <h2>Recent Investigations</h2>
-            </div>
-            <span class="status-tag">Latest 5</span>
-          </div>
-          <div class="recent-list" id="recentInvestigationsList">
-            <p class="empty-state">Completed investigations will appear here.</p>
-          </div>
-        </section>
-
       </div>
     </main>
   </div>
 
-  <script src="js/dashboard.js"></script>
+  <script src="js/dashboard.js?v=20261021-1621"></script>
 </body>
 </html>
-

@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=20261021-1526" />
   <link rel="stylesheet" href="css/ai-assistant.css" />
 </head>
 <body>
@@ -38,13 +38,6 @@
             <svg viewBox="0 0 24 24"><path d="M7 6h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm2 0V4h6v2M9 12h6M9 15h4"/></svg>
           </span>
           <span>Evidence</span>
-        </a>
-
-        <a href="timeline.html" class="nav-item">
-          <span class="nav-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
-          </span>
-          <span>Timeline</span>
         </a>
 
         <a href="reports.html" class="nav-item">
@@ -78,16 +71,19 @@
           <div class="panel-header">
             <div>
               <p class="eyebrow small">Context Selection</p>
-              <h2>Analysis Session ID</h2>
+              <h2>Select Case</h2>
             </div>
             <span class="status-tag" id="activeSessionBadge">No Session</span>
           </div>
           <div style="display: flex; gap: 10px; align-items: center;">
-            <input type="text" class="analysis-id-input" id="aiAnalysisIdInput" placeholder="Enter Analysis ID (e.g. 550e8400-e29b-41d4-a716-446655440000)..." />
-            <button type="button" class="primary-btn" id="loadAnalysisAiBtn">Set Active Session</button>
+            <div class="case-session-picker">
+              <select id="caseNameSelect" class="case-session-select" aria-label="Select a case"></select>
+            </div>
+            <input type="hidden" id="aiAnalysisIdInput" />
+            <button type="button" class="primary-btn" id="loadAnalysisAiBtn">Use Selected Case</button>
           </div>
           <div style="margin-top: 12px; font-size: 12px; color: var(--muted);" id="aiQuickLinks">
-            <span>Recent Sessions: </span><span id="aiQuickLinksChips">None recorded yet</span>
+            <span>Recent Cases: </span><span id="aiQuickLinksChips">None recorded yet</span>
           </div>
         </section>
 
@@ -108,7 +104,7 @@
 
           <div class="chat-messages" id="chatMessages">
             <div class="chat-bubble model">
-              <p>Hello Investigator. I am ForenSight's <strong>Threat &amp; Incident Response AI Analyst</strong>. Select an analysis session above, then ask me anything about detected weapons, suspect trajectories, timeline reconstruction, or dispatch reporting.</p>
+              <p>Hello Investigator. I am ForenSight's <strong>Threat &amp; Incident Response AI Analyst</strong>. Select a case above, then ask me about its latest analysis, detected weapons, suspect trajectories, timeline reconstruction, or dispatch reporting.</p>
             </div>
           </div>
 
@@ -121,6 +117,7 @@
     </main>
   </div>
 
-  <script src="js/ai-assistant.js"></script>
+  <script src="js/case-session-picker.js?v=20261021-1642"></script>
+  <script src="js/ai-assistant.js?v=20261021-1642"></script>
 </body>
 </html>

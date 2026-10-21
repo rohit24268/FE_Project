@@ -76,27 +76,138 @@
 
 .case-card-meta h3 {
   margin: 0;
-  font-size: 16px;
+  font-size: 19px;
   letter-spacing: -0.03em;
   color: var(--text);
 }
 
 .case-card-main p {
   margin: 0 0 6px;
-  font-size: 13px;
+  font-size: 15px;
   color: var(--muted);
 }
 
 .case-card-details {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  font-size: 12px;
+  gap: 14px;
+  font-size: 14px;
   color: var(--muted);
+}
+
+.case-details-btn {
+  white-space: nowrap;
+}
+
+.case-details {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.case-edit-form {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.case-edit-form .form-group:last-of-type {
+  margin-bottom: 10px;
+}
+
+.case-edit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.case-analysis-detail + .case-analysis-detail {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.case-analysis-detail h4 {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: 17px;
+  overflow-wrap: anywhere;
+}
+
+.case-analysis-detail .case-card-details {
+  font-size: 15px;
+}
+
+.case-analysis-detail p {
+  margin: 10px 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.case-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .case-card-actions {
   display: flex;
+  flex-direction: column;
   flex-shrink: 0;
   gap: 8px;
+  align-items: stretch;
+  min-width: 112px;
+  padding-top: 2px;
+}
+
+.case-primary-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.case-primary-actions .secondary-btn {
+  flex: 1;
+  white-space: nowrap;
+}
+
+.case-delete-btn {
+  padding: 10px 14px;
+  border: 1px solid rgba(223, 90, 90, 0.35);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--danger);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.case-delete-btn:hover {
+  background: rgba(223, 90, 90, 0.08);
+}
+
+.case-delete-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .case-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .case-card-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .case-primary-actions {
+    width: 100%;
+  }
+
+  .case-delete-btn {
+    align-self: flex-start;
+  }
 }
