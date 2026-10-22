@@ -23,8 +23,10 @@ class TestApiEndpoints(unittest.TestCase):
         self.assertIn("ForenSight AI Backend Running", res.json()["message"])
 
     def test_create_case_with_title(self):
+        import uuid
+        title = f"Incident #Alpha - Main Gate {uuid.uuid4().hex[:6]}"
         payload = {
-            "title": "Incident #Alpha - Main Gate",
+            "title": title,
             "investigator": "Officer J. Vance",
             "description": "Suspicious activity detected near perimeter",
             "status": "open"
@@ -32,14 +34,16 @@ class TestApiEndpoints(unittest.TestCase):
         res = self.client.post("/cases", json=payload)
         self.assertEqual(res.status_code, 201)
         data = res.json()
-        self.assertEqual(data["title"], "Incident #Alpha - Main Gate")
-        self.assertEqual(data["case_name"], "Incident #Alpha - Main Gate")
+        self.assertEqual(data["title"], title)
+        self.assertEqual(data["case_name"], title)
         self.assertTrue(bool(data["case_id"]))
 
     def test_create_case_with_case_name(self):
         # Frontend sends case_name; ensure backward/forward compatibility
+        import uuid
+        case_name = f"Incident #Beta - Loading Dock {uuid.uuid4().hex[:6]}"
         payload = {
-            "case_name": "Incident #Beta - Loading Dock",
+            "case_name": case_name,
             "investigator": "Agent M. Doe",
             "description": "Unauthorized access after hours",
             "status": "open"
@@ -47,8 +51,8 @@ class TestApiEndpoints(unittest.TestCase):
         res = self.client.post("/cases", json=payload)
         self.assertEqual(res.status_code, 201)
         data = res.json()
-        self.assertEqual(data["title"], "Incident #Beta - Loading Dock")
-        self.assertEqual(data["case_name"], "Incident #Beta - Loading Dock")
+        self.assertEqual(data["title"], case_name)
+        self.assertEqual(data["case_name"], case_name)
 
     def test_link_analysis_route_is_removed(self):
         response = self.client.post(

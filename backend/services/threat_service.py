@@ -45,6 +45,13 @@ SUSPICIOUS_ITEMS = {
     "handbag": 0.20,
 }
 
+# Fire and smoke environmental emergency hazards
+FIRE_HAZARDS = {
+    "fire": 0.90,
+    "flame": 0.90,
+    "smoke": 0.70,
+}
+
 PERSON_CLASS = "person"
 
 
@@ -56,9 +63,19 @@ def normalize_class_name(name: str) -> str:
 def get_base_threat_weight(object_name: str) -> Tuple[float, str]:
     """
     Returns (base_weight, category) for a given object class name.
-    Category is one of: 'LETHAL_WEAPON', 'BLUNT_WEAPON', 'SUSPICIOUS_ITEM', 'NONE'.
+    Category is one of: 'LETHAL_WEAPON', 'BLUNT_WEAPON', 'SUSPICIOUS_ITEM', 'FIRE_HAZARD', 'SMOKE_HAZARD', 'NONE'.
     """
     norm = normalize_class_name(object_name)
+
+    # Fire and smoke hazards
+    if norm in FIRE_HAZARDS:
+        cat = "FIRE_HAZARD" if "fire" in norm or "flame" in norm else "SMOKE_HAZARD"
+        return FIRE_HAZARDS[norm], cat
+
+    for k, weight in FIRE_HAZARDS.items():
+        if k in norm:
+            cat = "FIRE_HAZARD" if "fire" in k or "flame" in k else "SMOKE_HAZARD"
+            return weight, cat
 
     if norm in LETHAL_WEAPONS:
         return LETHAL_WEAPONS[norm], "LETHAL_WEAPON"

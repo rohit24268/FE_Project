@@ -38,12 +38,18 @@ MAX_SAMPLE_EVENTS = 400
 # MULTIMODAL CROP ANALYSIS (METHOD A)
 # --------------------------------------------------
 
+def is_gemini_available() -> bool:
+    """Check if a valid Gemini API key is provided."""
+    key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY") or ""
+    return bool(key and key.strip() and "your_gemini" not in key.lower())
+
+
 def analyze_crop_attributes(image_bytes: bytes) -> str:
     """
     Analyzes a cropped object image using Gemini 3.6 Flash multimodal capabilities
     and returns a concise description of visual attributes (clothing color, carried items/weapons, vehicle type, etc.).
     """
-    if not image_bytes:
+    if not image_bytes or not is_gemini_available():
         return ""
 
     try:

@@ -310,6 +310,9 @@ def _persist_to_mongodb(
                         "analysis_id": analysis_id,
                         "threat_analysis": result.get("threat_analysis"),
                         "threat_detections": threat_detections,
+                        "weapon_detections": result.get("weapon_detections", []),
+                        "fire_smoke_detections": result.get("fire_smoke_detections", []),
+                        "fire_smoke_events": result.get("fire_smoke_events", []),
                     },
                     allow_nan=False,
                 ).encode("utf-8")
@@ -499,6 +502,7 @@ def _persist_to_mongodb(
             "total_detections": result.get("total_detections", len(detections)),
             "threat_summary": result.get("threat_analysis"),
             "object_summary": result.get("object_counts"),
+            "fire_smoke_events": result.get("fire_smoke_events", []),
             "timeline": timeline,
             "created_at": now,
         }
@@ -527,6 +531,8 @@ def _persist_to_mongodb(
                     "total_detections": result.get("total_detections", len(detections)),
                     "object_counts": result.get("object_counts", {}),
                     "threat_analysis": result.get("threat_analysis"),
+                    "fire_smoke_events": result.get("fire_smoke_events", []),
+                    "fire_smoke_detections": result.get("fire_smoke_detections", []),
                 }
             },
             upsert=True,
@@ -626,6 +632,14 @@ async def analyze_cctv(
                 detail=f"YOLO processing failed: {str(e)}"
             ) from e
 
+        # Mirror output files to RESULT_DIR for direct access and fallback
+        import shutil
+        try:
+            for rf in result_dir.glob(f"{analysis_id}_*"):
+                shutil.copy2(rf, RESULT_DIR / rf.name)
+        except Exception as copy_err:
+            print(f"[ForenSight AI] Notice: Could not mirror to RESULT_DIR: {copy_err}")
+
         try:
             stored_files = await asyncio.to_thread(
                 _persist_to_mongodb,
@@ -677,5 +691,9 @@ async def analyze_cctv(
                 if stored_files["annotated_video_url"]
                 else None
             ),
-            "detections": result["detections"]
+            "detections": result["detections"],
+            "weapon_detections": result.get("weapon_detections", []),
+            "fire_smoke_detections": result.get("fire_smoke_detections", []),
+            "fire_smoke_events": result.get("fire_smoke_events", []),
+            "performance_metrics": result.get("performance_metrics")
         }

@@ -115,7 +115,7 @@ The upload and generated video are held in a temporary working directory only wh
 ### 1. Start the Backend API Server
 ```powershell
 cd d:\FE_Project\backend
-..\.venv\Scripts\Activate.ps1
+.\venv\Scripts\Activate.ps1 
 uvicorn main:app --reload --port 8000
 ```
 - API will run at: `http://localhost:8000`
